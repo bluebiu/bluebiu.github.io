@@ -1,0 +1,52 @@
+---
+layout: page
+title: Tags
+description: "虚虚实实"
+header-img: "img/blue_elephant.jpg"
+---
+
+<!-- 标签云 参考Codeboy.me里的 -160120 -->
+<div id='tag_cloud' class="tags">
+    {% for tag in site.tags %}
+    <a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+    {% endfor %}
+</div>
+
+<!-- 标签列表集合 -->
+<div id="post-list">
+    {% for tag in site.tags %}
+        <h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world"{{ tb|capitalize }} #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        {% assign pages_list = tag[1] %}
+        {% for post in pages_list %}
+            {% if post.title != null %}
+                {% if group == null or group == post.group %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                        <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%Y.%m.%d" }}</time> - {{ post.title }}
+                    </a>
+                </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% assign pages_list = nil %}
+        {% assign group = nil %}
+        </ul>
+    {% endfor %}
+</div>
+
+<!-- 云tags-160120 -->
+<script src="{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}" type="text/javascript" charset="utf-8"></script>
+<script language="javascript">
+    $.fn.tagcloud.defaults = {
+        //size: {start: 1, end: 1, unit: 'em'},
+        color: {start: '#FF99FF', end: '#FF99FF'},
+    };
+    $(function () {
+        $('#tag_cloud a').tagcloud();
+    });
+</script>
+<!-- end云tags-160120 -->
+
+{% include search.html %}

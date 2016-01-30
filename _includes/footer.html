@@ -1,0 +1,102 @@
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   <!--  <li>
+                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li> -->
+
+<!-- -160120
+                    {% if site.socialname.twitter %}
+                    <li>
+                        <a href="https://twitter.com/{{ site.socialname.twitter }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+ -->
+                    {% if site.socialname.github %}
+                    <li>
+                        <a href="https://github.com/{{ site.socialname.github }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    <!--
+                    {% if site.socialname.douban %}
+                    <li>
+                        <a href="http://www.douban.com/people/{{ site.socialname.douban }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-douban fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    -->
+
+                    <!--
+                    {% if site.socialname.facebook %}
+                    <li>
+                        <a href="https://www.facebook.com/{{ site.socialname.facebook }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    -->
+
+                    {% if site.socialname.zhihu %}
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/{{ site.socialname.zhihu }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+
+                    {% if site.socialname.weibo %}
+                    <li>
+                        <a target="_blank" href="http://weibo.com/{{ site.socialname.weibo }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+
+                </ul>
+                <!-- <p class="copyright text-muted">
+                &copy; 2016~{{ site.time | date: '%Y' }} {{ site.url }} Power by {{ site.owner.name }}. All Rights Reserved.
+                </p> -->
+                <p class="copyright text-muted">
+                &copy; 2016 {{ site.owner.name }} All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+

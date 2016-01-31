@@ -5,7 +5,7 @@ layout: default
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
+        background-image: url('{% if page.header-img %}{{ page.header-img | prepend : site.baseurl }}{% endif %}');
         background-color:none;
     }
 </style>
@@ -78,9 +78,9 @@ layout: default
 
                 <div class="ds-share"
                     data-thread-key="{{page.id}}" data-title="{{page.title}}"
-                    data-images="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}"
+                    data-images="{% if page.header-img %}{{ page.header-img | prepend: site.baseurl | prepend : site.url }}{% else %}{{ site.share_img | prepend : site.baseurl | prepend : site.url }}{% endif %}"
                     data-content="{{ content | strip_html | truncate:80 }} | Microdust:Azeril's blog"
-                    data-url="{{site.baseurl}}/{{page.url}}">
+                    data-url="{{ page.url | prepend : site.baseurl | prepend : site.url }}">
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li>分享到：</li>
@@ -97,7 +97,7 @@ layout: default
 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{ page.url | prepend : site.url }}"></div>
+                    <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{ page.url | prepend : baseurl | prepend : site.url }}"></div>
                 </div>
                 <!-- 多说评论框 end -->
 

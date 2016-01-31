@@ -23,7 +23,7 @@ header-img: "img/umbrella_in_grassland.jpg"
             {% if post.title != null %}
                 {% if group == null or group == post.group %}
                 <li>
-                    <a href="{{ site.baseurl }}{{ post.url }}">
+                    <a href="{{ post.url | prepend : site.baseurl }}">
                         <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%Y.%m.%d" }}</time> - {{ post.title }}
                     </a>
                 </li>

@@ -1,6 +1,7 @@
+# 多说分享评论用到
 url: "http://bluebiu.com"
 #url: "http://bluebiulocal.com:4000/"
-# 多说评论框 里会用到
+share_img: "img/wx_share_default.jpg"
 
 # Index
 title: Biu^Biu's Blog

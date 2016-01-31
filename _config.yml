@@ -70,7 +70,7 @@ defaults:
     values:
       layout: "post"
       author: "biu.lao"
-      header-img: "img/ship_in_hand.jpg" # We don't want posts without a header image, that whould mean white on white
+#      header-img: "img/ship_in_hand.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments
 comments :

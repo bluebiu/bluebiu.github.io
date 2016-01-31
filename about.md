@@ -49,7 +49,7 @@ header-img: "img/the_world_is_yours.jpg"
 
 <!-- 多说评论框 start -->
 <div class="comment">
-    <div class="ds-thread" data-thread-key="/About-html-2016-01-01" data-title="{{page.title}}" data-url="{{ page.url | prepend : site.url }}"></div>
+    <div class="ds-thread" data-thread-key="/about-html-2016-01-31" data-title="{{page.title}}" data-url="{{ page.url | prepend : site.url }}"></div>
 </div>
 <!-- 多说评论框 end -->
 

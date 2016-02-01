@@ -55,6 +55,7 @@
   position: fixed;
   bottom: 10px;
   right: 60px;
+  z-index: 9998;
 }
 #back-top a {
   width: 54px;

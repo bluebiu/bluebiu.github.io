@@ -49,7 +49,8 @@ Here is a [homepage][link1] link.
 * ……
 
 ---
+
 ###### 注释:
-[[^1]]: 外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”
+[^1]: 外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”
 
 [link1]: http://bluebiu.com "biubiu's blog"

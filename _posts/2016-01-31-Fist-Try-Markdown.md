@@ -32,7 +32,7 @@ exit;
 
 ## 尝试脚注
 
-php[^1]
+php[[^1]]
 
 ## 尝试下划线
 
@@ -40,9 +40,16 @@ _用了『_』的标记_
 [@超链接](http://bluebiu.com)
 {{site.url}}
 
+## 尝试链接的引用方法
+Here is a [homepage][link1] link.
+
 ## TODO
 * 文章的锚点自动生成
 * 代码高亮的安装
 * ……
 
-[^1]: 外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”
+---
+###### 注释:
+[[^1]]: 外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”
+
+[link1]: http://bluebiu.com "biubiu's blog"

@@ -32,7 +32,8 @@ exit;
 
 ## 尝试脚注
 
-php[[^1]]
+php[[^注1]]
+php2[[^注2]]
 
 ## 尝试下划线
 
@@ -51,6 +52,7 @@ Here is a [homepage][link1] link.
 ---
 
 ###### 注释:
-[^1]: 外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”
+[^注1]: 外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”
+[^注2]: 外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”
 
 [link1]: http://bluebiu.com "biubiu's blog"

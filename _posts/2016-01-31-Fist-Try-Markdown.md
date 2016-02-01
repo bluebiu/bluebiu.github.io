@@ -45,4 +45,4 @@ _用了『_』的标记_
 * 代码高亮的安装
 * ……
 
-[1]: 外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”
+[^1]: 外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”

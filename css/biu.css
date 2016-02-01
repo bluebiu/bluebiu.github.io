@@ -48,3 +48,30 @@
   background-color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
 }
+
+/*  Back Top Button  */
+/*  参考来自 cnfeat.com -160201 */
+#back-top {
+  position: fixed;
+  bottom: 10px;
+  right: 60px;
+}
+#back-top a {
+  width: 54px;
+  height: 54px;
+  display: block;
+  background: #ddd url(/img/Back-Top_Arrow.png) no-repeat center center;
+  background-color: #aaa;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+#back-top a:hover {
+  background-color: #777;
+}
+/*  Back Top Button  End */
+
+

@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "在mac上使用charles抓包"
+title: "在Mac上使用Charles抓包"
 categories: "blog"
 tags: [charles, fiddler, mac, https, ssl, packetcapture]
 description: "善用抓包工具"
 first_time: "2016-01-01 01:26:33"
-last_time: "2016-02-02 11:13:12"
+last_time: "2016-02-02 11:23:12"
 ---
 
 ## 一。先吐个槽
@@ -120,6 +120,6 @@ Charles generates its own certificates for sites, which it signs using a Charles
 [^note_3]: <http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/>
 
 
-[img_1]: http://bluebiu.com/img/biuimg2str.png "charles_https_warning"
-[img_2]: http://bluebiu.com/img/biuimg2str.png "charles_https_warning"
-[img_3]: http://bluebiu.com/img/biuimg2str.png "charles_https_warning"
+[img_1]: http://bluebiu.com/img/charles_for_mac/charles_1.png "charles_https_warning"
+[img_2]: http://bluebiu.com/img/charles_for_mac/charles_2.png "allow_mobile_proxy"
+[img_3]: http://bluebiu.com/img/charles_for_mac/charles_3.png "cenfigure_certificate"

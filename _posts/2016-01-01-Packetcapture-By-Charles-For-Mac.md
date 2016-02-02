@@ -26,7 +26,7 @@ charles版本`v3.11.2`。
 
 ### 1.安装Charles
 
-(破解什么的执行搞定……)
+(破解什么的自行搞定……)
 
 ### 2.打开，并设置基本参数
 
@@ -46,9 +46,10 @@ You may need to configure your browser or application to trust the Charles Root 
 ```
 
 ![图1][img_1]
+
 ###### 「图1」
 
-### 4.接着配置电脑上charled的ssl
+### 4.接着配置电脑上charles的ssl
 
 Proxy——SSL Proxying Settings——SSL Proxying ——勾选Enable SSL Proxying——Locations里add一个Host和port（比如xxx-api.xxx.com, 443）(注意，这里先别填`*:443`, 下文会说明为什么）​
 
@@ -63,7 +64,6 @@ Help——SSL Proxying——Install Charles Root Certificate on a Mobile Device 
 ### 6.手机安装证书
 
 手机按提示，访问http://charlesproxy.com/getssl，出现安装证书提示，随便打个名称，选择WLAN（这里android，一定要选`WLAN`而不是VPNxxx），确定，完成！
-
 这时再看看手机访问的https的链接，Charles能抓到了吧！
 
 ### 7.如果此时也想电脑也可以抓到https，还需要一点设置
@@ -90,7 +90,7 @@ Transaction began prior to session being cleared, body content transmitted befor
 
 ### 1.关键步骤说明
 
-在「二.6」那里要用手机的访问https的浏览器来访问，才生效，否则无效。（这是新版Charles不同的地方，官网说3.10之前的版本，仍是下载crt证书来完成这步，而之后的都是上述说的新方法。）
+在「二.6」那里要用手机的访问https的浏览器来访问，才生效，否则无效。（这是新版charles不同的地方，官网说3.10之前的版本，仍是下载crt证书来完成这步，而之后的都是上述说的新方法。）
 
 Version of Charles prior to v3.10 used a single SSL Root Certificate. You can still download the legacy certificate bundle here or the certificate itself here (for installing on mobile devices). Note that these certificates **will not work** on Charles v3.10. [[^note_1]]
 

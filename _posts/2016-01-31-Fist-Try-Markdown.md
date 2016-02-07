@@ -4,14 +4,17 @@ title: "Try Markdown"
 subtitle: "// Todo"
 categories: "blog"
 tags: [try, done]
-description: "take easy!"
+description: "Take easy!"
 first_time: "2016-01-31 15:00:25"
-last_time: "2016-02-07 15:55:11"
+last_time: "2016-02-08 00:53:11"
 ---
 
 ## 发表
 
 发表第一个markdown
+
+哈哈哈，才发现文件的『First』都写错成『Fist』了……
+
 各种实验田
 
 ## 试试初步高亮
@@ -90,6 +93,12 @@ Here is a [homepage][link1] link.
 6. [x] 罚点啥
 9. [ ] 问问
 10. [x] fdsfds
+
+在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段
+试试``there is a php code `echo 123;` here``还行哦。  
+
+再来`````this is five `````真可以。
+
 
 ---
 

@@ -92,11 +92,11 @@ Transaction began prior to session being cleared, body content transmitted befor
 
 在「二.6」那里要用手机的访问https的浏览器来访问，才生效，否则无效。（这是新版charles不同的地方，官网说3.10之前的版本，仍是下载crt证书来完成这步，而之后的都是上述说的新方法。）
 
-Version of Charles prior to v3.10 used a single SSL Root Certificate. You can still download the legacy certificate bundle here or the certificate itself here (for installing on mobile devices). Note that these certificates **will not work** on Charles v3.10. [[^note_1]]
+>Version of Charles prior to v3.10 used a single SSL Root Certificate. You can still download the legacy certificate bundle here or the certificate itself here (for installing on mobile devices). Note that these certificates **will not work** on Charles v3.10. [[^note_1]]
 
-If you are running Charles v3.10 or later, please go to Charles and consult the SSL Proxying submenu in the **Help menu**, for instructions on installing your new Charles Root Certificate. [[^note_2]]
+>If you are running Charles v3.10 or later, please go to Charles and consult the SSL Proxying submenu in the **Help menu**, for instructions on installing your new Charles Root Certificate. [[^note_2]]
 
-Charles generates its own certificates for sites, which it signs using a Charles Root Certificate, which is uniquely generated for your installation of Charles (as of v3.10). You will see a warning in your browser, or other application, when it receives that certificate because the Charles Root Certificate is not in your list of trusted root certificates. See SSL Proxying. [[^note_3]]
+>Charles generates its own certificates for sites, which it signs using a Charles Root Certificate, which is uniquely generated for your installation of Charles (as of v3.10). You will see a warning in your browser, or other application, when it receives that certificate because the Charles Root Certificate is not in your list of trusted root certificates. See SSL Proxying. [[^note_3]]
 
 正是通过查看说明，在Help菜单上找到了相应入口，一个简单的小说明，就让原本一筹莫展的问题，瞬间得以突破，进而下一步操作！**耐心、细心**很重要。
 

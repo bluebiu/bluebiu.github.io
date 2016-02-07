@@ -6,10 +6,11 @@ categories: "blog"
 tags: [try, done]
 description: "take easy!"
 first_time: "2016-01-31 15:00:25"
-last_time: "2016-02-07 14:47:11"
+last_time: "2016-02-07 15:55:11"
 ---
 
 ## 发表
+
 发表第一个markdown
 各种实验田
 
@@ -74,7 +75,9 @@ Here is a [homepage][link1] link.
 1. [ ] 文章的锚点自动生成
 2. [x] 代码高亮的安装
 3. [x] tasklist展示
-4. [ ] ……
+4. [ ] 七牛上传图片接口
+5. [ ] ……
+6. 
 
 ## 无序列表
 

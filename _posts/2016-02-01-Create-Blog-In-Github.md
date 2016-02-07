@@ -59,7 +59,7 @@ last_time: "2016-02-07 10:12:12"
 >You can use `GitHub's Automatic Page Generator` to quickly create a website for a project, user, or organization.  
 >To generate User and Organization Pages sites, you'll need to create a repository named `username.github.io` . The username or organization name must be your own or your GitHub Pages site will not build. The automatic page generator is accessible via the repository's Settings page. You can read more about User and Organization Pages here.[[^note_1]]
 
-OK。反正不管是什么，理解起来就是：最终上传内容到了github上，就能展示页面了。那就按介绍的步骤走一波咯 \>>>
+OK。反正不管名字叫什么，这东西理解起来就是：最终上传内容到了github上，就能展示页面了。那就按介绍的步骤走一波咯 \>>>
 
 **（1）**、首先，你得注册好github帐号，拥有github仓库空间。  
 **（2）**、创建pages仓库，必须是以你的github帐号名作为开头，即`yourName.github.io`。[[^note_2]]（注意一定要一致，否则pages页面将无法构建生成。）  
@@ -202,7 +202,7 @@ Bingo！
 >
 ..., GitHub Pages supports Jekyll, ... **Jekyll  makes it easy to create** site-wide headers and footers without having to copy them across every page. It also offers some other advanced templating features. [[^note_10]]
 
-有这好事？于是又接着度了一波~乎了一波~，看到各种美观简洁大方的页面，来自于Jekyll模板，又看了不少关于Jekyll、Hexo等的介绍，大概就是能模仿github把markdown构造成html，支持本地简单调试，可自由扩展等，觉得非常不错。跟着就再折腾了一波，得到了现在的这个样子。至于是怎么折腾的，涉及到`Jekyll`, `ruby`, `gem`, `bundler` `_config.yml`, `plun-in`, `Liquid`, `duoshuo`, `highlight`, `Rouge`, `tag`, `category`……这又说来话长了，准备在下一篇中细说。有兴趣可以接着看 \>>>「[然而标题却还没想好???][link_10]」
+有这好事？于是又接着度了一波~乎了一波~，看到各种美观简洁大方的页面，来自于Jekyll模板，又看了不少关于Jekyll、Hexo等的介绍，大概就是能模仿github把markdown构造成html，支持本地简单调试，可自由扩展等，觉得非常不错。跟着就再折腾了一波，得到了现在的这个样子。至于是怎么折腾的，涉及到`Jekyll`, `ruby`, `gem`, `bundler` `_config.yml`, `plun-in`, `Liquid`, `duoshuo`, `highlight`, `Rouge`, `tag`, `category`, `task-lists`……这又说来话长了，准备在下一篇中细说。有兴趣可以接着看 \>>>「[然而标题却还没想好???][link_10]」
 
 先看看现在的效果：  
 
@@ -249,7 +249,7 @@ Bingo！
 [link_7]: https://pages.github.com 
 [link_8]: http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html 
 [link_9]: http://wanwang.aliyun.com
-[link_10]: {% post_url 2016-01-01-Packetcapture-By-Charles-For-Mac %}
+[link_10]: {% post_url 2016-02-07-Learn-To-Use-Jekyll %}
 
 [img_1]: /img/how_to_create_blog/pages1_repo-actions-settings.png "pages1_repo-actions-settings"
 [img_2]: /img/how_to_create_blog/pages2_automatic-page-generator.png "pages2_automatic-page-generator"

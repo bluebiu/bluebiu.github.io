@@ -5,7 +5,7 @@ categories: "blog"
 tags: [github, blog, Jekyll, git, ruby, gem, plun-in, Liquid, duoshuo, highlight, Rouge, task-lists]
 description: "Enjoy the process!"
 first_time: "2016-02-07 15:50:33"
-last_time: "2016-02-08 00:52:43"
+last_time: "2016-02-08 00:56:43"
 ---
 
 ## 一、还没动笔
@@ -14,13 +14,13 @@ last_time: "2016-02-08 00:52:43"
 
 先撸几张图上来
 
-[img_1][]
+![img_1][]
 
-[img_2][]
+![img_2][]
 
-[img_3][]
+![img_3][]
 
-[img_4][]
+![img_4][]
 
 
 [img_1]: /img/learn_to_use_jekyll/jekyll1_highlight1.png

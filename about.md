@@ -14,7 +14,7 @@ header-img: "img/the_world_is_yours.jpg"
 
 ***
 
-* **Me**: biu.lao
+* **Me**: biubiu
 * **Location**: Guangzhou, Guangdong
 * **Master Language**: PHP(main), Javascript, Shell, Golang
 * **Used IDE**: Sublime Text(favorite), Vim

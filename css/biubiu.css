@@ -5,6 +5,9 @@
 .footnotes{
   font-size: 12px;
 }
+.footnotes li p{
+  margin-bottom: 1px;
+}
 
 .tag_cloud_filter{
   border-radius: 1em;

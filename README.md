@@ -1,6 +1,6 @@
 # Hello world
 
-This is a blog created by biu.lao. The blog is live at [bluebiu.com](http://bluebiu.com/).
+This is a blog created by biubiu. The blog is live at [bluebiu.com](http://bluebiu.com/).
 
 ## Words
 

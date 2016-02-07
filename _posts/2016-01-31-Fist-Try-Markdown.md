@@ -1,25 +1,48 @@
 ---
 layout: post
-title: "First try Markdown"
+title: "Try Markdown"
 subtitle: "// Todo"
 categories: "blog"
 tags: [try, done]
-description: "试试"
+description: "take easy!"
 first_time: "2016-01-31 15:00:25"
-last_time: "2016-01-31 13:10:11"
+last_time: "2016-02-07 14:47:11"
 ---
 
 ## 发表
 发表第一个markdown
+各种实验田
 
 ## 试试初步高亮
 
 试试`markdown`语法
 
 ```php
-echo 'php是最好的语言';
+<?php
+echo 'php是最好的1语言';
 exit;
+?>
 ```
+
+{% highlight php %}
+<?php
+echo 'fafa';
+// Todo
+function a() {
+    exit('heee');
+}
+?>
+{% endhighlight %}
+
+{% highlight php linenos%}
+<?php
+echo 'fafa';
+// Todo
+function a() {
+    exit('heee');
+}
+?>
+{% endhighlight %}
 
 ## 试试分享微信头图
 
@@ -46,10 +69,24 @@ _用了『_』的标记_
 ## 尝试链接的引用方法
 Here is a [homepage][link1] link.
 
-## TODO
-* 文章的锚点自动生成
-* 代码高亮的安装
-* ……
+## 试下任务列表
+
+1. [ ] 文章的锚点自动生成
+2. [x] 代码高亮的安装
+3. [x] tasklist展示
+4. [ ] ……
+
+## 无序列表
+
+* 收拾收拾是
+* 反反复复方法
+* GG嘎嘎嘎
+
+## 再试
+
+6. [x] 罚点啥
+9. [ ] 问问
+10. [x] fdsfds
 
 ---
 

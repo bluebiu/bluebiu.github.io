@@ -51,8 +51,30 @@ markdown: kramdown
 kramdown:
   input: GFM
   #use_coderay: true
+  # auto_ids: true
+  # footnote_nr: 1
+  # entity_output: as_char
+  # toc_levels: 1..6
+  # smart_quotes: ["lsquo","rsquo","ldquo","rdquo"]
+  # enable_coderay: false
+
+  # coderay:
+  #   coderay_wrap: div
+  #   coderay_line_numbers: inline
+  #   coderay_line_number_start: 1
+  #   coderay_tab_width: 4
+  #   coderay_bold_every: 10
+  #   coderay_css: style
+
 highlighter: rouge
-gems: [jekyll-paginate]
+
+# rouge:
+#   formatter:
+#     css_class: 'highlight'
+#     line_numbers: true
+
+
+gems: ["jekyll-paginate"]
 permalink: none
 # permalink默认是date, 还有pretty. none是/:categories/:title.html
 paginate: 8

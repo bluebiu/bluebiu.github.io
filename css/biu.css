@@ -1,6 +1,10 @@
 /*
- * -160120
+ * -160207
  */
+
+.footnotes{
+  font-size: 12px;
+}
 
 .tag_cloud_filter{
   border-radius: 1em;

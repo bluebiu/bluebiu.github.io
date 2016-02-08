@@ -249,7 +249,7 @@ Bingo！
 [link_7]: https://pages.github.com 
 [link_8]: http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html 
 [link_9]: http://wanwang.aliyun.com
-[link_10]: {% post_url 2016-02-07-Learn-To-Use-Jekyll %}
+[link_10]: {% post_url 2016-02-07-learn-to-use-jekyll %}
 
 [img_1]: /img/how_to_create_blog/pages1_repo-actions-settings.png "pages1_repo-actions-settings"
 [img_2]: /img/how_to_create_blog/pages2_automatic-page-generator.png "pages2_automatic-page-generator"

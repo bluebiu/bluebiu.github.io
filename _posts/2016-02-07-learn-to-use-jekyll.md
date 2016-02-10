@@ -22,6 +22,8 @@ last_time: "2016-02-08 00:56:43"
 
 ![img_4][]
 
+哦，原来是在github上看markdown的文件可以有tasklist，不过转成pages的时候就没这效果了。。
+
 
 [img_1]: /img/learn_to_use_jekyll/jekyll1_highlight1.png
 [img_2]: /img/learn_to_use_jekyll/jekyll2_highlight2.png

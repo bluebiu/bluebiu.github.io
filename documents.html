@@ -15,12 +15,21 @@ header-img: "img/plane_park_on_the_right.jpg"
     <ul class="post-list">
     {% assign markdate = currentdate %}
   {% endif %}
-    <li>
+
+      {% assign currentmonth = post.date | date: "%B" %}
+      {% if currentmonth != markmonth %}
+      <h4 id="{{post.date | date: "%Y%m" }}">「{{ currentmonth }}」</h4>
+        {% assign markmonth = currentmonth %}
+      {% endif %}
+
+      <li>
         <a href="{{ post.url | prepend: site.baseurl }}">
             <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%Y.%m.%d" }}</time> - {{ post.title }}
         </a>
-    </li>
+      </li>
+
   {% if forloop.last %}</ul>{% endif %}
+
 {% endfor %}
 
 {% include search.html %}

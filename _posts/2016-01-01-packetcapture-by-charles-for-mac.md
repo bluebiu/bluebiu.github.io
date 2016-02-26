@@ -120,6 +120,6 @@ Transaction began prior to session being cleared, body content transmitted befor
 [^note_3]: <http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/>
 
 
-[img_1]: http://bluebiu.com/img/charles_for_mac/charles_1.png "charles_https_warning"
-[img_2]: http://bluebiu.com/img/charles_for_mac/charles_2.png "allow_mobile_proxy"
-[img_3]: http://bluebiu.com/img/charles_for_mac/charles_3.png "cenfigure_certificate"
+[img_1]: {{ site.img_url }}/img/pages/charles_for_mac/charles_1.png "charles_https_warning"
+[img_2]: {{ site.img_url }}/img/pages/charles_for_mac/charles_2.png "allow_mobile_proxy"
+[img_3]: {{ site.img_url }}/img/pages/charles_for_mac/charles_3.png "cenfigure_certificate"

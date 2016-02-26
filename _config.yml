@@ -1,12 +1,12 @@
 # 多说分享评论用到
 url: "http://bluebiu.com"
-#url: "http://bluebiulocal.com:4000/"
-share_img: "img/wx_share_default.jpg"
+#url: "http://bluebiulocal.com:4000"
+share_img: "/img/wx_share_default.jpg"
 
 # Index
-title: Biu^Biu's Blog
+title: "Biu^Biu's Blog"
 hometitle: "Biu^Biu"
-header-img: "img/autumn_color.jpg"
+header-img: "/img/autumn_color.jpg"
 description: "美好，美好。"
 keyword: "biubiu, @biubiu, Biu^Biu's blog, bluebiu github, biubiu的博客"
 # baseurl: ""
@@ -80,7 +80,24 @@ defaults:
 
 # Comments
 comments :
-  provider : duoshuo
+  provider : "duoshuo"
   duoshuo :
-    short_name : bluebiu
+    short_name : "bluebiu"
 
+
+# # 服务器选项
+# detach: false
+# port: "4000"
+# host: "127.0.0.1"
+# baseurl: "" # does not include hostname
+
+# Static url
+# img_url末尾不加「/」，图片的值都填的「/img」开头，方便调试 -160218
+img_url: "http://7xpq9q.com1.z0.glb.clouddn.com"
+source_url: "http://7xpq9q.com1.z0.glb.clouddn.com"
+source_url_local: ""
+
+# Static version
+css_version: "1455364935" # 2016年 2月13日 星期六 20时02分42秒 CST
+js_version: "1455364935" # 2016年 2月13日 星期六 20时02分42秒 CST
+img_version: "1455364935" # 2016年 2月13日 星期六 20时02分42秒 CST

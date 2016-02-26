@@ -5,7 +5,8 @@ categories: "person"
 tags: [kingsoft, over, shock]
 description: "oh~no~"
 first_time: "2016-02-08 22:28:31"
-last_time: "2016-02-08 23:38:42"
+last_time: "2016-02-08 23:38:43"
+img_version: "1455408984"
 ---
 
 ## 随手记也要标题么
@@ -88,14 +89,14 @@ last_time: "2016-02-08 23:38:42"
 [link_3]: https://www.zhihu.com/question/27862379
 [link_4]: http://www.weiyun.com
 
-[img_0]: /img/shock_for_kuaipan/kuaipan0.png
-[img_1]: /img/shock_for_kuaipan/kuaipan1.png
-[img_2]: /img/shock_for_kuaipan/kuaipan2.png
-[img_3]: /img/shock_for_kuaipan/kuaipan3.png
-[img_4]: /img/shock_for_kuaipan/kuaipan4.png
-[img_5]: /img/shock_for_kuaipan/kuaipan5.png
-[img_5-1]: /img/shock_for_kuaipan/kuaipan5-1.png
-[img_6]: /img/shock_for_kuaipan/kuaipan6.png
-[img_7]: /img/shock_for_kuaipan/kuaipan7.png
-[img_7-1]: /img/shock_for_kuaipan/kuaipan7-1.png
-[img_8]: /img/shock_for_kuaipan/kuaipan8.png
+[img_0]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan0.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_1]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_2]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_3]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan3.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_4]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan4.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_5]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan5.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_5-1]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan5-1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_6]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan6.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_7]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan7.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_7-1]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan7-1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_8]: {{ site.img_url }}/img/pages/shock_for_kuaipan/kuaipan8.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}

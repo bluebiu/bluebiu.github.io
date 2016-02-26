@@ -2,11 +2,11 @@
 layout: page
 title: "About"
 description: "One day, I have a dream"
-header-img: "img/the_world_is_yours.jpg"
+header-img: "/img/banners/the_world_is_yours.jpg"
 ---
 
 <center>
-    <p><img src="/img/biuimg2str.png" align="center"></p>
+    <p><img src="{{ site.img_url }}/img/biuimg2str.png" align="center"></p>
 </center>
 
 
@@ -45,7 +45,7 @@ header-img: "img/the_world_is_yours.jpg"
 
 > 永不休止的自我驱动，是强大的战力 —— by myself
 
-![perpetual_motion_machine](/img/perpetual_motion_machine.jpg)
+![perpetual_motion_machine]({{ site.img_url }}/img/perpetual_motion_machine.jpg)
 
 <!-- 多说评论框 start -->
 <div class="comment">

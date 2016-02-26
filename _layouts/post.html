@@ -5,7 +5,7 @@ layout: default
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('{% if page.header-img %}{{ page.header-img | prepend : site.baseurl }}{% endif %}');
+        background-image: url('{% if page.header-img %}{{ page.header-img | prepend : site.img_url }}{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}{% endif %}');
         background-color:none;
     }
 </style>
@@ -79,8 +79,8 @@ layout: default
 
                 <div class="ds-share"
                     data-thread-key="{{page.id}}" data-title="{{page.title}}"
-                    data-images="{% if page.header-img %}{{ page.header-img | prepend: site.baseurl | prepend : site.url }}{% else %}{{ site.share_img | prepend : site.baseurl | prepend : site.url }}{% endif %}"
-                    data-content="{{ content | strip_html | truncate:80 }} | Microdust:Azeril's blog"
+                    data-images="{% if page.header-img %}{{ page.header-img | prepend: site.img_url }}{% else %}{{ site.share_img | prepend : site.img_url | replace: '//', '/' }}{% endif %}"
+                    data-content="{{ content | strip_html | truncate:80 }} | {{ site.title }}"
                     data-url="{{ page.url | prepend : site.baseurl | prepend : site.url }}">
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
@@ -137,7 +137,10 @@ var duoshuoQuery = {short_name:"{{site.comments.duoshuo.short_name}}"};
 </script>
 
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!--
+20160226
 <script>
+/*
     async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
         anchors.options = {
           visible: 'always',
@@ -146,7 +149,9 @@ var duoshuoQuery = {short_name:"{{site.comments.duoshuo.short_name}}"};
         };
         anchors.add().remove('.intro-header h1').remove('.subheading');
     })
+*/
 </script>
+ -->
 <style>
     /* place left on bigger screen */
     @media all and (min-width: 800px) {
@@ -181,4 +186,4 @@ var duoshuoQuery = {short_name:"{{site.comments.duoshuo.short_name}}"};
 </script>
 
 <!-- 替换task list的js -160207 -->
-<script type="text/javascript" src="/js/checklists.js" > </script>
+<script type="text/javascript" src="{{ site.source_url }}/js/checklists.js" > </script>

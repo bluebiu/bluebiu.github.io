@@ -1,3 +1,6 @@
+---
+---
+
 /*
  * -160207
  */
@@ -68,7 +71,7 @@
   width: 54px;
   height: 54px;
   display: block;
-  background: #ddd url(/img/back_top_arrow.png) no-repeat center center;
+  background: #ddd url({{ site.img_url }}/img/back_top_arrow.png) no-repeat center center;
   background-color: #aaa;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;

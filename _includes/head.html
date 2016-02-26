@@ -11,24 +11,25 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 
     <!-- Icons -->
-    <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}" />
+    <link rel="shortcut icon" href="{{ "/favicon.ico" }}" />
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}" />
+    <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.source_url }}{{ site.css_version | prepend: "?vvv=" }}" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/clean-blog.css" | prepend: site.baseurl }}" />
+    <link rel="stylesheet" href="{{ "/css/clean-blog.css" | prepend: site.source_url }}{{ site.css_version | prepend: "?vvv=" }}" />
 
     <!-- -160201 -->
-    <link rel="stylesheet" href="{{ "/css/biubiu.css" | prepend: site.baseurl }}" />
+    <link rel="stylesheet" href="{{ "/css/biubiu.css" | prepend: site.source_url }}{{ site.css_version | prepend: "?vvv=" }}" />
 
     <!-- Pygments Github CSS -->
-    <!-- <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}" /> -->
-    <link rel="stylesheet" href="{{ "/css/syntax-monokai.css" | prepend: site.baseurl }}" />
+    <!-- <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}{{ site.css_version | prepend: "?vvv=" }}" /> -->
+    <link rel="stylesheet" href="{{ "/css/syntax-monokai.css" | prepend: site.source_url }}{{ site.css_version | prepend: "?vvv=" }}" />
 
     <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-     <!-- <link href="//cdn.staticfile.org/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- 使用七牛的CDN, for font-awesome -->
+     <link href="//cdn.staticfile.org/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
    <!-- 感觉用不着 -160120 <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' /> -->
@@ -41,14 +42,14 @@
     <![endif]-->
 
     <!-- jQuery -->
-    <script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"> </script>
+    <script src="{{ "/js/jquery.min.js" | prepend: site.source_url }}{{ site.js_version | prepend: "?vvv=" }}"> </script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"> </script>
+    <script src="{{ "/js/bootstrap.min.js" | prepend: site.source_url }}{{ site.js_version | prepend: "?vvv=" }}"> </script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="{{ "/js/clean-blog.min.js " | prepend: site.baseurl }}"> </script>
+    <script src="{{ "/js/clean-blog.min.js" | prepend: site.source_url }}{{ site.js_version | prepend: "?vvv=" }}"> </script>
 
     <!-- biubiu Custom JavaScript -160201 -->
-    <script src="{{ "/js/biubiu.js " | prepend: site.baseurl }}"> </script>
+    <script src="{{ "/js/biubiu.js" | prepend: site.source_url }}{{ site.js_version | prepend: "?vvv=" }}"> </script>
 </head>

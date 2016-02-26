@@ -5,7 +5,7 @@ categories: "blog"
 tags: [github, blog, jekyll, git, aliyun, cname, markdown]
 description: "记录下各种坑点"
 first_time: "2016-01-01 01:26:33"
-last_time: "2016-02-07 10:12:12"
+last_time: "2016-02-21 10:27:12"
 ---
 
 ## 一、突发奇想
@@ -213,6 +213,7 @@ Bingo！
 ![img_11][]
 
 其实也是把旧的全干掉，再把新的放进来重头弄的，不如，就叫「[从零开始折腾Jekyll][link_10]」吧哈哈……
+（发现一篇的话篇幅太长，层次不明，于是分为了两篇「[从零开始折腾Jekyll - 使用Jekyll模板][link_10]」、「[折腾Jekyll实录][link_11]」 —— 2016.02.21 10:27）
 
 
 ## 五、参考文档
@@ -250,15 +251,16 @@ Bingo！
 [link_8]: http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html 
 [link_9]: http://wanwang.aliyun.com
 [link_10]: {% post_url 2016-02-07-learn-to-use-jekyll %}
+[link_11]: {% post_url 2016-02-21-learn-to-use-jekyll-more %}
 
-[img_1]: /img/how_to_create_blog/pages1_repo-actions-settings.png "pages1_repo-actions-settings"
-[img_2]: /img/how_to_create_blog/pages2_automatic-page-generator.png "pages2_automatic-page-generator"
-[img_3]: /img/how_to_create_blog/pages3_generator-picker.png "pages3_generator-picker"
-[img_4]: /img/how_to_create_blog/pages4_generator-publish.png "page4_generator-publish"
-[img_5]: /img/how_to_create_blog/pages5_myblog1.png
-[img_6]: /img/how_to_create_blog/pages6_dns_setting.png
-[img_7]: /img/how_to_create_blog/pages7_myblog2.png
-[img_8]: /img/how_to_create_blog/pages8_myblog3.png
-[img_9]: /img/how_to_create_blog/pages9_myblog4.png
-[img_10]: /img/how_to_create_blog/pages10_myblog5.png
-[img_11]: /img/how_to_create_blog/pages11_myblog6.png
+[img_1]: /img/pages/how_to_create_blog/pages1_repo-actions-settings.png "pages1_repo-actions-settings"
+[img_2]: /img/pages/how_to_create_blog/pages2_automatic-page-generator.png "pages2_automatic-page-generator"
+[img_3]: /img/pages/how_to_create_blog/pages3_generator-picker.png "pages3_generator-picker"
+[img_4]: /img/pages/how_to_create_blog/pages4_generator-publish.png "page4_generator-publish"
+[img_5]: /img/pages/how_to_create_blog/pages5_myblog1.png
+[img_6]: /img/pages/how_to_create_blog/pages6_dns_setting.png
+[img_7]: /img/pages/how_to_create_blog/pages7_myblog2.png
+[img_8]: /img/pages/how_to_create_blog/pages8_myblog3.png
+[img_9]: /img/pages/how_to_create_blog/pages9_myblog4.png
+[img_10]: /img/pages/how_to_create_blog/pages10_myblog5.png
+[img_11]: /img/pages/how_to_create_blog/pages11_myblog6.png

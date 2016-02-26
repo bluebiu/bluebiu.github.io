@@ -6,6 +6,7 @@ tags: [github, blog, jekyll, git, aliyun, cname, markdown]
 description: "记录下各种坑点"
 first_time: "2016-01-01 01:26:33"
 last_time: "2016-02-21 10:27:12"
+img_version: "1456465498"
 ---
 
 ## 一、突发奇想
@@ -21,9 +22,9 @@ last_time: "2016-02-21 10:27:12"
 
 ### 1、探索
 
-大信息时代，自然是先百度知乎了一波。发现有很多介绍，什么[网易博客][link_1]，[新浪博客][link_2]，[博客园][link_3], [CSDN博客][link_4]，[开源中国][link_5]，[简书][link_6]等等，各种技术博客的温床。后来一看，竟没几个是支持markdown的……(除了简书，之前新浪博客新版可选markdown模式试了下，由于是在线编辑器，非常局限，并不能算是『好用』的markdown编辑器。后面其他的也没有完全仔细去试了，毕竟想到是在线编辑器，就还是算了……)
+大信息时代，自然是先百度知乎了一波。发现有很多介绍，什么[网易博客][link_1]，[新浪博客][link_2]，[博客园][link_3], [CSDN博客][link_4]，[开源中国][link_5]，[简书][link_6]等等，各种技术博客的温床。后来一看，竟没几个是支持markdown的……(除了简书，之前新浪博客新版可选markdown模式试了下，由于是在线编辑器，非常局限，并不能算是「好用」的markdown编辑器。后面其他的也没有完全仔细去试了，毕竟想到是在线编辑器，就还是算了……)
 
-这时候[Github Pages][link_7]就顺理成章的『被发现』了。:)
+这时候[Github Pages][link_7]就顺理成章的「被发现」了。:)
 
 在阮一峰前辈的「[搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门][link_8]」文中介绍说：
 
@@ -253,14 +254,14 @@ Bingo！
 [link_10]: {% post_url 2016-02-07-learn-to-use-jekyll %}
 [link_11]: {% post_url 2016-02-21-learn-to-use-jekyll-more %}
 
-[img_1]: /img/pages/how_to_create_blog/pages1_repo-actions-settings.png "pages1_repo-actions-settings"
-[img_2]: /img/pages/how_to_create_blog/pages2_automatic-page-generator.png "pages2_automatic-page-generator"
-[img_3]: /img/pages/how_to_create_blog/pages3_generator-picker.png "pages3_generator-picker"
-[img_4]: /img/pages/how_to_create_blog/pages4_generator-publish.png "page4_generator-publish"
-[img_5]: /img/pages/how_to_create_blog/pages5_myblog1.png
-[img_6]: /img/pages/how_to_create_blog/pages6_dns_setting.png
-[img_7]: /img/pages/how_to_create_blog/pages7_myblog2.png
-[img_8]: /img/pages/how_to_create_blog/pages8_myblog3.png
-[img_9]: /img/pages/how_to_create_blog/pages9_myblog4.png
-[img_10]: /img/pages/how_to_create_blog/pages10_myblog5.png
-[img_11]: /img/pages/how_to_create_blog/pages11_myblog6.png
+[img_1]: {{ site.img_url }}/img/pages/how_to_create_blog/pages1_repo-actions-settings.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_2]: {{ site.img_url }}/img/pages/how_to_create_blog/pages2_automatic-page-generator.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_3]: {{ site.img_url }}/img/pages/how_to_create_blog/pages3_generator-picker.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_4]: {{ site.img_url }}/img/pages/how_to_create_blog/pages4_generator-publish.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_5]: {{ site.img_url }}/img/pages/how_to_create_blog/pages5_myblog1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_6]: {{ site.img_url }}/img/pages/how_to_create_blog/pages6_dns_setting.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_7]: {{ site.img_url }}/img/pages/how_to_create_blog/pages7_myblog2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_8]: {{ site.img_url }}/img/pages/how_to_create_blog/pages8_myblog3.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_9]: {{ site.img_url }}/img/pages/how_to_create_blog/pages9_myblog4.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_10]: {{ site.img_url }}/img/pages/how_to_create_blog/pages10_myblog5.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_11]: {{ site.img_url }}/img/pages/how_to_create_blog/pages11_myblog6.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}

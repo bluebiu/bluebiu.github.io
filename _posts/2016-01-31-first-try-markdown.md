@@ -66,7 +66,8 @@ php444 for note3 [[^note3]]
 
 ## 尝试下划线
 
-_用了『_』的标记_
+_用了『_』的标记_  
+markdown不支持的，只能用html的行内标签\<u\>,比如<u>下划线</u>这样。  
 [@超链接](http://bluebiu.com)
 {{site.url}}
 

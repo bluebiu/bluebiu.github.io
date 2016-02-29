@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "从零开始折腾Jekyll"
-subtitle: "使用Jekyll模板"
+subtitle: "——使用Jekyll模板"
 categories: "blog"
 tags: [github, blog, Jekyll, git, ruby, gem, plun-in, Liquid, duoshuo, highlight, Rouge, task-lists]
 description: "Enjoy the process!"
 first_time: "2016-02-07 15:50:33"
-last_time: "2016-02-25 23:44:56"
+last_time: "2016-03-01 01:56:42"
 img_version: "1456465498"
 ---
 
@@ -167,8 +167,8 @@ baseurl: 这个又重要，又不重要的配置呢，主要是影响到站点�
 
 比如：你有域名`aaa.com`， 的username是`bbb`，那么
 
-1. 你「博客」的github地址就是`bbb.github.io`，做了CNAME指向你的domian后，实际地址就是`aaa.com`，baseurl配置为空「''」。
-2. 你的某个项目`ccc_project`有gh-pages分支，那么该「项目描述博客」的地址就是biubiubiu.github.io，实际上地址就是`aaa.com/ccc_project`，相应的baseurl: ccc_project
+1. 你「博客」的github地址就是`bbb.github.io`，做了CNAME指向你的domian后，实际地址就是`aaa.com`，baseurl配置为空`''`。
+2. 你的某个项目`ccc_project`有gh-pages分支，那么该「项目描述博客」的地址就是biubiubiu.github.io，实际上地址就是`aaa.com/ccc_project`，相应的baseurl: `ccc_project`
 3. 也许有留意到了，配置的每一项，是英文格式冒号 + 空格 + "值"。格式不能写错，否则github就会发邮件嘤嘤嘤了……
 
 剩下的里面基本都有一些注释，或者非常明显的英文变量，耐心看下，比较直观可以看明白。
@@ -226,7 +226,7 @@ subtitle: yeah
 * [Jekyll Themes](http://jekyllthemes.org) (比较纯粹的原始模板，使用的话还需要自行配置一部分)
 * [Clean Blog - Jekyll Themes](http://jekyllthemes.org/themes/clean-blog/) （本文示例所用的Jekyll Themes）
 * [Using Jekyll with Pages](https://help.github.com/articles/using-jekyll-with-pages/#platform-mac) （github中对于如何使用Jekyll的大概介绍）
-* [configuration - jekyll](https://jekyllrb.com/docs/configuration/) (配置英文版)
+* [configuration - jekyll](https://jekyllrb.com/docs/configuration/) (配置说明 - 官网英文版)
 
 ---
 

@@ -6,9 +6,10 @@ header-img: "/img/banners/the_world_is_yours.jpg"
 ---
 
 <center>
-    <p><img src="{{ site.img_url }}/img/biuimg2str.png" align="center"></p>
+    <p><img src="{{ site.img_url }}/img/whoami.png" align="center"></p>
 </center>
 
+>想象力比知识更重要，因为知识是有限的，而想象力概括着世界的一切，推动着进步，并且是知识进化的源泉。严格地说，想象力是科学研究中的实在因素。 —— 爱因斯坦
 
 ## Introduction
 
@@ -38,9 +39,16 @@ header-img: "/img/banners/the_world_is_yours.jpg"
 * [91wan.com](http://91wan.com)
 * [vip.com](http://vip.com)
 
+## More
+
+***
+
+* Hobbies: [>><u>Running</u>]({{ site.url }}/running.html) [>><u>Thinking</u>]({{ site.url}}/categories.html#person)  
+* Er...: [>><u>Badminton</u>]({{ site.url }}/badminton.html) [>><u>Photography</u>]({{ site.url }}/photography.html) [>><u>Cooking</u>]({{ site.url }}/cooking.html)  
+
 <br />
 
-###### *——update by 2016-01-31 01:38:28*
+###### *——update by 2016-03-01 01:38:28*
 (End)
 
 > 永不休止的自我驱动，是强大的战力 —— by myself

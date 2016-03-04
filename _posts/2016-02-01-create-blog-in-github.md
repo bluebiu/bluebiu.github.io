@@ -9,6 +9,11 @@ last_time: "2016-02-21 10:27:12"
 img_version: "1456465498"
 ---
 
+> 目录
+
+* mulu
+{:toc}
+
 ## 一、突发奇想
 
 突然就想搞个博客，于是就开始搞起来了。  
@@ -230,16 +235,16 @@ Bingo！
 
 ###### 注释：
 
-[^note_1]: <https://help.github.com/articles/creating-pages-with-the-automatic-generator/>
-[^note_2]: <https://help.github.com/articles/user-organization-and-project-pages/>，根据介绍：个人主页就是建立「yourName.github.io」分支，而如果是项目仓库的话，就在其仓库下建立「gh-pages」分支即可。
-[^note_3]: 同1
-[^note_4]: <https://help.github.com/articles/about-custom-domains-for-github-pages-sites/>，域名解析说明
-[^note_5]: <https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/>，子域名设置CNAME说明
-[^note_6]: <https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/>，顶级域名设置A记录说明
-[^note_7]: <https://www.zhihu.com/question/28311939>
-[^note_8]: <https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/>
-[^note_9]: <https://help.github.com/articles/adding-a-cname-file-to-your-repository/>
-[^note_10]: <https://help.github.com/articles/using-jekyll-with-pages/>，可以用Jekyll便捷维护
+[^note_1]: -<https://help.github.com/articles/creating-pages-with-the-automatic-generator/>
+[^note_2]: -<https://help.github.com/articles/user-organization-and-project-pages/>，根据介绍：个人主页就是建立「yourName.github.io」分支，而如果是项目仓库的话，就在其仓库下建立「gh-pages」分支即可。
+[^note_3]: -同1
+[^note_4]: -<https://help.github.com/articles/about-custom-domains-for-github-pages-sites/>，域名解析说明
+[^note_5]: -<https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/>，子域名设置CNAME说明
+[^note_6]: -<https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/>，顶级域名设置A记录说明
+[^note_7]: -<https://www.zhihu.com/question/28311939>
+[^note_8]: -<https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/>
+[^note_9]: -<https://help.github.com/articles/adding-a-cname-file-to-your-repository/>
+[^note_10]: -<https://help.github.com/articles/using-jekyll-with-pages/>，可以用Jekyll便捷维护
 
 
 [link_1]: http://blog.163.com 

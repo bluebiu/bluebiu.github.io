@@ -50,6 +50,8 @@ socialname:
 markdown: kramdown
 kramdown:
   input: GFM
+  # toc目录结构默认「1..6」
+  toc_levels: 1..5
 highlighter: rouge
 
 # rouge:

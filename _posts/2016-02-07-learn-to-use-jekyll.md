@@ -6,9 +6,14 @@ categories: "blog"
 tags: [github, blog, Jekyll, git, ruby, gem, plun-in, Liquid, duoshuo, highlight, Rouge, task-lists]
 description: "Enjoy the process!"
 first_time: "2016-02-07 15:50:33"
-last_time: "2016-03-01 01:56:42"
+last_time: "2016-03-02 17:19:15"
 img_version: "1456465498"
 ---
+
+>目录
+
+* 目录
+{:toc}
 
 ## 一、Github Pages
 
@@ -69,12 +74,13 @@ Jekyll虽屌，但毕竟不是瑞士军刀，并且，也不建议把它玩成�
 
 到了这里，别人已经帮你把所有该准备的都准备好了，只需把你的鞋换上而已。  
 
-1. 修改配置文件`_config.yml`
+1) 修改配置文件`_config.yml`
 
 ```shell
 >cd path/to/yourblog
 >vim _config.yml
 ```
+
 并修改一些个性信息（以我为例）
 
 ```yaml
@@ -96,7 +102,7 @@ comments:
 # 文件不长，建议至少过一遍。
 ```
 
-2. 添加文章
+2) 添加文章
 
 ```shell
 >cd _post/
@@ -119,7 +125,7 @@ I am a student, my name is LiLei.
 ```
 
 再次提交改动至Github。  
- 
+
 over！  
 （完了？）  
 
@@ -232,9 +238,9 @@ subtitle: yeah
 
 ###### 注释:
 
-[^note_1]: 用`git clone`指令，把你远程仓库的源码，下载到本地。在项目页面的右上角有SSH的地址。  
-[^note_2]: 别人的开源项目，git页码右上角点击`Fork`，即可拿到当前的源码并加入你的仓库中，然后按1的方式可自行下载。
-[^note_3]: 每次修改后，用`git add .`, `git commit -m "some simple notes"`, `git push origin master`完成修改内容提交并上传远程仓库。
+[^note_1]: -用`git clone`指令，把你远程仓库的源码，下载到本地。在项目页面的右上角有SSH的地址。  
+[^note_2]: -别人的开源项目，git页码右上角点击`Fork`，即可拿到当前的源码并加入你的仓库中，然后按1的方式可自行下载。
+[^note_3]: -每次修改后，用`git add .`, `git commit -m "some simple notes"`, `git push origin master`完成修改内容提交并上传远程仓库。
 
 
 [link_1]: {% post_url 2016-02-01-create-blog-in-github %}

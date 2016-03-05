@@ -68,7 +68,7 @@
   width: 54px;
   height: 54px;
   display: block;
-  background: #ddd url(http://public.bluebiu.com/img/back_top_arrow.png) no-repeat center center;
+  background: #ddd url("/img/back_top_arrow.png") no-repeat center center;
   background-color: #aaa;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
@@ -82,8 +82,9 @@
 }
 /*  Back Top Button  End */
 
+/* home title to img -160305 */
  a.navbar-brand {
-  background-image: url("/favicon.ico");
+  background-image: url("/img/biu-circle.png");
   background-repeat: no-repeat;
   background-position: center center;
   height: 50px;

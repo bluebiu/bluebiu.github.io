@@ -97,7 +97,6 @@ comments :
 # img_url末尾不加「/」，图片的值都填的「/img」开头，方便调试 -160218
 img_url: "http://public.bluebiu.com"
 source_url: "http://public.bluebiu.com"
-source_url_local: ""
 
 # Static version
 css_version: "1456777312" # 2016年 3月 1日 星期二 04时21分53秒 CST

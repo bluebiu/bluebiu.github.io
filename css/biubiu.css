@@ -82,4 +82,9 @@
 }
 /*  Back Top Button  End */
 
-
+ a.navbar-brand {
+  background-image: url("/favicon.ico");
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 50px;
+}

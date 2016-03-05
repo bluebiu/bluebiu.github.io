@@ -95,8 +95,8 @@ comments :
 
 # Static url
 # img_url末尾不加「/」，图片的值都填的「/img」开头，方便调试 -160218
-img_url: "http://public.bluebiu.com"
-source_url: "http://public.bluebiu.com"
+img_url: "http://static.bluebiu.com"
+source_url: "http://static.bluebiu.com"
 
 # Static version
 css_version: "1457180575" # 2016年 3月 5日 星期六 20时23分06秒 CST

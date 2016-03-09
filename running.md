@@ -11,8 +11,10 @@ header-img: "/img/banners/ship_in_hand.jpg"
 
 *** 哈哈哈哈
 
-![](/img/run6.jpg)  
-![](/img/run4.jpg)
+记第一次跑完9桥
+
+![](/img/tmp/run6.jpg)  
+![](/img/tmp/run4.jpg)
  
 
 <br />

@@ -130,19 +130,19 @@ img_version: "1455364935"
       <th style="width: 180px;">备注</th>
    </tr>
    <tr>
-      <td>35km</td>
+      <td>35.20km</td>
       <td>最远LSD</td>
-      <td>暂无</td>
+      <td>2016-05-01 12:16</td>
       <td>九桥</td>
-      <td>暂无</td>
+      <td>03:55:53</td>
       <td></td>
    </tr>
    <tr>
-      <td>33</td>
+      <td>33.56km</td>
       <td>上次LSD</td>
-      <td>暂无</td>
+      <td>2016-02-28 13:00</td>
       <td>九桥</td>
-      <td>暂无</td>
+      <td>04:05:08</td>
       <td></td>
    </tr>
 </table>

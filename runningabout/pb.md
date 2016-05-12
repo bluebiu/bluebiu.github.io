@@ -10,6 +10,8 @@ img_version: "1455364935"
 
 ---
 
+###### (*update by 2016-05-12 12:22:22*)
+
 <table class="table table-bordered table-striped table-condensed">
    <tr style="background-color: rgba(255,255,0,0.6);">
       <th style="width: 120px;">距离</th>
@@ -144,8 +146,3 @@ img_version: "1455364935"
       <td></td>
    </tr>
 </table>
-
-<br />
-
-###### *——update by 2016-05-12 12:22:22*
-(End)

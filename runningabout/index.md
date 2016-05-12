@@ -17,7 +17,7 @@ header-img: "/img/banners/ship_in_hand.jpg"
 
 ![](/img/tmp/luguhu.jpg)  
  
- ###### run in Lugu Lake
+###### run in Lugu Lake
 
 
 

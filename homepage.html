@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="KEYWORD" content="biubiu, @biubiu, Biu^Biu's blog, bluebiu github, biu的想象力, biubiu's imagination" >
+    <meta name="DESCRIPTION" content="美好，美好。">
+    <title>Biu^Biu's Imagination</title>
+    <link rel="canonical" href="http://www.bluebiu.com" />
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0 none;
+            font-family: Microsoft Yahei,SimHei;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        .main-bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url("http://static.bluebiu.com/img/wx_share_default.jpg");
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-attachment: fixed;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            z-index: -10;
+        }
+        .main{
+            margin: 0 auto;
+            padding: 9px;
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            width: auto;
+            height: auto;
+            max-height: 90%;
+            min-width: 90%;
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 1.5em;
+
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+            transition: height 1s ease;
+            transition: top 1s ease;
+        }
+        .biu{
+            position: relative;
+            top: 9px;
+            z-index: 2;
+            height: 200px;
+        }
+        .biu-img{
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 4;
+            color: white;
+            font-family: monospace;
+            overflow: hidden;
+            width: 144px;
+            height: 144px;
+            padding: 20px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        .biu-bg{
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 3;
+            width: 144px;
+            height: 144px;
+            margin: 0 auto;
+            padding: 20px;
+            overflow: hidden;
+            border-radius: 50%;
+
+            opacity: 0.88;
+            background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, gray 0%, black 100%, red 95%);
+            background-image: -webkit-radial-gradient(45px 45px, circle cover, gray, black);
+            background-image: radial-gradient(45px 45px 45deg, circle cover, gray 0%, black 100%, red 95%);
+            -webkit-box-shadow: #f3a14b 0px 0px 10px;
+            -moz-box-shadow: #f3a14b 0px 0px 10px;
+            box-shadow: #f3a14b 0px 0px 10px;
+        }
+        .title{
+            text-align: center;
+            margin: 9px 5%;
+        }
+        .title a{
+          color: #ededed;
+          font-family: Oswald;
+          font-size: 3em;
+          transition: 0.5s all ease;
+          text-transform: uppercase;
+          text-decoration: none;
+          text-shadow: /* Color 1 */
+          1px 1px #61b4de, /* Color 2 */
+          2px 2px #91c467, /* Color 3 */
+          3px 3px #f3a14b, /* Color 4 */
+          4px 4px #e84c50, /* Color 5 */
+          5px 5px #4e5965;
+        }
+        .title a:hover{
+          color: #0a0a0a;
+          text-shadow: /* Color 1 */
+          1px 1px #61b4de, 2px 2px #61b4de, 3px 3px #61b4de, 4px 4px #61b4de, 5px 5px #61b4de, /* Color 2 */
+          6px 6px #91c467, 7px 7px #91c467, 8px 8px #91c467, 9px 9px #91c467, 10px 10px #91c467, /* Color 3 */
+          11px 11px #f3a14b, 12px 12px #f3a14b, 13px 13px #f3a14b, 14px 14px #f3a14b, 15px 15px #f3a14b, /* Color 4 */
+          16px 16px #e84c50, 17px 17px #e84c50, 18px 18px #e84c50, 19px 19px #e84c50, 20px 20px #e84c50, /* Color 5 */
+          21px 21px #4e5965, 22px 22px #4e5965, 23px 23px #4e5965, 24px 24px #4e5965, 25px 25px #4e5965;
+        }
+        .card{
+            color: white;
+            margin: 9px 5%;
+            padding: 9px;
+            border-radius: 1.5em;
+            overflow: hidden;
+            position: relative;
+
+            /*background-color:rgba(0,0,0,0.66);*/
+            background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, black 0%, gray 100%, red 95%);
+            background-image: -webkit-radial-gradient(45px 45px, circle cover, black, gray);
+            background-image: radial-gradient(45px 45px 45deg, circle cover, black 0%, gray 100%, red 95%);
+
+            -webkit-box-shadow: #f3a14b 0px 0px 10px;
+            -moz-box-shadow: #f3a14b 0px 0px 10px;
+            box-shadow: #f3a14b 0px 0px 10px;
+        }
+        .card a{
+            color: white;
+            font-size: 18px;
+        }
+/*        .blockquote{
+            color: white;
+            font-style: italic;
+            font-size: 0.95em;
+            margin: 9px 5%;
+            padding-left: 10px;
+            line-height: 1.5;
+            border-left: 5px solid #f3a14b;
+        }*/
+        .line{
+            border: 2px solid gray;
+            width: 90%;
+            margin: 9px auto;
+        }
+        .foot{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            min-width: 400px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.3);
+            text-align: center;
+        }
+        @media (min-width: 641px){
+            .main{
+                min-width: 40%;
+                max-height: 80%;
+            }
+        }
+        @media (max-width: 640px){
+            .card a{
+                font-size: 14px;
+            }
+            .title{
+                font-size: 14px;
+            }
+        }
+    </style>
+    <!-- 分享头图 -->
+    <div id="wx_pic" style="margin:0 auto;display:none;">
+        <img src="http://static.bluebiu.com/img/wx_share_default.jpg" />
+    </div>
+</head>
+
+<body ontouchstart="">
+    <div class="main-bg"></div>
+    <div class="main">
+        <div class="biu">
+            <pre class="biu-img">
+    aaaaba
+ _"        "a
+_        _   "\,
+d   0'   ""    "_
+0               ",
+L                \
+"a     "9"9".    d
+  ',            _'
+    "'a, ___,_,"'
+            </pre>
+            <div class="biu-bg"></div>
+        </div>
+        <div class="title">
+            <a href="#">Biu^Biu's Imagination</a>
+        </div>
+        <hr class="line"/>
+<!--         <div class="blockquote">
+           <blockquote><I>「<b>想象力</b>比知识更重要，因为知识是有限的，而想象力概括着世界的一切，推动着进步，并且是知识进化的源泉。严格地说，<b>想象力</b>是科学研究中的实在因素。」 —— 爱因斯坦</I></blockquote>
+        </div> -->
+        <div class="card">
+            <h3>
+                » <a href="http://bluebiu.com">Blog</a>
+                 / <a href="http://bluebiu.com/photography.html">Photograph</a>
+                 / <a href="http://bluebiu.com/about.html">About</a>
+            </h3>
+        </div>
+    </div>
+    <footer class="foot">
+        &copy; 2016 biubiu All Rights Reserved. 粤ICP备16014509号
+    </footer>
+</body>
+
+</html>

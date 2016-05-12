@@ -43,7 +43,7 @@ header-img: "/img/banners/the_world_is_yours.jpg"
 
 ***
 
-* Hobbies: [>><u>Running</u>](/running.html) [>><u>Thinking</u>](/categories.html#person)  
+* Hobbies: [>><u>Running</u>](/runningabout) [>><u>Thinking</u>](/categories.html#person)  
 * Er...: [>><u>Badminton</u>](/badminton.html) [>><u>Photography</u>](/photography.html) [>><u>Cooking</u>](/cooking.html)  
 
 <br />

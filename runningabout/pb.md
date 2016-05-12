@@ -76,7 +76,7 @@ img_version: "1455364935"
       <th style="width: 180px;">备注</th>
    </tr>
    <tr>
-      <td>半程马拉松</td>
+      <td>半程马拉松(21.0975km)</td>
       <td>清元国际半马比赛</td>
       <td>2016-03-20</td>
       <td>清元市</td>
@@ -103,7 +103,7 @@ img_version: "1455364935"
       <th style="width: 180px;">备注</th>
    </tr>
    <tr>
-      <td>全程马拉松</td>
+      <td>全程马拉松(42.195km)</td>
       <td>暂无</td>
       <td>暂无</td>
       <td>暂无</td>

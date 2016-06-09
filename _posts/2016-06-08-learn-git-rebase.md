@@ -37,39 +37,39 @@ img_version: "1465407458"
 
 ### 1、预热+了解
 
-看了那样间断又拗口的「定义」，基本还是无法准确理解rebase的作用的，就连得到的基本结果都不清楚。翻帖子，爬楼，各种看别人说的，还是可以了解个大概，但也仅仅就到这程度了。更不说大部分又是抄来抄去的，实在是不敢过于相信。
+看了那样间断又拗口的「定义」，基本还是无法准确理解rebase的作用的，就连得到的基本结果都不清楚。翻帖子，爬楼，各种看别人说的，还是可以了解个大概，但也仅仅就到这程度了。更不说大部分又是抄来抄去的，实在是不敢过于相信。  
 于是，还是要亲自实践一番。
 
 边操作，边思考，依旧是这样套路进行着——
 
 ### 2、操作+推测
 
-one：先checkout -b one分支，提交1，再回master提交2，然后在master rebase，结果是log顺序为0-1-2。
+one：先checkout -b one分支，提交1，再回master提交2，然后在master rebase，结果是log顺序为0-1-2。  
 ——推测1：以提交时间为顺序？
 
 ![img_1][]
 
-two：先co -b two，回到master，提交1，再到two提交2，回master rebase，结果0-2-1。
+two：先co -b two，回到master，提交1，再到two提交2，回master rebase，结果0-2-1。  
 ——推测2：以rebase跟的某分支为先，当前分支为后？
 
 ![img_2][]
 
-three：先再master提交1，再co -b three，提交2，回master rebase，结果0-1-2.
+three：先再master提交1，再co -b three，提交2，回master rebase，结果0-1-2。  
 ——推测3：以某分支生存时间范围为优先，「插入」当前分支的历史之前。
 
 ![img_3][]
 
-four：先在master提交1，再co -b four，回master提交2，回four提交3，回master rebase，结果0-1-3-2。
+four：先在master提交1，再co -b four，回master提交2，回four提交3，回master rebase，结果0-1-3-2。  
 ——推测4：会把rebase后跟的那个分支A的内容「全部插入」到当前分支master之前，在A生成后的所有B的提交都被算在后面。
 
 ![img_4][]
 
-five：先在master提交1，再co -b five，提交2，回master提交3，回five提交4，回master rebase，结果0-1-2-4-3。
+five：先在master提交1，再co -b five，提交2，回master提交3，回five提交4，回master rebase，结果0-1-2-4-3。  
 ——推测5：会把release后跟的分支A的所有提交，都「全部插入」到当前分支后。两部分都按各自时间顺序。
 
 ![img_5][]
 
-six：先在master提交1，再co -b six，提交2，回master提交3，回six提交4，回master提交5，在master rebase six，结果0-1-2-4-3-5.
+six：先在master提交1，再co -b six，提交2，回master提交3，回six提交4，回master提交5，在master rebase six，结果0-1-2-4-3-5。  
 
 seven：同six，最后rebase时加了参数 -i， 结果也一样。
 
@@ -115,9 +115,9 @@ git lg = git log --xxxxxxxxxxxxx
 
 ### 2、其他
 
-这次只是简单的通过具体操作，了解并验证git rebase得到的基本结果。实际应用中，还涉及到更多细节。比如merge与rebase的区别，merge后再rebase如何操作，反悔当前分支历史提交如何进行rebase操作，rebase -i后里面的各个参数如何使用，等等，仍需掌握，才能顺利把rebase运用在生产项目中，提供真正的支持与帮助。
-这些后面会继续把这些实践都记录总结下来，算提前挖坑了。
-[「git rebase实践（二）——关于merge和rebase」][link_4]
+这次只是简单的通过具体操作，了解并验证git rebase得到的基本结果。实际应用中，还涉及到更多细节。比如merge与rebase的区别，merge后再rebase如何操作，反悔当前分支历史提交如何进行rebase操作，rebase -i后里面的各个参数如何使用，等等，仍需掌握，才能顺利把rebase运用在生产项目中，提供真正的支持与帮助。  
+这些后面会继续把这些实践都记录总结下来，算提前挖坑了。  
+[「git rebase实践（二）——关于merge和rebase」][link_4]  
 [「git rebase实践（三）——关于-i参数的使用」][link_5]
 
 ## 四、参考文档

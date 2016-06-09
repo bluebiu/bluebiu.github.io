@@ -10,10 +10,10 @@ last_time: "2016-06-10 00:40:34"
 img_version: "1465463634"
 ---
 
->关于git rebase实践的系列： 
-[「git rebase实践（一）——关于rebase定义的实践结果」][link_1] 
-[「git rebase实践（二）——关于merge和rebase」][link_2] 
-[「git rebase实践（三）——关于-i参数的使用」][link_3] 
+>关于git rebase实践的系列：  
+[「git rebase实践（一）——关于rebase定义的实践结果」][link_1]  
+[「git rebase实践（二）——关于merge和rebase」][link_2]  
+[「git rebase实践（三）——关于-i参数的使用」][link_3]
 
 ## 一、关于git rebase -i
 

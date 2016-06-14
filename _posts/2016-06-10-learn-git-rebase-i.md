@@ -7,7 +7,7 @@ tags: [git, rebase, pick, squash]
 description: "Practice is to test the truth!"
 first_time: "2016-06-09 17:13:47"
 last_time: "2016-06-10 00:40:34"
-img_version: "1465463634"
+img_version: "1465463635"
 ---
 
 >关于git rebase实践的系列：  

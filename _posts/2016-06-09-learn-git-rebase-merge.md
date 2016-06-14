@@ -7,7 +7,7 @@ tags: [git, rebase, merge, HEAD]
 description: "Practice is to test the truth!"
 first_time: "2016-06-09 17:04:02"
 last_time: "2016-06-13 22:04:24"
-img_version: "1465826570"
+img_version: "1465826571"
 ---
 
 >关于git rebase实践的系列：  
@@ -94,8 +94,8 @@ three：先co -b mergethree，提交1，2，回master提交3，然后先rebase�
 [link_3]: {% post_url 2016-06-10-learn-git-rebase-i %}
 [link_4]: {% post_url 2016-06-10-learn-git-rebase-i %}
 
-[img_1]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_7.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_8.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_9.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_10.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_11.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_1]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_7.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_2]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_8.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_3]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_9.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_4]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_10.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_5]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_11.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}

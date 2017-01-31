@@ -3,31 +3,31 @@ layout: page
 title: "PB"
 description: "后知后觉腿还在"
 header-img: "/img/banners/ship_in_hand.jpg"
-img_version: "1455364935"
+img_version: "1485610209"
 ---
 
 # Person Best
 
 ---
 
-###### (*update by 2016-05-16 01:02:44*)
+###### (*——Last updated on 2017-01-28 21:30:00*)
 
 <table class="table table-bordered table-striped table-condensed">
    <tr style="background-color: rgba(255,255,0,0.6);">
-      <th style="width: 120px;">距离</th>
+      <th style="width: 150px;">距离</th>
       <th style="width: 200px;">项目</th>
       <th style="width: 120px;">日期</th>
       <th style="width: 180px;">地点</th>
-      <th style="width: 100px;">成绩</th>
+      <th style="width: 80px;">成绩</th>
       <th style="width: 180px;">备注</th>
    </tr>
    <tr>
-      <td>5k</td>
-      <td>广州特步欢乐跑10k</td>
+      <td><b>「5k」</b></td>
+      <td>广州特步10k</td>
       <td>2016-05-15</td>
       <td>广州会展中心</td>
-      <td>0:21:18</td>
-      <td>为了拿欢乐英雄戒指</td>
+      <td><b>「0:21:18」</b></td>
+      <td>拿欢乐英雄戒指</td>
    </tr>
    <tr>
       <td>上次pb</td>
@@ -41,24 +41,24 @@ img_version: "1455364935"
 
 <table class="table table-bordered table-striped table-condensed">
    <tr style="background-color: rgba(255,255,0,0.6);">
-      <th style="width: 120px;">距离</th>
+      <th style="width: 150px;">距离</th>
       <th style="width: 200px;">项目</th>
       <th style="width: 120px;">日期</th>
       <th style="width: 180px;">地点</th>
-      <th style="width: 100px;">成绩</th>
+      <th style="width: 80px;">成绩</th>
       <th style="width: 180px;">备注</th>
    </tr>
    <tr>
-      <td>10k</td>
-      <td>广州特步欢乐跑10k</td>
+      <td><b>「10k」</b></td>
+      <td>广州特步10k</td>
       <td>2016-05-15</td>
       <td>广州会展中心</td>
-      <td>0:45:00</td>
-      <td>为了拿欢乐英雄戒指</td>
+      <td><b>「0:44:38」</b></td>
+      <td>拿欢乐英雄戒指</td>
    </tr>
    <tr>
       <td>上次pb</td>
-      <td>广州李宁10k欢乐跑</td>
+      <td>广州李宁10k</td>
       <td>2016-03-27</td>
       <td>广州海心沙</td>
       <td>0:45:59</td>
@@ -68,26 +68,26 @@ img_version: "1455364935"
 
 <table class="table table-bordered table-striped table-condensed">
    <tr style="background-color: rgba(255,255,0,0.6);">
-      <th style="width: 120px;">距离</th>
+      <th style="width: 150px;">距离</th>
       <th style="width: 200px;">项目</th>
       <th style="width: 120px;">日期</th>
       <th style="width: 180px;">地点</th>
-      <th style="width: 100px;">成绩</th>
+      <th style="width: 80px;">成绩</th>
       <th style="width: 180px;">备注</th>
    </tr>
    <tr>
-      <td>半程马拉松(21.0975km)</td>
-      <td>清远国际半马比赛</td>
-      <td>2016-03-20</td>
-      <td>清远市</td>
-      <td>01:51:25</td>
-      <td></td>
+      <td><b>「21.0975km」</b></td>
+      <td>深圳南山半马</td>
+      <td>2016-11-27</td>
+      <td>深圳</td>
+      <td><b>「01:42:01」</b></td>
+      <td>很久没半马了</td>
    </tr>
    <tr>
       <td>上次pb</td>
       <td>清远国际半马比赛</td>
       <td>2016-03-20</td>
-      <td>清远市</td>
+      <td>清远</td>
       <td>01:51:25</td>
       <td></td>
    </tr>
@@ -95,54 +95,43 @@ img_version: "1455364935"
 
 <table class="table table-bordered table-striped table-condensed">
    <tr style="background-color: rgba(255,255,0,0.6);">
-      <th style="width: 120px;">距离</th>
+      <th style="width: 150px;">距离</th>
       <th style="width: 200px;">项目</th>
       <th style="width: 120px;">日期</th>
       <th style="width: 180px;">地点</th>
-      <th style="width: 100px;">成绩</th>
+      <th style="width: 80px;">成绩</th>
       <th style="width: 180px;">备注</th>
    </tr>
    <tr>
-      <td>全程马拉松(42.195km)</td>
-      <td>九桥plus</td>
-      <td>2016-06-11</td>
-      <td>广州九桥</td>
-      <td>04:52:46</td>
-      <td></td>
+      <td><b>「42.195km」</b></td>
+      <td>深圳国际马拉松</td>
+      <td>2016-12-18</td>
+      <td>深圳</td>
+      <td><b>「04:01:28」</b></td>
+      <td>可惜没破4~</td>
    </tr>
    <tr>
       <td>上次pb</td>
-      <td>九桥plus</td>
+      <td>桂林国际马拉松</td>
       <td>2016-06-11</td>
-      <td>广州九桥</td>
-      <td>04:52:46</td>
+      <td>桂林</td>
+      <td>04:07:11</td>
       <td></td>
    </tr>
 </table>
 
-<table class="table table-bordered table-striped table-condensed">
-   <tr style="background-color: rgba(255,255,0,0.6);">
-      <th style="width: 120px;">距离</th>
-      <th style="width: 200px;">项目</th>
-      <th style="width: 120px;">日期</th>
-      <th style="width: 180px;">地点</th>
-      <th style="width: 100px;">成绩</th>
-      <th style="width: 180px;">备注</th>
-   </tr>
-   <tr>
-      <td>35.20km</td>
-      <td>最远LSD</td>
-      <td>2016-05-01 12:16</td>
-      <td>九桥</td>
-      <td>03:55:53</td>
-      <td></td>
-   </tr>
-   <tr>
-      <td>33.56km</td>
-      <td>上次LSD</td>
-      <td>2016-02-28 13:00</td>
-      <td>九桥</td>
-      <td>04:05:08</td>
-      <td></td>
-   </tr>
-</table>
+[<u>更多跑马记录>></u>](/runningabout/marathon-records.html)
+
+
+###### 附：
+
+![img_0][]
+
+###### [10k马拉松大众选手等级达标证书 - 2016年]
+
+![img_1][]
+
+###### [42k马拉松大众选手等级达标证书 - 2016年]
+
+[img_0]: {{ site.img_url }}/img/runningabout/certificate_10k.pdf{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_1]: {{ site.img_url }}/img/runningabout/certificate_42k.pdf{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}

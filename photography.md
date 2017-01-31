@@ -11,7 +11,7 @@ header-img: "/img/banners/ship_in_hand.jpg"
 
 *** 哈哈哈哈
 
-2年前的了……
+n年前的了……
 
 ![](/img/tmp/photography/1.JPG)  
 ![](/img/tmp/photography/2.JPG)  

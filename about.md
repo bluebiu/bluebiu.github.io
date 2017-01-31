@@ -9,7 +9,8 @@ header-img: "/img/banners/the_world_is_yours.jpg"
     <p><img src="{{ site.img_url }}/img/whoami.png" align="center"></p>
 </center>
 
->想象力比知识更重要，因为知识是有限的，而想象力概括着世界的一切，推动着进步，并且是知识进化的源泉。严格地说，想象力是科学研究中的实在因素。 —— 爱因斯坦
+>Imagination is more important than knowledge. For knowledge is limited to all we now know and understand, while imagination embraces the entire world, and all there ever will be to know and understand.  
+想象力比知识更重要，因为知识是有限的，而想象力概括着世界的一切，推动着进步，并且是知识进化的源泉。严格地说，想象力是科学研究中的实在因素。 —— 爱因斯坦
 
 ## Introduction
 
@@ -19,7 +20,7 @@ header-img: "/img/banners/the_world_is_yours.jpg"
 * **Location**: Guangzhou, Guangdong
 * **Master Language**: PHP(main), Javascript, Shell, Golang
 * **Used IDE**: Sublime Text(favorite), Vim
-* **Skills**: `PHP`, `Nginx`, `Mysql`, `Redis`, `Memcache`, `JS`, `HTML`, `Ajax`, `Curl`, `Shell`, `Golang`, `Git`, `,Git-flow`, `Svn`, `Vagrant`, `Docker`, `MonogoDB`, `Vim`, `Fiddler`, `Charles`, `SS`, `Markdown`, `OAuth`, `OOP`, `Https`...
+* **Skills**: `PHP`, `Nginx`, `Mysql`, `Redis`, `Memcache`, `JS`, `HTML`, `Ajax`, `Curl`, `Shell`, `Golang`, `Git`, `,Git-flow`, `Svn`, `Vagrant`, `Docker`, `MongoDB`, `Vim`, `Fiddler`, `Charles`, `SS`, `Markdown`, `OAuth`, `OOP`, `Https`, `Regex`...
 * **Motto**: 坚持，坚持。美好，美好。
 
 ## Contact
@@ -43,15 +44,16 @@ header-img: "/img/banners/the_world_is_yours.jpg"
 
 ***
 
-* Hobbies: [>><u>Running</u>](/runningabout) [>><u>Thinking</u>](/categories.html#person)  
-* Er...: [>><u>Badminton</u>](/badminton.html) [>><u>Photography</u>](/photography.html) [>><u>Cooking</u>](/cooking.html)  
+* Hobbies: [>>Running](/runningabout), [>>Thinking](/categories.html#person)  
+* And: [>>Badminton](/badminton.html), [>>Photography](/photography.html), [>>Cooking](/cooking.html)  
 
 <br />
 
-###### *——update by 2016-03-01 01:38:28*
+###### *——Last updated on 2017-01-31 23:18:56*
 (End)
 
-> 永不休止的自我驱动，是强大的战力 —— by myself
+> The endless self drive, is a powerful fighting force. —— by myself
+永不休止的自我驱动，是强大的战力。
 
 ![perpetual_motion_machine]({{ site.img_url }}/img/perpetual_motion_machine.jpg)
 

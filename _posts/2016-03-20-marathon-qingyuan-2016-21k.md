@@ -69,6 +69,14 @@ img_version: "1485791821"
 
 ###### [↑星星绮颖夫妇，厉害了，两人一起携手半马完赛]
 
+![img_15][]
+
+###### [↑当然了，不能忘了这次让清马成名的完赛包里的肥皂……]
+
+![img_16][]
+
+###### [↑还好机智的我并没有吃……]
+
 ### 2、成绩
 
 ![img_13][]
@@ -105,6 +113,8 @@ img_version: "1485791821"
 [img_12]: {{ site.img_url }}/img/runningabout/marathon/2016-03-20-qingyuan/xxqy.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_13]: {{ site.img_url }}/img/runningabout/marathon/2016-03-20-qingyuan/track.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_14]: {{ site.img_url }}/img/runningabout/marathon/2016-03-20-qingyuan/certificate.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_15]: {{ site.img_url }}/img/runningabout/marathon/2016-03-20-qingyuan/soap1.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_16]: {{ site.img_url }}/img/runningabout/marathon/2016-03-20-qingyuan/soap2.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 
 
 

@@ -6,7 +6,7 @@ tags: [linux, ssh, known_hosts, regex]
 description: "搜索工具也不如亲自动手靠谱"
 first_time: "2017-02-02 11:39:01"
 last_time: "2017-02-02 11:39:01"
-img_version: "1486006755"
+img_version: "1486006756"
 ---
 
 ## 一、起因

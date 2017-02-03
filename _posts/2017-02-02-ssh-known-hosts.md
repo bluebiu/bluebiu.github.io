@@ -6,7 +6,7 @@ tags: [linux, ssh, known_hosts, regex]
 description: "搜索工具也不如亲自动手靠谱"
 first_time: "2017-02-02 11:39:01"
 last_time: "2017-02-04 00:03:36"
-img_version: "1486137826"
+img_version: "1486137827"
 ---
 
 ## 一、事出有因
@@ -42,6 +42,7 @@ img_version: "1486137826"
 ![img_1][]
 
 发现几个线索：  
+
 1. 再次ssh连接，竟然不报warning了？！  
 2. known_hosts里有github.com这个域名的记录。  
 3. 类似192.30.252/253的记录，有多条，并且最后一条明显区别较大。  
@@ -90,7 +91,7 @@ ping了下……发现ip跟最近的那条吻合（192.30.253.113）！那么就
 
 搜来搜去，全都没用！我可能用了假搜索引擎……
 
->有以下两个解决方案：
+>有以下两个解决方案：  
 1. 手动删除修改known_hosts里面的内容；  
 2. 修改配置文件“~/.ssh/config”，加上这两行，重启服务器。  
    StrictHostKeyChecking no  
@@ -99,8 +100,8 @@ ping了下……发现ip跟最近的那条吻合（192.30.253.113）！那么就
 就上面这两句话吧，至少能搜到20遍（百度：ssh known_hosts），然而，屁用没有！……
 
 1. 要手动的话，我还查个鸟阿，直接结案了。
-2. 这两配置，排列组合我分开试，一起试，混合试，都不能满足需求。
-`StrictHostKeyChecking`设置是否将新主机公钥加入known_hosts文件。no就是自动加；yes就是要手动加，并且访问被拒绝；ask就是询问同意后自动加。
+2. 这两配置，排列组合我分开试，一起试，混合试，都不能满足需求。  
+`StrictHostKeyChecking`设置是否将新主机公钥加入known_hosts文件。no就是自动加；yes就是要手动加，并且访问被拒绝；ask就是询问同意后自动加。  
 `UserKnownHostsFile`指定其它文件作为known_hosts文件。
 
 ![img_4][]

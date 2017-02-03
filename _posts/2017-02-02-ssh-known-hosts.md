@@ -155,7 +155,16 @@ Host [hostnames]
 
 ![img_6][]
 
-很快，就试出了结果：**可以！**
+![img_8][]
+
+先后尝试了「*」，「?」，「???」等通配符。配合known_hosts文件的变化，以及使用-v参数观察
+
+```linux
+debug1: Host 'github.com' is known and matches the RSA host key.
+debug1: Found key in /Users/biubiu/.ssh/known_hosts:24
+```
+
+很快，就试出了结果：**答案是「可以」！**
 
 通配符验证：  
 `*`是多个字符  
@@ -184,7 +193,7 @@ ssh-keygen -F www.example.net
 
 ![img_7][]
 
-## 五、参考文档
+## 六、参考文档
 
 * [ssh 配置讲解大全](http://blog.chinaunix.net/uid-20395453-id-3264845.html) （这里找出了服务端配置导致由于known_hosts引起告警的原因）
 * [ssh登陆之忽略known_hosts文件](http://blog.csdn.net/yasaken/article/details/7348441)（误导答案很多，还互相抄袭。随便放个出来。）
@@ -208,4 +217,5 @@ ssh-keygen -F www.example.net
 [img_5]: {{ site.img_url }}/img/pages/ssh_known_hosts/wildcard_1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_6]: {{ site.img_url }}/img/pages/ssh_known_hosts/wildcard_2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_7]: {{ site.img_url }}/img/pages/ssh_known_hosts/ssh_keygen.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_7]: {{ site.img_url }}/img/pages/ssh_known_hosts/ssh_v.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 

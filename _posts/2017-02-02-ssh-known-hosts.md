@@ -217,5 +217,5 @@ ssh-keygen -F www.example.net
 [img_5]: {{ site.img_url }}/img/pages/ssh_known_hosts/wildcard_1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_6]: {{ site.img_url }}/img/pages/ssh_known_hosts/wildcard_2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_7]: {{ site.img_url }}/img/pages/ssh_known_hosts/ssh_keygen.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_7]: {{ site.img_url }}/img/pages/ssh_known_hosts/ssh_v.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_8]: {{ site.img_url }}/img/pages/ssh_known_hosts/ssh_v.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 

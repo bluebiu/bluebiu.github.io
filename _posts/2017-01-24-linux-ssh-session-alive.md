@@ -62,9 +62,9 @@ $
 状态匹配扩展要有内核里的连接跟踪代码的协助，因为它是从连接跟踪机制中得到包的状态的。这样我们就可以了解连接所处的状态。它几乎适用于所有的协议，包括那些无状态的协议，如ICMP和UDP。**针对每个连接都有一个缺省的超时值，如果连接的时间超过了这个值，那么这个连接的记录就被会从连接跟踪的记录数据库中删除，也就是说连接就不再存在了。**这个match必须有-m state作为前提才能使用。状态机制的详细内容在章节状态机制中。[[^note_1]]
 
 >NAT firewalls like to time out idle sessions to keep their state tables clean and their memory footprint low.  
-NAT防火墙喜欢对空闲的会话进行超时处理，以确保它们状态表的干净和内存的低占用率。  
+**NAT防火墙喜欢对空闲的会话进行超时处理，以确保它们状态表的干净和内存的低占用率。**  
 Some firewalls are nice, and let you idle for up to a day or so; some are gestapo and terminate your session after 5 minutes.  
-一些防火墙比较友好，允许你的空闲会话时间为一天甚至超过一天；另一些却如盖世太保，5分钟空闲就终止你的会话。[[^note_2]]
+**一些防火墙比较友好，允许你的空闲会话时间为一天甚至超过一天；另一些却如盖世太保，5分钟空闲就终止你的会话。**[[^note_2]]
 
 通过这段描述（好吧，其实这段我没看得太透彻-0-。看来平时缺少些TCP等的知识细节的积累，对处理问题时的一些方向，线索，还是会有不少的障碍的。），我们就比较能大致想到断开的原因了——
 

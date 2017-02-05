@@ -112,5 +112,6 @@ img_version: "1485827532"
 [img_13]: {{ site.img_url }}/img/runningabout/marathon/2016-05-15-guangzhou/haha.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_14]: {{ site.img_url }}/img/runningabout/marathon/2016-05-15-guangzhou/4.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_15]: {{ site.img_url }}/img/runningabout/marathon/2016-05-15-guangzhou/me.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_16]: {{ site.img_url }}/img/runningabout/marathon/2016-05-15-guangzhou/arms.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 
 

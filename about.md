@@ -52,7 +52,7 @@ header-img: "/img/banners/the_world_is_yours.jpg"
 ###### *——Last updated on 2017-01-31 23:18:56*
 (End)
 
-> The endless self drive, is a powerful fighting force. —— by myself
+> The endless self drive, is a powerful fighting force. —— by myself  
 永不休止的自我驱动，是强大的战力。
 
 ![perpetual_motion_machine]({{ site.img_url }}/img/perpetual_motion_machine.jpg)

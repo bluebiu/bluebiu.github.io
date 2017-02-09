@@ -3,7 +3,7 @@ layout: page
 title: "Running"
 description: "run by run"
 header-img: "/img/banners/ship_in_hand.jpg"
-img_version: "1485075660"
+img_version: "1486612189"
 ---
 
 >生命在于运动！

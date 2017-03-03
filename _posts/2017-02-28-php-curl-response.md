@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PHP利用curl「转发」"
-subtitle: "「偷梁换柱」，暗渡陈仓"
+subtitle: "——「偷梁换柱」，暗渡陈仓"
 categories: "blog"
 tags: [php, curl, response, header, body, image]
 description: "不用不知道一用吓一跳"
@@ -37,6 +37,7 @@ img_version: "1488265307"
 代码：  
 
 ```php
+<?php
 $url = 'https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&media_id=MEDIA_ID'; 
 // 这里获取到的，并不能预先知道是什么类型，如jpg,jpeg,png,gif
 $curl = curl_init();
@@ -80,6 +81,7 @@ echo $response;exit;
 >一是通过curl自带的curl_getinfo()方法[[^note_1]]获取头的长度，然后使用substr来分割字符串。示例代码如下：
 
 ```php
+<?php
 $response = curl_exec($ch);
 if (curl_getinfo($ch, CURLINFO_HTTP_CODE) == '200') {
     $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
@@ -91,6 +93,7 @@ if (curl_getinfo($ch, CURLINFO_HTTP_CODE) == '200') {
 >第二种方法基于header和body是通过两个回车换行来分割的，所以可以通过如下代码实现：
 
 ```php
+<?php
 $response = curl_exec($ch);
 
 if (curl_getinfo($ch, CURLINFO_HTTP_CODE) == '200') {
@@ -101,7 +104,7 @@ if (curl_getinfo($ch, CURLINFO_HTTP_CODE) == '200') {
 马上调整：
 
 ```php
-// ...
+<?php
 curl_close($curl);
 if (!empty($response) && 200==$httpCode) {
     $header = substr($response, 0, $headerSize);
@@ -133,9 +136,9 @@ if (!empty($response) && 200==$httpCode) {
 [^note_1]: <http://www.php.net/manual/zh/function.curl-getinfo.php>
 
 
-[img_0]: {{ site.img_url }}/img/pages/php-curl-response/4type.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/php-curl-response/outputheader.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/php-curl-response/origin.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/php-curl-response/done.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]: {{ site.img_url }}/img/pages/php_curl_response/4type.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_1]: {{ site.img_url }}/img/pages/php_curl_response/outputheader.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_2]: {{ site.img_url }}/img/pages/php_curl_response/origin.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_3]: {{ site.img_url }}/img/pages/php_curl_response/done.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 
 

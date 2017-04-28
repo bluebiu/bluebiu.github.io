@@ -6,7 +6,7 @@ tags: [shaoguan, run, marathon, 21k]
 description: "run by run"
 first_time: "2017-01-21 17:01:44"
 last_time: "2017-01-21 17:01:44"
-img_version: "1485791821"
+img_version: "1485791822"
 ---
 
 ## 一、跑前
@@ -106,7 +106,7 @@ img_version: "1485791821"
 
 [img_0]: {{ site.img_url }}/img/runningabout/marathon/2016-10-23-shaoguan/hapi.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_1]: {{ site.img_url }}/img/runningabout/marathon/2016-10-23-shaoguan/makeup.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/runningabout/marathon/2016-10-23-shaoguan/moning.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_2]: {{ site.img_url }}/img/runningabout/marathon/2016-10-23-shaoguan/morning.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_3]: {{ site.img_url }}/img/runningabout/marathon/2016-10-23-shaoguan/3R_before.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_4]: {{ site.img_url }}/img/runningabout/marathon/2016-10-23-shaoguan/3R_start.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
 [img_5]: {{ site.img_url }}/img/runningabout/marathon/2016-10-23-shaoguan/start.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}

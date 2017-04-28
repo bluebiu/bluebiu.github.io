@@ -147,6 +147,8 @@ img_version: "1485791821"
       <td class="for_yes">✅</td>
       <td>01:53:46</td>
       <td></td>
+      <td><a href="{% post_url 2016-10-23-marathon-shaoguan-2016-21k %}" target="_blank"><u>>></u></a></td>
+
    </tr>
    <tr>
       <!-- <td>10</td> -->
@@ -276,9 +278,9 @@ img_version: "1485791821"
       <td>19</td>
       <td>清远国际马拉松</td>
       <td>21.0975</td>
-      <td class="for_yes">已报</td>
-      <td></td>
-      <td>要带家属跑:)</td>
+      <td class="for_yes">✅</td>
+      <td>02:42:31</td>
+      <td>领导首个半马完成！</td>
    </tr>
    <tr>
       <td>4</td>

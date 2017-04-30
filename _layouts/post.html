@@ -64,65 +64,24 @@ layout: default
                     {% endif %}
                 </ul>
 
-                <!-- Duoshuo Share start -->
-                <style>
-                    .ds-share{
-                        text-align: right;
-                    }
-
-                    @media only screen and (max-width: 700px) {
-                        .ds-share {
-
-                        }
-                    }
-                </style>
-
-                <div class="ds-share"
-                    data-thread-key="{{page.id}}" data-title="{{page.title}}"
-                    data-images="{% if page.header-img %}{{ page.header-img | prepend: site.img_url }}{% else %}{{ site.share_img | prepend : site.img_url | replace: '//', '/' }}{% endif %}"
-                    data-content="{{ content | strip_html | truncate:80 }} | {{ site.title }}"
-                    data-url="{{ page.url | prepend : site.baseurl | prepend : site.url }}">
-                    <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li>分享到：</li>
-                        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-                        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
-                    </div>
-                <hr>
-                </div>
-                <!-- Duoshuo Share end-->
-
-
-                <!-- 多说评论框 start -->
-                <div class="comment">
-                    <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{ page.url | prepend : baseurl | prepend : site.url }}"></div>
-                </div>
-                <!-- 多说评论框 end -->
+                <!-- -170430 网易云跟帖 start -->
+                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+                <script>
+                  var cloudTieConfig = {
+                    url: "{{ page.url | prepend : baseurl | prepend : site.url }}",
+                    sourceId: "{{page.id}}",
+                    productKey: "7c31b6f8d653489fab349464a27d36fd",
+                    target: "cloud-tie-wrapper"
+                  };
+                </script>
+                <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+                <!-- 网易云跟帖 end -->
 
             </div>
         </div>
     </div>
 </article>
 
-
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"{{site.comments.duoshuo.short_name}}"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-<!-- 多说公共JS代码 end -->
-
-</script>
 
 <!-- async load function -->
 <script>

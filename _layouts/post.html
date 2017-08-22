@@ -8,6 +8,14 @@ layout: default
         background-image: url('{% if page.header-img %}{{ page.header-img | prepend : site.img_url }}{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}{% endif %}');
         background-color:none;
     }
+    h2,h3{
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+    h4,h5{
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
 </style>
 <header class="intro-header" >
     <div class="container">
@@ -64,18 +72,18 @@ layout: default
                     {% endif %}
                 </ul>
 
-                <!-- -170430 网易云跟帖 start -->
-                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-                <script>
-                  var cloudTieConfig = {
-                    url: "{{ page.url | prepend : baseurl | prepend : site.url }}",
-                    sourceId: "{{page.id}}",
-                    productKey: "7c31b6f8d653489fab349464a27d36fd",
-                    target: "cloud-tie-wrapper"
-                  };
+                <!-- -170822 搜狐畅言 start-->
+                <!--PC和WAP自适应版-->
+                <div id="SOHUCS" sid="{{page.id}}" ></div>
+                <script type="text/javascript">
+                (function(){
+                var appid = 'cyt6B4olx';
+                var conf = 'prod_c9243f42207d5f1b05d003294476426d';
+                var width = window.innerWidth || document.documentElement.clientWidth;
+                if (width < 960) {
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
                 </script>
-                <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-                <!-- 网易云跟帖 end -->
+                <!-- -170822 搜狐畅言 end-->
 
             </div>
         </div>

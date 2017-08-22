@@ -6,7 +6,7 @@ tags: [duoshuo, over, sad, wangyiyun]
 description: "oh~no~"
 first_time: "2017-04-30 21:20:13"
 last_time: "2017-04-30 21:20:13"
-img_version: "1493558439"
+img_version: "1493558440"
 ---
 
 ## 转眼走到了 自传最终章
@@ -34,19 +34,19 @@ img_version: "1493558439"
 
 一百度，铺天盖地——
 
-* [如何评价“多说”即将关闭？有什么替代方案？——知乎][https://www.zhihu.com/question/57426274]
-* [如何看待多说社会化评论系统即将关闭？——知乎][https://www.zhihu.com/question/57444893]
-* [V2EX› 分享创造› 多说挂了，用 GitHub Issues 来当评论系统吧][https://www.v2ex.com/t/352545]
-* [Gitment：使用 GitHub Issues 搭建评论系统][https://imsun.net/posts/gitment-introduction/]
-* [多说甩下的锅，畅言来稳稳地接——搜狐科技][http://it.sohu.com/20170327/n484983201.shtml]
-* [多说没了，我的评论将何去何从——人云亦云][http://www.renyyy.com/articles/694/]
+* [如何评价“多说”即将关闭？有什么替代方案？——知乎](https://www.zhihu.com/question/57426274)
+* [如何看待多说社会化评论系统即将关闭？——知乎](https://www.zhihu.com/question/57444893)
+* [V2EX› 分享创造› 多说挂了，用 GitHub Issues 来当评论系统吧](https://www.v2ex.com/t/352545)
+* [Gitment：使用 GitHub Issues 搭建评论系统](https://imsun.net/posts/gitment-introduction/)
+* [多说甩下的锅，畅言来稳稳地接——搜狐科技](http://it.sohu.com/20170327/n484983201.shtml)
+* [多说没了，我的评论将何去何从——人云亦云](http://www.renyyy.com/articles/694/)
 
 厉害了，表面上都是评论，实际上全都是狠狠的刷了一波硬广！硬就硬吧，反正也只能从骡子里找马了。知乎上看了几大片回复，大致捋了捋：
-1. [disqus][http://www.disqus.com]：全球第一，但要翻墙。早先刚搭建博客时就有考虑，想想为了给留言的朋友减少麻烦（不用自备梯子），弃之，与人方便自己方便。现在还是暂不考虑吧。
-2. [畅言][http://changyan.kuaizhan.com]：看到的第一个硬广，很及时。
-3. [网易云跟帖][https://gentie.163.com/index.html]：硬广+1，很及时+1。
-4. [来必力][https://livere.com]：看推荐都说得卜错，我就上官网看了下，首页就开了半天，什么玩意，退下……
-5. [Gitment][https://github.com/imsun/gitment]：国人利用github issues硬是做出了一个，粗看了下，感觉卜错，但授权有点奇怪，等以后有空研究了再用吧。
+1. [disqus](http://www.disqus.com)：全球第一，但要翻墙。早先刚搭建博客时就有考虑，想想为了给留言的朋友减少麻烦（不用自备梯子），弃之，与人方便自己方便。现在还是暂不考虑吧。
+2. [畅言](http://changyan.kuaizhan.com)：看到的第一个硬广，很及时。
+3. [网易云跟帖](https://gentie.163.com/index.html)：硬广+1，很及时+1。
+4. [来必力](https://livere.com)：看推荐都说得卜错，我就上官网看了下，首页就开了半天，什么玩意，退下……
+5. [Gitment](https://github.com/imsun/gitment)：国人利用github issues硬是做出了一个，粗看了下，感觉卜错，但授权有点奇怪，等以后有空研究了再用吧。
 
 就在「畅言」和「网易云跟帖」里挑一个吧。来回斟酌，想了下「搜狐新闻」和「网易新闻」……然后就选了「网易云跟帖」……
 

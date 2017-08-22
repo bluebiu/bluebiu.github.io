@@ -49,7 +49,7 @@ header-img: "/img/banners/the_world_is_yours.jpg"
 
 <br />
 
-###### *——Last updated on 2017-01-31 23:18:56*
+###### *——Last updated on 2017-08-22 11:55:34*
 (End)
 
 > The endless self drive, is a powerful fighting force. —— by myself  
@@ -57,15 +57,15 @@ header-img: "/img/banners/the_world_is_yours.jpg"
 
 ![perpetual_motion_machine]({{ site.img_url }}/img/perpetual_motion_machine.jpg)
 
-<!-- -170430 网易云跟帖 start -->
-<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "{{ page.url | prepend : baseurl | prepend : site.url }}",
-    sourceId: "/about-html-2016-01-30",
-    productKey: "7c31b6f8d653489fab349464a27d36fd",
-    target: "cloud-tie-wrapper"
-  };
+<!-- -170822 搜狐畅言 start-->
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="/about-html-2017-08-22" ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt6B4olx';
+var conf = 'prod_c9243f42207d5f1b05d003294476426d';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
 </script>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-<!-- 网易云跟帖 end -->
+<!-- -170822 搜狐畅言 end-->

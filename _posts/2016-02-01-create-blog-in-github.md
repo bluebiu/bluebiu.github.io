@@ -6,7 +6,6 @@ tags: [github, blog, jekyll, git, aliyun, cname, markdown]
 description: "记录下各种坑点"
 first_time: "2016-01-01 01:26:33"
 last_time: "2016-02-21 10:27:12"
-img_version: "1456465498"
 ---
 
 > 目录
@@ -259,14 +258,14 @@ Bingo！
 [link_10]: {% post_url 2016-02-07-learn-to-use-jekyll %}
 [link_11]: {% post_url 2016-02-21-learn-to-use-jekyll-more %}
 
-[img_1]: {{ site.img_url }}/img/pages/how_to_create_blog/pages1_repo-actions-settings.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/how_to_create_blog/pages2_automatic-page-generator.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/how_to_create_blog/pages3_generator-picker.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/how_to_create_blog/pages4_generator-publish.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/how_to_create_blog/pages5_myblog1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_6]: {{ site.img_url }}/img/pages/how_to_create_blog/pages6_dns_setting.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_7]: {{ site.img_url }}/img/pages/how_to_create_blog/pages7_myblog2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_8]: {{ site.img_url }}/img/pages/how_to_create_blog/pages8_myblog3.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_9]: {{ site.img_url }}/img/pages/how_to_create_blog/pages9_myblog4.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_10]: {{ site.img_url }}/img/pages/how_to_create_blog/pages10_myblog5.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_11]: {{ site.img_url }}/img/pages/how_to_create_blog/pages11_myblog6.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/pages1_repo-actions-settings.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/pages2_automatic-page-generator.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/pages3_generator-picker.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/pages4_generator-publish.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/pages5_myblog1.png
+[img_6]:{{site.img_url}}/{{page.url|remove:".html"}}/pages6_dns_setting.png
+[img_7]:{{site.img_url}}/{{page.url|remove:".html"}}/pages7_myblog2.png
+[img_8]:{{site.img_url}}/{{page.url|remove:".html"}}/pages8_myblog3.png
+[img_9]:{{site.img_url}}/{{page.url|remove:".html"}}/pages9_myblog4.png
+[img_10]:{{site.img_url}}/{{page.url|remove:".html"}}/pages10_myblog5.png
+[img_11]:{{site.img_url}}/{{page.url|remove:".html"}}/pages11_myblog6.png

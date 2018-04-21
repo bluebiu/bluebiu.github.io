@@ -6,7 +6,6 @@ tags: [linux, du, sort, dir, file, size]
 description: "组合拳威力大"
 first_time: "2017-03-03 10:57:28"
 last_time: "2017-03-03 10:57:28"
-img_version: "1488509862"
 ---
 
 >那些网络上各种互相抄袭，说用du -sh * \| sort -rn的，真的自己试过吗？！
@@ -139,14 +138,14 @@ du命令功能说明：统计目录(或文件)所占磁盘空间的大小。
 ---
 
 
-[img_0]: {{ site.img_url }}/img/pages/du_and_sort_combination/df_h.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/du_and_sort_combination/du_sh.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/du_and_sort_combination/sort_sh.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/du_and_sort_combination/sort_sm.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/du_and_sort_combination/sort_sk.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/du_and_sort_combination/variables_innodb.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_6]: {{ site.img_url }}/img/pages/du_and_sort_combination/ibdata.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_7]: {{ site.img_url }}/img/pages/du_and_sort_combination/log_bin.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_8]: {{ site.img_url }}/img/pages/du_and_sort_combination/reset_master.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/df_h.png
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/du_sh.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/sort_sh.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/sort_sm.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/sort_sk.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/variables_innodb.png
+[img_6]:{{site.img_url}}/{{page.url|remove:".html"}}/ibdata.png
+[img_7]:{{site.img_url}}/{{page.url|remove:".html"}}/log_bin.png
+[img_8]:{{site.img_url}}/{{page.url|remove:".html"}}/reset_master.png
 
 

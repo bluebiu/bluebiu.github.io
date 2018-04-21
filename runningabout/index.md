@@ -2,8 +2,7 @@
 layout: page
 title: "Running"
 description: "run by run"
-header-img: "/img/banners/ship_in_hand.jpg"
-img_version: "1486612189"
+header-img: "/base/img/banners/ship_in_hand.jpg"
 ---
 
 >生命在于运动！
@@ -29,6 +28,6 @@ img_version: "1486612189"
 ###### [3R - Run, Road, Refresh - Running on the road can refresh us！]
 
 
-[img_0]: {{ site.img_url }}/img/runningabout/luguhu.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/runningabout/2016.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/runningabout/3R_banner.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/other/runningabout/luguhu.jpg
+[img_1]:{{site.img_url}}/other/runningabout/2016.jpg
+[img_2]:{{site.img_url}}/other/runningabout/3R_banner.jpg

@@ -7,7 +7,6 @@ tags: [git, rebase, definition]
 description: "Enjoy the process more!"
 first_time: "2016-06-09 01:35:22"
 last_time: "2016-06-09 01:35:22"
-img_version: "1465407458"
 ---
 
 >关于git rebase实践的系列：  
@@ -139,9 +138,9 @@ git lg = git log --xxxxxxxxxxxxx
 [link_4]: {% post_url 2016-06-09-learn-git-rebase-merge %}
 [link_5]: {% post_url 2016-06-10-learn-git-rebase-i %}
 
-[img_0]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_0.jpg{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_3.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_4.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_5.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_0.jpg
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_1.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_2.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_3.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_4.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_5.png

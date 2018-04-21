@@ -2,7 +2,7 @@
 layout: page
 title: "Photography"
 description: "pic by pic"
-header-img: "/img/banners/ship_in_hand.jpg"
+header-img: "/base/img/banners/ship_in_hand.jpg"
 ---
 
 >艺术源于生活
@@ -13,13 +13,13 @@ header-img: "/img/banners/ship_in_hand.jpg"
 
 n年前的了……
 
-![](/img/tmp/photography/1.JPG)  
-![](/img/tmp/photography/2.JPG)  
-![](/img/tmp/photography/3.JPG)  
-![](/img/tmp/photography/4.JPG)  
-![](/img/tmp/photography/5.JPG)  
-![](/img/tmp/photography/6.JPG)  
-![](/img/tmp/photography/7.JPG)  
+![]({{site.img_url}}/other/photography/1.jpg)  
+![]({{site.img_url}}/other/photography/2.jpg)  
+![]({{site.img_url}}/other/photography/3.jpg)  
+![]({{site.img_url}}/other/photography/4.jpg)  
+![]({{site.img_url}}/other/photography/5.jpg)  
+![]({{site.img_url}}/other/photography/6.jpg)  
+![]({{site.img_url}}/other/photography/7.jpg)  
  
 
 <br />

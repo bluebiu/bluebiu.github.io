@@ -2,11 +2,11 @@
 layout: page
 title: "About"
 description: "One day, I have a dream"
-header-img: "/img/banners/the_world_is_yours.jpg"
+header-img: "/base/img/banners/the_world_is_yours.jpg"
 ---
 
 <center>
-    <p><img src="{{ site.img_url }}/img/whoami.png" align="center"></p>
+    <p><img src="{{site.source_url}}/base/img/whoami.png" align="center"></p>
 </center>
 
 >Imagination is more important than knowledge. For knowledge is limited to all we now know and understand, while imagination embraces the entire world, and all there ever will be to know and understand.  
@@ -55,17 +55,8 @@ header-img: "/img/banners/the_world_is_yours.jpg"
 > The endless self drive, is a powerful fighting force. —— by myself  
 永不休止的自我驱动，是强大的战力。
 
-![perpetual_motion_machine]({{ site.img_url }}/img/perpetual_motion_machine.jpg)
+![perpetual_motion_machine]({{site.source_url}}/base/img/perpetual_motion_machine.jpg)
 
-<!-- -170822 搜狐畅言 start-->
-<!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="/about-html-2017-08-22" ></div>
-<script type="text/javascript">
-(function(){
-var appid = 'cyt6B4olx';
-var conf = 'prod_c9243f42207d5f1b05d003294476426d';
-var width = window.innerWidth || document.documentElement.clientWidth;
-if (width < 960) {
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
-</script>
-<!-- -170822 搜狐畅言 end-->
+<!-- -170822 搜狐畅言-->
+<div id="SOHUCS" sid="/about-html-2016-01-30" ></div>
+<script type="text/javascript" src="{{ site.source_url }}/plugin/changyan/comment.js" > </script>

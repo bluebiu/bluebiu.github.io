@@ -6,7 +6,6 @@ tags: [linux, grep, color, centos, auto, always, lsb_release, version]
 description: "竟然可以了？这是为什么呢～"
 first_time: "2017-08-20 13:23:34"
 last_time: "2017-08-20 13:23:34"
-img_version: "1502354455"
 ---
 
 
@@ -100,12 +99,12 @@ always和auto的区别就是，always会在任何情况下都给匹配字段加�
 [^note_0]: <http://blog.sina.com.cn/s/blog_8c6d7ff6010188uy.html>
 
 
-[img_0]: {{ site.img_url }}/img/pages/grep_color/no.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/grep_color/ok.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/grep_color/k.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/grep_color/always.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/grep_color/never.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/grep_color/ok2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_6]: {{ site.img_url }}/img/pages/grep_color/centos5.8.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_7]: {{ site.img_url }}/img/pages/grep_color/centos6.9.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/no.png
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/ok.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/k.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/always.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/never.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/ok2.png
+[img_6]:{{site.img_url}}/{{page.url|remove:".html"}}/centos5.8.png
+[img_7]:{{site.img_url}}/{{page.url|remove:".html"}}/centos6.9.png
 

@@ -6,7 +6,6 @@ tags: [iTerm2, ssh, session, vim, ASCII]
 description: "好用的东西也得好好去用才好用"
 first_time: "2017-01-22 17:09:38"
 last_time: "2017-01-23 21:22:34"
-img_version: "1485607178"
 ---
 
 ## 一、一个iTerm2蛋疼的问题
@@ -94,11 +93,11 @@ Host *
 
 [link_0]: {% post_url 2017-01-24-linux-ssh-session-alive %}
 
-[img_0]: {{ site.img_url }}/img/pages/ssh_session/broken_pipe.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/ssh_session/iterm2_ssh_session.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/ssh_session/aaaaaa.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/ssh_session/vim.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/ssh_session/ssh_config.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/ssh_session/sshd_config.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/broken_pipe.png
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/iterm2_ssh_session.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/aaaaaa.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/vim.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/ssh_config.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/sshd_config.png
 
 

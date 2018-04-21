@@ -6,16 +6,16 @@
            >
 
     <div style="position: fixed; top: 16px; right: 16px;">
-        <img src="/search/img/cb-close.png"  id="close-btn"/>
+        <img src="{{ "/plugin/search/img/cb-close.png" | prepend: site.source_url }}"  id="close-btn"/>
     </div>
 </div>
 
 <div style="position: fixed; right: 16px; bottom: 20px;">
-    <img src="/search/img/cb-search.png"  id="search-btn"  title="双击ctrl试一下"/>
+    <img src="{{ "/plugin/search/img/cb-search.png" | prepend: site.source_url }}"  id="search-btn"  title="双击ctrl试一下"/>
 </div>
 
-<link rel="stylesheet" href="{{ "/search/css/cb-search.css" | prepend: site.baseurl }}" />
+<link rel="stylesheet" href="{{ "/plugin/search/css/cb-search.css" | prepend: site.source_url }}" />
 
-<script src="{{ "/search/js/bootstrap3-typeahead.min.js" | prepend: site.baseurl }}"> </script>
-<script src="{{ "/search/js/cb-search.js" | prepend: site.baseurl }}"> </script>
+<script src="{{ "/plugin/search/js/bootstrap3-typeahead.min.js" | prepend: site.source_url }}"> </script>
+<script src="{{ "/plugin/search/js/cb-search.js" | prepend: site.source_url }}"> </script>
 <!-- end搜索条 -160120 -->

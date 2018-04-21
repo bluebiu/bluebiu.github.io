@@ -6,7 +6,6 @@ tags: [charles, fiddler, mac, https, ssl, packetcapture]
 description: "善用抓包工具"
 first_time: "2016-01-01 01:26:33"
 last_time: "2016-02-02 11:23:12"
-img_version: "1456465498"
 ---
 
 ## 一、先吐个槽
@@ -121,6 +120,6 @@ Transaction began prior to session being cleared, body content transmitted befor
 [^note_3]: <http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/>
 
 
-[img_1]: {{ site.img_url }}/img/pages/charles_for_mac/charles_1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }} "charles_https_warning"
-[img_2]: {{ site.img_url }}/img/pages/charles_for_mac/charles_2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }} "allow_mobile_proxy"
-[img_3]: {{ site.img_url }}/img/pages/charles_for_mac/charles_3.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }} "cenfigure_certificate"
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/charles_1.png "charles_https_warning"
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/charles_2.png "allow_mobile_proxy"
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/charles_3.png "cenfigure_certificate"

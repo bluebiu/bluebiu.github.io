@@ -5,7 +5,7 @@ layout: default
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('{% if page.header-img %}{{ page.header-img | prepend : site.img_url }}{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}{% endif %}');
+        background-image: url('{% if page.header-img %}{{ page.header-img | prepend : site.source_url }}{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}{% endif %}');
         background-color:none;
     }
     h2,h3{
@@ -31,7 +31,18 @@ layout: default
                     {% if page.subtitle %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% endif %}
-                    <span class="meta">Posted by {{ page.author }} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <span class="meta">Posted by {{ page.author }} on {{ page.date | date: "%B %-d, %Y" }}
+                    </span>
+                    <span>
+                        {% if site.leancloud.enable %}
+                          <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
+                           <span class="leancloud-visitors-count">?</span>
+                           <span class="post-meta-item-text"> <i>hits</i> </span>
+                           <span class="post-meta-divider">|</span>
+                          </span>
+                        {% endif %}
+                        {{page.content | strip_html | strip_newlines | remove: " " | size}} <i>words</i> | {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 250 | round: 1 }} <i>minutes to read</i>
+                    </span>
                 </div>
             </div>
         </div>
@@ -71,19 +82,8 @@ layout: default
                     </li>
                     {% endif %}
                 </ul>
-
-                <!-- -170822 搜狐畅言 start-->
-                <!--PC和WAP自适应版-->
+                <!-- 畅言评论 -160130 -->
                 <div id="SOHUCS" sid="{{page.id}}" ></div>
-                <script type="text/javascript">
-                (function(){
-                var appid = 'cyt6B4olx';
-                var conf = 'prod_c9243f42207d5f1b05d003294476426d';
-                var width = window.innerWidth || document.documentElement.clientWidth;
-                if (width < 960) {
-                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
-                </script>
-                <!-- -170822 搜狐畅言 end-->
 
             </div>
         </div>
@@ -131,26 +131,15 @@ layout: default
     }
 </style>
 
-<script type="text/javascript">
-    // 顶部大图区随机背景颜色
-    // 通过jq改变hsl值实现
-    // 可通过hsl限定一个范围，避免边界颜色影响视觉，比如过白或过黑
-    // by biubiu -160121
-    $(function(){
-        function myRandomRangeNum($min, $max) {
-            return parseInt( $min + Math.round( ($max-$min)*Math.random() ) );
-        }
-        var $hslParam1 = myRandomRangeNum(0,360);
-        var $hslParam2 = myRandomRangeNum(10,100) + '%';
-        var $hslParam3 = myRandomRangeNum(16,66) + '%';
-        var $hslVal = 'hsl('+ $hslParam1 +','+ $hslParam2 +','+ $hslParam3 +')';
-        console.log($hslVal);
-        $('.intro-header').css({
-            "background-color": $hslVal
-        });
-    });
-
-</script>
+<!-- 文章点击统计 -180420 -->
+{% include leancloud-analytics.html %}
 
 <!-- 替换task list的js -160207 -->
-<script type="text/javascript" src="{{ site.source_url }}/js/checklists.js" > </script>
+<script type="text/javascript" src="{{ site.source_url }}/plugin/checklist/checklists.js" > </script>
+
+<!-- 顶部大图随机颜色 -160121 -->
+<script type="text/javascript" src="{{ site.source_url }}/plugin/randomcolor/post-topimg-random-color.js" > </script>
+
+<!-- 畅言评论 -160130 -->
+<script type="text/javascript" src="{{ site.source_url }}/plugin/changyan/comment.js" > </script>
+

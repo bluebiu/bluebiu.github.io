@@ -6,7 +6,6 @@ tags: [linux, redis, command, client, copy, key]
 description: "命令行技巧多"
 first_time: "2017-04-12 19:51:57"
 last_time: "2017-04-20 12:25:16"
-img_version: "1492661354"
 ---
 
 ## 一、命运偷走如果 只留下结果
@@ -169,17 +168,17 @@ It does appear to be a lot of stuff compared to simply doing a GET and then s SE
 [^note_1]: <http://stackoverflow.com/questions/10891213/redis-how-to-set-one-key-equal-to-the-value-of-another-key>
 
 
-[img_0]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/origin_714.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/copying.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/addtest2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/test2_728.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/command.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/test3_715.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_6]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/test1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_7]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/test4_712.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_8]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/console_ok.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_9]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/console_error.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_10]: {{ site.img_url }}/img/pages/redis_copy_key_to_key/test5_714.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/origin_714.png
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/copying.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/addtest2.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/test2_728.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/command.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/test3_715.png
+[img_6]:{{site.img_url}}/{{page.url|remove:".html"}}/test1.png
+[img_7]:{{site.img_url}}/{{page.url|remove:".html"}}/test4_712.png
+[img_8]:{{site.img_url}}/{{page.url|remove:".html"}}/console_ok.png
+[img_9]:{{site.img_url}}/{{page.url|remove:".html"}}/console_error.png
+[img_10]:{{site.img_url}}/{{page.url|remove:".html"}}/test5_714.png
 
 
 

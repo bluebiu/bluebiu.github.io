@@ -6,7 +6,6 @@ tags: [linux, ssh, known_hosts, regex]
 description: "搜索工具也不如亲自动手靠谱"
 first_time: "2017-02-02 11:39:01"
 last_time: "2017-02-04 00:03:36"
-img_version: "1486137827"
 ---
 
 ## 一、事出有因
@@ -209,13 +208,13 @@ ssh-keygen -F www.example.net
 [^note_2]: <http://www.hao32.com/unix-linux/462.html>
 [^note_3]: <http://tianxiamall.blog.163.com/blog/static/208489112201521487463/>
 
-[img_0]: {{ site.img_url }}/img/pages/ssh_known_hosts/sourcetree.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/ssh_known_hosts/ssh_t.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/ssh_known_hosts/ssh_t2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/ssh_known_hosts/ssh_t3.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/ssh_known_hosts/params.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/ssh_known_hosts/wildcard_1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_6]: {{ site.img_url }}/img/pages/ssh_known_hosts/wildcard_2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_7]: {{ site.img_url }}/img/pages/ssh_known_hosts/ssh_keygen.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_8]: {{ site.img_url }}/img/pages/ssh_known_hosts/ssh_v.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/sourcetree.png
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/ssh_t.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/ssh_t2.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/ssh_t3.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/params.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/wildcard_1.png
+[img_6]:{{site.img_url}}/{{page.url|remove:".html"}}/wildcard_2.png
+[img_7]:{{site.img_url}}/{{page.url|remove:".html"}}/ssh_keygen.png
+[img_8]:{{site.img_url}}/{{page.url|remove:".html"}}/ssh_v.png
 

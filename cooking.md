@@ -2,7 +2,7 @@
 layout: page
 title: "Cooking"
 description: "eat by eat"
-header-img: "/img/banners/ship_in_hand.jpg"
+header-img: "/base/img/banners/ship_in_hand.jpg"
 ---
 
 >艺术源于生活
@@ -13,7 +13,7 @@ header-img: "/img/banners/ship_in_hand.jpg"
 
 2016诚意第一餐……
 
-![](/img/tmp/eat.jpg)  
+![]({{site.img_url}}/other/tmp/eat.jpg)  
  
 
 <br />

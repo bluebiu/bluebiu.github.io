@@ -7,7 +7,6 @@ tags: [php, curl, response, header, body, image]
 description: "不用不知道一用吓一跳"
 first_time: "2017-02-28 15:01:32"
 last_time: "2017-02-28 15:01:32"
-img_version: "1488265307"
 ---
 
 ## 一、PHP不是最好的语言
@@ -136,9 +135,9 @@ if (!empty($response) && 200==$httpCode) {
 [^note_1]: <http://www.php.net/manual/zh/function.curl-getinfo.php>
 
 
-[img_0]: {{ site.img_url }}/img/pages/php_curl_response/4type.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/php_curl_response/outputheader.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/php_curl_response/origin.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/php_curl_response/done.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/4type.png
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/outputheader.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/origin.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/done.png
 
 

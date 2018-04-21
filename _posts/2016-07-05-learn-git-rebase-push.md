@@ -77,7 +77,7 @@ img_version: "1484300999"
 [link_2]: {% post_url 2016-06-09-learn-git-rebase-merge %}
 [link_3]: {% post_url 2016-06-10-learn-git-rebase-i %}
 
-[img_0]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_24.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_25.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_26.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_24.png
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_25.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_26.png
 

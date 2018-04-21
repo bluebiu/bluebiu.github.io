@@ -60,8 +60,12 @@ highlighter: rouge
 #     line_numbers: true
 
 
-gems: ["jekyll-paginate"]
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
 permalink: none
+# permalink: /:categories/:year-:month-:day-:title
 # permalink默认是date, 还有pretty. none是/:categories/:title.html
 paginate: 8
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
@@ -94,11 +98,19 @@ defaults:
 # baseurl: "" # does not include hostname
 
 # Static url
-# img_url末尾不加「/」，图片的值都填的「/img」开头，方便调试 -160218
-img_url: "http://static.bluebiu.com"
-source_url: "http://static.bluebiu.com"
+# for posts
+img_url: "http://source.bluebiu.com/posts"
+# for base source
+source_url: "http://source.bluebiu.com"
+# source_url: ""
 
 # Static version
-css_version: "1457180575" # 2016年 3月 5日 星期六 20时23分06秒 CST
-js_version: "1455364935" # 2016年 2月13日 星期六 20时02分42秒 CST
-img_version: "1455364935" # 2016年 2月13日 星期六 20时02分42秒 CST
+css_version: "1524211659" # 2016年 3月 5日 星期六 20时23分06秒 CST
+js_version: "1524211659" # 2016年 2月13日 星期六 20时02分42秒 CST
+img_version: "1524211659" # 2016年 2月13日 星期六 20时02分42秒 CST
+
+# leanCloud leancloud.cn
+leancloud:
+  enable: true
+  app_id: "2sJh8aPYI7uG3cgEzUEKA9vL-gzGzoHsz"
+  app_key: "rD9QQbYiGdVry0XOYEEixqbr"

@@ -7,7 +7,6 @@ tags: [github, blog, Jekyll, git, ruby, gem, plun-in, Liquid, duoshuo, highlight
 description: "Enjoy the process!"
 first_time: "2016-02-07 15:50:33"
 last_time: "2016-03-02 17:19:15"
-img_version: "1456465498"
 ---
 
 >目录
@@ -251,8 +250,8 @@ subtitle: yeah
 [link_6]: {% post_url 2016-02-21-learn-to-use-jekyll-more %}
 
 
-[img_1]: {{ site.img_url }}/img/pages/learn_to_use_jekyll/jekyllthemes1_clone.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/learn_to_use_jekyll/jekyllthemes2_pages.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/learn_to_use_jekyll/jekyllthemes2_pages2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/learn_to_use_jekyll/jekyllthemes3_hello.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/learn_to_use_jekyll/jekyllthemes4_todolist.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/jekyllthemes1_clone.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/jekyllthemes2_pages.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/jekyllthemes2_pages2.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/jekyllthemes3_hello.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/jekyllthemes4_todolist.png

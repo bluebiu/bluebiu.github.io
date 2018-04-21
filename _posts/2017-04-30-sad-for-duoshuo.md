@@ -6,7 +6,6 @@ tags: [duoshuo, over, sad, wangyiyun]
 description: "oh~no~"
 first_time: "2017-04-30 21:20:13"
 last_time: "2017-04-30 21:20:13"
-img_version: "1493558440"
 ---
 
 ## 转眼走到了 自传最终章
@@ -116,16 +115,16 @@ img_version: "1493558440"
 参考文档，都在上面有附上链接，不再重复了……
 
 
-[img_0]: {{ site.img_url }}/img/pages/sad_for_duoshuo/guanbi.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/sad_for_duoshuo/guanbi.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/sad_for_duoshuo/setting0.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/sad_for_duoshuo/setting1.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/sad_for_duoshuo/setting2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/sad_for_duoshuo/export.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_6]: {{ site.img_url }}/img/pages/sad_for_duoshuo/import.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_7]: {{ site.img_url }}/img/pages/sad_for_duoshuo/json.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_8]: {{ site.img_url }}/img/pages/sad_for_duoshuo/script.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_9]: {{ site.img_url }}/img/pages/sad_for_duoshuo/diff.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_10]: {{ site.img_url }}/img/pages/sad_for_duoshuo/dashang.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_11]: {{ site.img_url }}/img/pages/sad_for_duoshuo/dashang2.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_12]: {{ site.img_url }}/img/pages/sad_for_duoshuo/now.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/guanbi.png
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/guanbi.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/setting0.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/setting1.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/setting2.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/export.png
+[img_6]:{{site.img_url}}/{{page.url|remove:".html"}}/import.png
+[img_7]:{{site.img_url}}/{{page.url|remove:".html"}}/json.png
+[img_8]:{{site.img_url}}/{{page.url|remove:".html"}}/script.png
+[img_9]:{{site.img_url}}/{{page.url|remove:".html"}}/diff.png
+[img_10]:{{site.img_url}}/{{page.url|remove:".html"}}/dashang.png
+[img_11]:{{site.img_url}}/{{page.url|remove:".html"}}/dashang2.png
+[img_12]:{{site.img_url}}/{{page.url|remove:".html"}}/now.png

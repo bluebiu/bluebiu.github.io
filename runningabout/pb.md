@@ -2,8 +2,7 @@
 layout: page
 title: "PB"
 description: "后知后觉腿还在"
-header-img: "/img/banners/ship_in_hand.jpg"
-img_version: "1485610211"
+header-img: "/base/img/banners/ship_in_hand.jpg"
 ---
 
 # Person Best
@@ -133,5 +132,5 @@ img_version: "1485610211"
 
 ###### [42k马拉松大众选手等级达标证书 - 2016年]
 
-[img_0]: {{ site.img_url }}/img/runningabout/certificate_10k.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/runningabout/certificate_42k.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/other/runningabout/certificate_10k.png
+[img_1]:{{site.img_url}}/other/runningabout/certificate_42k.png

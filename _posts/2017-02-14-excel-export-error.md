@@ -6,7 +6,6 @@ tags: [excel, linux, xml, number, string]
 description: "火眼金睛"
 first_time: "2017-02-14 17:39:01"
 last_time: "2017-02-23 20:33:36"
-img_version: "1487853404"
 ---
 
 ## 一、「有人在吗？excel打不开，报错」
@@ -95,11 +94,11 @@ XML 的优势之一，就是可以在不中断应用程序的情况下进行扩�
 
 ---
 
-[img_0]: {{ site.img_url }}/img/pages/excel_export_error/error.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/excel_export_error/number.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/excel_export_error/excel.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/excel_export_error/value.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/excel_export_error/php.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/excel_export_error/head.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/error.png
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/number.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/excel.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/value.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/php.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/head.png
 
 

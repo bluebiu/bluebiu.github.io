@@ -7,7 +7,6 @@ tags: [git, rebase, pick, squash]
 description: "Practice is to test the truth!"
 first_time: "2016-06-09 17:13:47"
 last_time: "2016-06-10 00:40:34"
-img_version: "1465463635"
 ---
 
 >关于git rebase实践的系列：  
@@ -130,16 +129,16 @@ commit_four
 [link_2]: {% post_url 2016-06-09-learn-git-rebase-merge %}
 [link_3]: {% post_url 2016-06-10-learn-git-rebase-i %}
 
-[img_0]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_6.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_1]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_12.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_2]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_13.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_3]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_14.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_4]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_15.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_5]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_16.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_6]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_17.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_7]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_18.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_8]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_19.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_9]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_20.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_10]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_21.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_11]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_22.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
-[img_12]: {{ site.img_url }}/img/pages/learn_git_rebase/rebase_23.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_6.png
+[img_1]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_12.png
+[img_2]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_13.png
+[img_3]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_14.png
+[img_4]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_15.png
+[img_5]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_16.png
+[img_6]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_17.png
+[img_7]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_18.png
+[img_8]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_19.png
+[img_9]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_20.png
+[img_10]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_21.png
+[img_11]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_22.png
+[img_12]:{{site.img_url}}/{{page.url|remove:".html"}}/rebase_23.png

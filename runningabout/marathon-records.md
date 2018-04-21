@@ -2,8 +2,7 @@
 layout: page
 title: "Marathon Records"
 description: "不知不觉跑起来"
-header-img: "/img/banners/ship_in_hand.jpg"
-img_version: "1485791821"
+header-img: "/base/img/banners/ship_in_hand.jpg"
 ---
 
 <style type="text/css">
@@ -46,7 +45,7 @@ img_version: "1485791821"
       <td class="for_yes">✅</td>
       <td>01:53:59</td>
       <td>第一次线下</td>
-      <td><a href="{% post_url 2015-12-12-marathon-nanning-2015-21k %}" target="_blank"><u>>></u></a></td>
+      <td><a href="{% post_url 2015-12-12-2015-12-12-nanning-21k %}" target="_blank"><u>>></u></a></td>
    </tr>
 </table>
 
@@ -71,7 +70,7 @@ img_version: "1485791821"
       <td class="for_yes">✅</td>
       <td>01:51:25</td>
       <td>第一次跟3R一起</td>
-      <td><a href="{% post_url 2016-03-20-marathon-qingyuan-2016-21k %}" target="_blank"><u>>></u></a></td>
+      <td><a href="{% post_url 2016-03-20-2016-03-20-qingyuan-21k %}" target="_blank"><u>>></u></a></td>
    </tr>
    <tr>
       <!-- <td>3</td> -->
@@ -90,7 +89,7 @@ img_version: "1485791821"
       <td class="for_yes">✅</td>
       <td>00:45:38</td>
       <td></td>
-      <td><a href="{% post_url 2016-03-27-marathon-guangzhou-2016-10k-1 %}" target="_blank"><u>>></u></a></td>
+      <td><a href="{% post_url 2016-03-27-2016-03-27-guangzhou-10k %}" target="_blank"><u>>></u></a></td>
    </tr>
    <tr>
       <td rowspan="2">5</td>
@@ -100,7 +99,7 @@ img_version: "1485791821"
       <td class="for_yes">✅</td>
       <td>00:44:38<a href="/runningabout/pb.html" target="_blank"><u class="for_pb">pb</u></a></td>
       <td>欢乐英雄戒指:)</td>
-      <td><a href="{% post_url 2016-05-15-marathon-guangzhou-2016-10k-2 %}" target="_blank"><u>>></u></a></td>
+      <td><a href="{% post_url 2016-05-15-2016-05-15-guangzhou-10k %}" target="_blank"><u>>></u></a></td>
    </tr>
    <tr>
       <!-- <td>5</td> -->
@@ -110,7 +109,7 @@ img_version: "1485791821"
       <td class="for_yes">✅</td>
       <td>00:40:00</td>
       <td>当了回<a href="http://mp.weixin.qq.com/s/KavBGY9pdtLZujWdxkxyVA" target="_blank">「<u>兔子</u>」</a></td>
-      <td><a href="{% post_url 2016-05-22-marathon-guangzhou-2016-5k %}" target="_blank"><u>>></u></a></td>
+      <td><a href="{% post_url 2016-05-22-2016-05-22-guangzhou-5k %}" target="_blank"><u>>></u></a></td>
    </tr>
    <tr>
       <td>6</td>
@@ -147,7 +146,7 @@ img_version: "1485791821"
       <td class="for_yes">✅</td>
       <td>01:53:46</td>
       <td></td>
-      <td><a href="{% post_url 2016-10-23-marathon-shaoguan-2016-21k %}" target="_blank"><u>>></u></a></td>
+      <td><a href="{% post_url 2016-10-23-2016-10-23-shaoguan-21k %}" target="_blank"><u>>></u></a></td>
 
    </tr>
    <tr>

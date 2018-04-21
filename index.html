@@ -2,8 +2,7 @@
 layout: page
 title: "永动机"
 description: "动次打次动次打次"
-header-img: "/img/banners/sz_wori.jpg"
-img_version: "1455364935"
+header-img: "/base/img/banners/sz_wori.jpg"
 ---
 
 {% for post in paginator.posts %}
@@ -22,7 +21,15 @@ img_version: "1455364935"
             {{ post.content | strip_html | truncate:150 }}
         </div>
     </a>
-    <p class="post-meta">Posted by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
+    <p class="post-meta">Posted by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}
+        {% if site.leancloud.enable %}
+          <span id="{{ post.url }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
+           <span class="post-meta-divider">|</span>
+           <span class="post-meta-item-text"> Hits:  </span>
+           <span class="leancloud-visitors-count"></span>
+          </span>
+        {% endif %}
+    </p>
 </div>
 
 <hr>

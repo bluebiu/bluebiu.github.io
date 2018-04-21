@@ -2,8 +2,7 @@
 layout: page
 title: Category
 description: "有得有失"
-header-img: "/img/banners/umbrella_in_grassland.jpg"
-img_version: "1455364935"
+header-img: "/base/img/banners/umbrella_in_grassland.jpg"
 ---
 
 <!-- 分类云 参考Codeboy.me里的 -160120 -->
@@ -37,17 +36,9 @@ img_version: "1455364935"
     {% endfor %}
 </div>
 
-<!-- 云tags-160120 -->
-<script src="{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}" type="text/javascript" charset="utf-8"></script>
-<script language="javascript">
-    $.fn.tagcloud.defaults = {
-        //size: {start: 1, end: 1, unit: 'em'},
-        color: {start: '#AA99FF', end: '#AA99FF'},
-    };
-    $(function () {
-        $('#tag_cloud a').tagcloud();
-    });
-</script>
-<!-- end云tags-160120 -->
 
+<!-- 云tags-依赖 div: tag_cloud -->
+{% include tagcloud.html %}
+
+<!-- search -->
 {% include search.html %}

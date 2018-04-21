@@ -6,7 +6,6 @@ tags: [linux, ssh, session, alive, NAT, iptables]
 description: "要解决问题就不能不知道真正原因"
 first_time: "2017-01-24 14:01:52"
 last_time: "2017-01-28 20:39:23"
-img_version: "1485607179"
 ---
 
 ## 一、挖坑
@@ -155,5 +154,5 @@ Host *
 
 [link_0]: {% post_url 2017-01-22-iterm2-ssh-session-idle %}
 
-[img_0]: {{ site.img_url }}/img/pages/ssh_session/server_sshd_config.png{{ page.img_version | default: site.img_version | prepend: "?vvv=" }}
+[img_0]:{{site.img_url}}/{{page.url|remove:".html"}}/server_sshd_config.png
 

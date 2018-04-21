@@ -50,7 +50,7 @@ function a() {
 
 ## 试试分享微信头图
 
-![wx题图](/img/wx_share_default.jpg "wxshare")
+![wx题图](/base/img/wx_share_default.jpg "wxshare")
 
 ## 尝试h6颜色
 ---

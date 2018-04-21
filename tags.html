@@ -2,8 +2,7 @@
 layout: page
 title: Tags
 description: "虚虚实实"
-header-img: "/img/banners/blue_elephant.jpg"
-img_version: "1455364935"
+header-img: "/base/img/banners/blue_elephant.jpg"
 ---
 
 <!-- 标签云 参考Codeboy.me里的 -160120 -->
@@ -37,17 +36,8 @@ img_version: "1455364935"
     {% endfor %}
 </div>
 
-<!-- 云tags-160120 -->
-<script src="{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}" type="text/javascript" charset="utf-8"></script>
-<script language="javascript">
-    $.fn.tagcloud.defaults = {
-        //size: {start: 1, end: 1, unit: 'em'},
-        color: {start: '#FF99FF', end: '#FF99FF'},
-    };
-    $(function () {
-        $('#tag_cloud a').tagcloud();
-    });
-</script>
-<!-- end云tags-160120 -->
+<!-- 云tags-依赖 div: tag_cloud -->
+{% include tagcloud.html %}
 
+<!-- search -->
 {% include search.html %}

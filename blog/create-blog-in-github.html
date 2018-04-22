@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword" content="biubiu, @biubiu, Biu^Biu's blog, bluebiu github, biubiu的博客" >
+    <meta name="description" content="美好，美好。">
+
+    <title>从零开始用GitHub Pages创建博客 - Biu^Biu's Blog</title>
+
+    <link rel="canonical" href="http://bluebiu.com/blog/create-blog-in-github.html" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/bootstrap.min.css?vvv=1524211659" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/clean-blog.css?vvv=1524211659" />
+
+    <!-- -160201 -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/biubiu.css?vvv=1524211659" />
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/base/css/syntax.css?vvv=1524211659" /> -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/syntax-monokai.css?vvv=1524211659" />
+
+    <!-- Custom Fonts -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- 使用七牛的CDN, for font-awesome -->
+     <link href="//cdn.staticfile.org/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+   <!-- 感觉用不着 -160120 <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' /> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"> </script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"> </script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="http://source.bluebiu.com/base/js/jquery.min.js?vvv=1524211659"> </script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://source.bluebiu.com/base/js/bootstrap.min.js?vvv=1524211659"> </script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="http://source.bluebiu.com/base/js/clean-blog.min.js?vvv=1524211659"> </script>
+
+    <!-- biubiu Custom JavaScript -160201 -->
+    <script src="http://source.bluebiu.com/base/js/biubiu.js?vvv=1524211659"> </script>
+</head>
+
+
+<body ontouchstart="">
+
+    <!-- 自定义的一些html块 -160201 -->
+<div id="back-top">
+    <a href="#toptoptop" title="回到顶部"></a>
+</div>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href='/'></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <a href="http://www.bluebiu.com">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/documents.html">Timeline</a>
+                </li>
+                
+                <li>
+                    <a href="/categories.html">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="/tags.html">Tags</a>
+                </li>
+                
+                <li>
+                    <a href="/about.html">About</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('');
+        background-color:none;
+    }
+    h2,h3{
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+    h4,h5{
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a href="/tags.html#github" title="github" >github</a>
+                        
+                        <a href="/tags.html#blog" title="blog" >blog</a>
+                        
+                        <a href="/tags.html#jekyll" title="jekyll" >jekyll</a>
+                        
+                        <a href="/tags.html#git" title="git" >git</a>
+                        
+                        <a href="/tags.html#aliyun" title="aliyun" >aliyun</a>
+                        
+                        <a href="/tags.html#cname" title="cname" >cname</a>
+                        
+                        <a href="/tags.html#markdown" title="markdown" >markdown</a>
+                        
+                    </div>
+                    <h1>从零开始用GitHub Pages创建博客</h1>
+                    
+                    <span class="meta">Posted by biubiu on February 1, 2016
+                    </span>
+                    <span>
+                        
+                          <span id="/blog/create-blog-in-github.html" class="leancloud_visitors" data-flag-title="从零开始用GitHub Pages创建博客">
+                           <span class="leancloud-visitors-count">?</span>
+                           <span class="post-meta-item-text"> <i>hits</i> </span>
+                           <span class="post-meta-divider">|</span>
+                          </span>
+                        
+                        6326 <i>words</i> | 26 <i>minutes to read</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
+                <blockquote>
+  <p>目录</p>
+</blockquote>
+
+<ul id="markdown-toc">
+  <li><a href="#一突发奇想" id="markdown-toc-一突发奇想">一、突发奇想</a></li>
+  <li><a href="#二从无到有" id="markdown-toc-二从无到有">二、从无到有</a>    <ul>
+      <li><a href="#1探索" id="markdown-toc-1探索">1、探索</a></li>
+      <li><a href="#2开动" id="markdown-toc-2开动">2、开动</a></li>
+      <li><a href="#3包装" id="markdown-toc-3包装">3、包装</a>        <ul>
+          <li><a href="#31获取独立域名" id="markdown-toc-31获取独立域名">3.1、获取独立域名</a></li>
+          <li><a href="#32配置" id="markdown-toc-32配置">3.2、配置</a>            <ul>
+              <li><a href="#1解析域名设置" id="markdown-toc-1解析域名设置">（1）、解析域名设置</a></li>
+              <li><a href="#2添加cname文件" id="markdown-toc-2添加cname文件">（2）、添加CNAME文件</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#四关于jekyll" id="markdown-toc-四关于jekyll">四、关于Jekyll</a></li>
+  <li><a href="#五参考文档" id="markdown-toc-五参考文档">五、参考文档</a></li>
+</ul>
+
+<h2 id="一突发奇想">一、突发奇想</h2>
+
+<p>突然就想搞个博客，于是就开始搞起来了。<br />
+当然是从什么都不了解，到踩了不少坑，然后就总算弄得差不多了。<br />
+收集，参考，模仿，调整，少不了这些套路的了。<br />
+下面整理了大部分，先大致记录着。</p>
+
+<h2 id="二从无到有">二、从无到有</h2>
+
+<p>迷茫着，迷茫着，不知不觉就上道了。</p>
+
+<h3 id="1探索">1、探索</h3>
+
+<p>大信息时代，自然是先百度知乎了一波。发现有很多介绍，什么<a href="http://blog.163.com">网易博客</a>，<a href="http://blog.sina.com">新浪博客</a>，<a href="http://www.cnblogs.com">博客园</a>, <a href="http://blog.csdn.net">CSDN博客</a>，<a href="http://my.oschina.net">开源中国</a>，<a href="http://www.jianshu.com">简书</a>等等，各种技术博客的温床。后来一看，竟没几个是支持markdown的……(除了简书，之前新浪博客新版可选markdown模式试了下，由于是在线编辑器，非常局限，并不能算是「好用」的markdown编辑器。后面其他的也没有完全仔细去试了，毕竟想到是在线编辑器，就还是算了……)</p>
+
+<p>这时候<a href="https://pages.github.com">Github Pages</a>就顺理成章的「被发现」了。:)</p>
+
+<p>在阮一峰前辈的「<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">搭建一个免费的，无限流量的Blog—-github Pages和Jekyll入门</a>」文中介绍说：</p>
+
+<blockquote>
+  <p>…<br />
+整个思路到这里就很明显了。你先在本地编写符合Jekyll规范的网站源码，然后上传到github，由github生成并托管整个网站。<br />
+…<br />
+这种做法的好处是：<br />
+    * 免费，无限流量。<br />
+    * 享受git的版本管理功能，不用担心文章遗失。<br />
+    * 你只要用自己喜欢的编辑器写文章就可以了，其他事情一概不用操心，都由github处理。<br />
+…<br />
+它的缺点是：<br />
+    * 有一定技术门槛，你必须要懂一点git和网页开发。<br />
+    * 它生成的是静态网页，添加动态功能必须使用外部服务，比如评论功能就只能用disqus。
+    * 它不适合大型网站，因为没有用到数据库，每运行一次都必须遍历全部的文本文件，网站越大，生成时间越长。<br />
+…</p>
+</blockquote>
+
+<p>这简直对我来说，它的<strong>优点</strong>等于：</p>
+
+<ul>
+  <li>线上：免费，省心；线下：存储文档便捷可靠。</li>
+  <li>可善用本地编辑器来支持markdown！</li>
+  <li>非常适合掌握git和少量前端技巧者几乎无门槛使用！</li>
+  <li>适合暂时还没买服务器，数据库的人……</li>
+</ul>
+
+<p>那还等啥？就地搞起！@#&amp;……%￥#@！@（）&amp;）……</p>
+
+<h3 id="2开动">2、开动</h3>
+
+<p>选型结束，马上开始进行实践。
+最先看了一些采用了这个方式的博客，发现页面素材百花争艳……有点搞不懂了——这些都用什么做的？Jekyll和Hexo都是什么？——好吧，小白刚入门，不知其意是很正常的。那么后退一步，先回头看看怎么突然就不懂了？
+我们前面说了，只是选型到了GitHub Pages，那这个GitHub Pages（github.io）是什么呢？</p>
+
+<blockquote>
+  <p>You can use <code class="highlighter-rouge">GitHub's Automatic Page Generator</code> to quickly create a website for a project, user, or organization.<br />
+To generate User and Organization Pages sites, you’ll need to create a repository named <code class="highlighter-rouge">username.github.io</code> . The username or organization name must be your own or your GitHub Pages site will not build. The automatic page generator is accessible via the repository’s Settings page. You can read more about User and Organization Pages here.[<sup id="fnref:note_1"><a href="#fn:note_1" class="footnote">1</a></sup>]</p>
+</blockquote>
+
+<p>OK。反正不管名字叫什么，这东西理解起来就是：最终上传内容到了github上，就能展示页面了。那就按介绍的步骤走一波咯 &gt;&gt;&gt;</p>
+
+<p><strong>（1）</strong>、首先，你得注册好github帐号，拥有github仓库空间。<br />
+<strong>（2）</strong>、创建pages仓库，必须是以你的github帐号名作为开头，即<code class="highlighter-rouge">yourName.github.io</code>。[<sup id="fnref:note_2"><a href="#fn:note_2" class="footnote">2</a></sup>]（注意一定要一致，否则pages页面将无法构建生成。）<br />
+<strong>（3）</strong>、根据官方指示，开启自动构建页面设置——</p>
+
+<blockquote>
+
+  <p>1）On GitHub, navigate to the main page of the repository.<br />
+2）Under your repository name, click  <code class="highlighter-rouge">Settings</code>.<br />
+<img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages1_repo-actions-settings.png" alt="img_1" /><br />
+3）Click the <code class="highlighter-rouge">Automatic Page Generator</code> button.<br />
+<img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages2_automatic-page-generator.png" alt="img_2" /><br />
+4）Author your content in the Markdown editor.<br />
+5）Click the <code class="highlighter-rouge">Continue To Layouts</code> button<br />
+6）Preview your content in our themes.<br />
+<img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages3_generator-picker.png" alt="img_3" /><br />
+7）Publish button When you find a theme that you like, click <code class="highlighter-rouge">Publish page</code>.[<sup id="fnref:note_3"><a href="#fn:note_3" class="footnote">3</a></sup>]<br />
+<img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages4_generator-publish.png" alt="img_4" /></p>
+</blockquote>
+
+<p>基本一套下来就能访问 「yourUserName.github.io」啦，如果不行，按步骤重新确认一遍……（首次操作后，可能要等3-10分钟才生效）</p>
+
+<p>搞定后的首次访问效果图如下 &gt;&gt;&gt;<br />
+<img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages5_myblog1.png" alt="img_5" /></p>
+
+<p>-0-，那么接下来就是域名问题了。</p>
+
+<h3 id="3包装">3、包装</h3>
+
+<p>直接访问github，时常出现访问失败，加载页面资源失败，当然是各种网络因素，各种墙（尤其在公司时https，域名白名单等弱智墙……），梯问题导致，破坏心情。或者是觉得这个xxxx.github.io太low，影响逼格……
+其实很好办，我们可以考虑建立一个自定义域名来解除困扰。</p>
+
+<h4 id="31获取独立域名">3.1、获取独立域名</h4>
+
+<p>获取个性域名有很多途径，可以在各种地方购买，选择收费或免费，选择各种后缀等等，就不展开安利了，用到个人适合的就行了。<br />
+我是在<a href="http://wanwang.aliyun.com">万网</a>申请了一个。<br />
+保证开通可访问和可管理的状态，然后就往下走了。</p>
+
+<h4 id="32配置">3.2、配置</h4>
+
+<p>这里需要2步，增加DNS解析，增加github里CNAME文件。</p>
+
+<h5 id="1解析域名设置">（1）、解析域名设置</h5>
+
+<p>设置为子域名和顶级域名，是不同的。</p>
+
+<blockquote>
+
+  <ul>
+    <li>Subdomains<br />
+A subdomain is configured with a <code class="highlighter-rouge">CNAME</code> record through your DNS provider.</li>
+    <li>Apex domains<br />
+An apex domain is usually configured with an <code class="highlighter-rouge">A</code>, <code class="highlighter-rouge">ALIAS</code>, or <code class="highlighter-rouge">ANAME</code> record through your DNS provider and is often assigned to one or more IP addresses.[<sup id="fnref:note_4"><a href="#fn:note_4" class="footnote">4</a></sup>]</li>
+  </ul>
+</blockquote>
+
+<p>根据指引，要配置为「xxblog.yourDomian.com」这样的子域名时，需要增加一个<code class="highlighter-rouge">CNAME</code>解析。要配置为「yourDomian.com」的顶级域名时，需要增加一个<code class="highlighter-rouge">A记录</code>。</p>
+
+<blockquote>
+
+  <ul>
+    <li>Configuring a custom subdomain with your DNS provider<br />
+In cooperation with your DNS provider, create a CNAME record that points from that domain to <code class="highlighter-rouge">username.github.io</code>. Your DNS changes can take up to a full day to propagate.[<sup id="fnref:note_5"><a href="#fn:note_5" class="footnote">5</a></sup>]</li>
+    <li>Configuring an A record with your DNS provider<br />
+With your DNS provider, create A records that resolve to the following IP addresses:<br />
+&gt;192.30.252.153<br />
+&gt;192.30.252.154 [<sup id="fnref:note_6"><a href="#fn:note_6" class="footnote">6</a></sup>]</li>
+  </ul>
+</blockquote>
+
+<p>CNAME配置为跟之前访问pages的相同即可，A记录则是配置为2个给定的IP值。（如果要配置www的子域，可以用CNAME实现。）
+我选择了用A记录配置顶级域名，如下：</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages6_dns_setting.png" alt="img_6" /></p>
+
+<p>嗯，设置好了先打开看一眼？……duang！</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages7_myblog2.png" alt="img_7" /></p>
+
+<p>纳尼……404？！不过好在看到是github的404页面了，至少说明配置的解析，到了github。配到了还不行？到这里，我反复去试了subdomian的CNAME配置和切回apex domian配置，发现仍然404依旧。
+百思不得其解，翻来翻去，偶然翻到一篇知乎帖子：</p>
+
+<blockquote>
+
+  <p><strong>我仅仅把域名解析到上面的IP，Github 的服务器怎么判断我的 Github Page 是哪个？</strong><br />
+例如我的自定义域名是：http://example.com，我的 Github Page 是：http://username.github.io<br />
+当输入http://example.com时，DNS解析到 192.30.252.153，服务器怎么知道我要去的是 http://username.github.io？ 毕竟 Github Page 有千千万万个。[<sup id="fnref:note_7"><a href="#fn:note_7" class="footnote">7</a></sup>]</p>
+</blockquote>
+
+<p>一拍脑袋，擦，我这后面还有一半的配置没弄呢。</p>
+
+<h5 id="2添加cname文件">（2）、添加CNAME文件</h5>
+
+<p>必须要在仓库根目录中建立一个<code class="highlighter-rouge">CNAME</code>文件，才能保证github顺利redirect成功。</p>
+
+<blockquote>
+
+  <ul>
+    <li>Creating and committing a CNAME file<br />
+To redirect your GitHub Pages site, you must create and commit a CNAME file that contains the custom domain to your repository’s root directory. For more information, see “Adding a CNAME file to your repository.” [<sup id="fnref:note_8"><a href="#fn:note_8" class="footnote">8</a></sup>]</li>
+    <li>Adding a CNAME file to your repository<br />
+…
+      <ul>
+        <li>4) In the file name field, type <code class="highlighter-rouge">CNAME</code> (with all caps!).</li>
+        <li>5) In the new file, add a single line that specifies the bare subdomain for your custom domain. For example, use <code class="highlighter-rouge">blog.example.com</code>, not <code class="highlighter-rouge">https://blog.example.com</code>. Note that there can only be <strong>one domain</strong> in the CNAME file. [<sup id="fnref:note_9"><a href="#fn:note_9" class="footnote">9</a></sup>]</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>（值得注意的是，里面只能写一个域名，不需要添加「https」等protocal）<br />
+来到<code class="highlighter-rouge">username.github.io</code>这个仓库的根目录，增加一个<code class="highlighter-rouge">CNAME</code>文件，</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;cd [path/to/blogroot]
+&gt;touch CNAME
+&gt;vim CNAME
+</code></pre></div></div>
+
+<p>里面写入，并保存</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yourDomain.com
+</code></pre></div></div>
+
+<p>写好提交下，上传到github仓库，</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;git status
+&gt;git add CNAME
+&gt;git commit -m "add CNAME file"
+&gt;git push origin master
+&gt;git status
+</code></pre></div></div>
+
+<p><img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages8_myblog3.png" alt="img_8" /></p>
+
+<p>最后看下github仓库中是否与本地仓库一致，也有了CNAME文件。<br />
+确认无误。<br />
+ok。<br />
+稍等片刻。<br />
+刷新刚才的「404页面」？<br />
+看到内容了吗！<br />
+Bingo！</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages9_myblog4.png" alt="img_9" /></p>
+
+<p>至此，已经从零开始，到现在在github上搭建好了一个博客。
+刚接触都不容易，喝口水歇一歇吧。:)</p>
+
+<h2 id="四关于jekyll">四、关于Jekyll</h2>
+
+<p>在github搭建博客，其实已经告了一个段落。
+总结一下，其实还是不够<strong>细心</strong>，遗漏了一些关键步骤。不过好在仍然是有<strong>耐心</strong>，又把路给铺回正道上了……</p>
+
+<p>不过，紧接着折腾心骤起……又回头仔细看了看github help，看到有个说明：</p>
+
+<blockquote>
+
+  <p>…, GitHub Pages supports Jekyll, … <strong>Jekyll  makes it easy to create</strong> site-wide headers and footers without having to copy them across every page. It also offers some other advanced templating features. [<sup id="fnref:note_10"><a href="#fn:note_10" class="footnote">10</a></sup>]</p>
+</blockquote>
+
+<p>有这好事？于是又接着度了一波~乎了一波~，看到各种美观简洁大方的页面，来自于Jekyll模板，又看了不少关于Jekyll、Hexo等的介绍，大概就是能模仿github把markdown构造成html，支持本地简单调试，可自由扩展等，觉得非常不错。跟着就再折腾了一波，得到了现在的这个样子。至于是怎么折腾的，涉及到<code class="highlighter-rouge">Jekyll</code>, <code class="highlighter-rouge">ruby</code>, <code class="highlighter-rouge">gem</code>, <code class="highlighter-rouge">bundler</code> <code class="highlighter-rouge">_config.yml</code>, <code class="highlighter-rouge">plun-in</code>, <code class="highlighter-rouge">Liquid</code>, <code class="highlighter-rouge">duoshuo</code>, <code class="highlighter-rouge">highlight</code>, <code class="highlighter-rouge">Rouge</code>, <code class="highlighter-rouge">tag</code>, <code class="highlighter-rouge">category</code>, <code class="highlighter-rouge">task-lists</code>……这又说来话长了，准备在下一篇中细说。有兴趣可以接着看 &gt;&gt;&gt;「<a href="/blog/learn-to-use-jekyll.html">然而标题却还没想好???</a>」</p>
+
+<p>先看看现在的效果：</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages10_myblog5.png" alt="img_10" /></p>
+
+<p>当然，结构也不是最开始那个默认theme时的样子了。现在是这样的：</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/create-blog-in-github/pages11_myblog6.png" alt="img_11" /></p>
+
+<p>其实也是把旧的全干掉，再把新的放进来重头弄的，不如，就叫「<a href="/blog/learn-to-use-jekyll.html">从零开始折腾Jekyll</a>」吧哈哈……
+（发现一篇的话篇幅太长，层次不明，于是分为了两篇「<a href="/blog/learn-to-use-jekyll.html">从零开始折腾Jekyll - 使用Jekyll模板</a>」、「<a href="/blog/learn-to-use-jekyll-more.html">折腾Jekyll实录</a>」 —— 2016.02.21 10:27）</p>
+
+<h2 id="五参考文档">五、参考文档</h2>
+
+<ul>
+  <li><a href="https://help.github.com/categories/github-pages-basics/">Categories / GitHub Pages Basics</a> (总说明文档入口，官方答疑)</li>
+  <li><a href="http://blog.csdn.net/renfufei/article/details/37725057">创建GitHub技术博客全攻略</a>（里面cname那里有一段说反了……）</li>
+  <li><a href="https://www.zhihu.com/question/28311939">自定义域名A记录到 Github 的IP时，Github怎么知道我的 Github page 是哪一个？ - 知乎</a> (一语点醒梦中人，道明了CNAME文件的作用)</li>
+  <li><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">搭建一个免费的，无限流量的Blog—-github Pages和Jekyll入门</a>（阮一峰对GitHub Pages的入门指引）</li>
+  <li><a href="https://www.zhihu.com/question/20223939">有哪些简洁明快的 Jekyll 模板？ - 知乎</a> （各种优秀模板秀）</li>
+  <li><a href="https://help.aliyun.com/knowledge_detail/6555867.html?spm=5176.product9002830_dns.3.2.mDIEwl">云解析 &gt; 产品使用问题 &gt; 网站解析 &gt; 域名解析设置</a> （万网域名解析官方文档）</li>
+</ul>
+
+<hr />
+
+<h6 id="注释">注释：</h6>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:note_1">
+      <p>-<a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator/">https://help.github.com/articles/creating-pages-with-the-automatic-generator/</a> <a href="#fnref:note_1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_2">
+      <p>-<a href="https://help.github.com/articles/user-organization-and-project-pages/">https://help.github.com/articles/user-organization-and-project-pages/</a>，根据介绍：个人主页就是建立「yourName.github.io」分支，而如果是项目仓库的话，就在其仓库下建立「gh-pages」分支即可。 <a href="#fnref:note_2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_3">
+      <p>-同1 <a href="#fnref:note_3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_4">
+      <p>-<a href="https://help.github.com/articles/about-custom-domains-for-github-pages-sites/">https://help.github.com/articles/about-custom-domains-for-github-pages-sites/</a>，域名解析说明 <a href="#fnref:note_4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_5">
+      <p>-<a href="https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/">https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/</a>，子域名设置CNAME说明 <a href="#fnref:note_5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_6">
+      <p>-<a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/">https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/</a>，顶级域名设置A记录说明 <a href="#fnref:note_6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_7">
+      <p>-<a href="https://www.zhihu.com/question/28311939">https://www.zhihu.com/question/28311939</a> <a href="#fnref:note_7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_8">
+      <p>-<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/</a> <a href="#fnref:note_8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_9">
+      <p>-<a href="https://help.github.com/articles/adding-a-cname-file-to-your-repository/">https://help.github.com/articles/adding-a-cname-file-to-your-repository/</a> <a href="#fnref:note_9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_10">
+      <p>-<a href="https://help.github.com/articles/using-jekyll-with-pages/">https://help.github.com/articles/using-jekyll-with-pages/</a>，可以用Jekyll便捷维护 <a href="#fnref:note_10" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+                <p>(完)</p>
+                <!-- 转载声明 -->
+                <!-- 参考自Codeboy.me -160121  -->
+                    <blockquote>
+                        <!-- 这里baseurl没办法咯，where+map后面没法用prepend -160201 -->
+                        <p>分类：「 <a href="/categories.html#blog">blog</a> 」</p>
+                        <p>发表时间：2016-01-01 01:26:33</p>
+                        <p>最后更新：2016-02-21 10:27:12</p>
+                        <p>转载请注明原作者及出处：「 <a href="http://bluebiu.com">biubiu</a> - <a href="http://bluebiu.com/blog/create-blog-in-github.html">http://bluebiu.com/blog/create-blog-in-github.html</a> 」</p>
+                    </blockquote>
+                <!-- end转载声明 -->
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/blog/first-try-markdown.html" data-toggle="tooltip" data-placement="top" title="Try Markdown">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/blog/learn-to-use-jekyll.html" data-toggle="tooltip" data-placement="top" title="从零开始折腾Jekyll">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                <!-- 畅言评论 -160130 -->
+                <div id="SOHUCS" sid="/blog/create-blog-in-github" ></div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!--
+20160226
+<script>
+/*
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading');
+    })
+*/
+</script>
+ -->
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+<!-- 文章点击统计 -180420 -->
+
+  <!-- <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> -->
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("2sJh8aPYI7uG3cgEzUEKA9vL-gzGzoHsz", "rD9QQbYiGdVry0XOYEEixqbr");</script>
+  <script src="http://source.bluebiu.com/plugin/leancloud/hits.js"></script>
+
+
+<!-- 替换task list的js -160207 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/checklist/checklists.js" > </script>
+
+<!-- 顶部大图随机颜色 -160121 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/randomcolor/post-topimg-random-color.js" > </script>
+
+<!-- 畅言评论 -160130 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/changyan/comment.js" > </script>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   <!--  <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li> -->
+
+<!-- -160120
+                    
+                    <li>
+                        <a href="https://twitter.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+ -->
+                    
+                    <li>
+                        <a href="https://github.com/bluebiu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <!--
+                    
+                    <li>
+                        <a href="http://www.douban.com/people/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-douban fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    -->
+
+                    <!--
+                    
+                    <li>
+                        <a href="https://www.facebook.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    -->
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/bluebiu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/bluelooord">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                </ul>
+                <!-- <p class="copyright text-muted">
+                &copy; 2016~2018 http://bluebiu.com Power by biubiu. All Rights Reserved.
+                </p> -->
+                <p class="copyright text-muted">
+                &copy; 2016- biubiu All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+
+</html>

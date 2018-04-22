@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword" content="biubiu, @biubiu, Biu^Biu's blog, bluebiu github, biubiu的博客" >
+    <meta name="description" content="美好，美好。">
+
+    <title>从零开始折腾Jekyll - Biu^Biu's Blog</title>
+
+    <link rel="canonical" href="http://bluebiu.com/blog/learn-to-use-jekyll.html" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/bootstrap.min.css?vvv=1524211659" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/clean-blog.css?vvv=1524211659" />
+
+    <!-- -160201 -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/biubiu.css?vvv=1524211659" />
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/base/css/syntax.css?vvv=1524211659" /> -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/syntax-monokai.css?vvv=1524211659" />
+
+    <!-- Custom Fonts -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- 使用七牛的CDN, for font-awesome -->
+     <link href="//cdn.staticfile.org/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+   <!-- 感觉用不着 -160120 <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' /> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"> </script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"> </script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="http://source.bluebiu.com/base/js/jquery.min.js?vvv=1524211659"> </script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://source.bluebiu.com/base/js/bootstrap.min.js?vvv=1524211659"> </script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="http://source.bluebiu.com/base/js/clean-blog.min.js?vvv=1524211659"> </script>
+
+    <!-- biubiu Custom JavaScript -160201 -->
+    <script src="http://source.bluebiu.com/base/js/biubiu.js?vvv=1524211659"> </script>
+</head>
+
+
+<body ontouchstart="">
+
+    <!-- 自定义的一些html块 -160201 -->
+<div id="back-top">
+    <a href="#toptoptop" title="回到顶部"></a>
+</div>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href='/'></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <a href="http://www.bluebiu.com">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/documents.html">Timeline</a>
+                </li>
+                
+                <li>
+                    <a href="/categories.html">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="/tags.html">Tags</a>
+                </li>
+                
+                <li>
+                    <a href="/about.html">About</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('');
+        background-color:none;
+    }
+    h2,h3{
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+    h4,h5{
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a href="/tags.html#github" title="github" >github</a>
+                        
+                        <a href="/tags.html#blog" title="blog" >blog</a>
+                        
+                        <a href="/tags.html#Jekyll" title="Jekyll" >Jekyll</a>
+                        
+                        <a href="/tags.html#git" title="git" >git</a>
+                        
+                        <a href="/tags.html#ruby" title="ruby" >ruby</a>
+                        
+                        <a href="/tags.html#gem" title="gem" >gem</a>
+                        
+                        <a href="/tags.html#plun-in" title="plun-in" >plun-in</a>
+                        
+                        <a href="/tags.html#Liquid" title="Liquid" >Liquid</a>
+                        
+                        <a href="/tags.html#duoshuo" title="duoshuo" >duoshuo</a>
+                        
+                        <a href="/tags.html#highlight" title="highlight" >highlight</a>
+                        
+                        <a href="/tags.html#Rouge" title="Rouge" >Rouge</a>
+                        
+                        <a href="/tags.html#task-lists" title="task-lists" >task-lists</a>
+                        
+                    </div>
+                    <h1>从零开始折腾Jekyll</h1>
+                    
+                    <h2 class="subheading">——使用Jekyll模板</h2>
+                    
+                    <span class="meta">Posted by biubiu on February 7, 2016
+                    </span>
+                    <span>
+                        
+                          <span id="/blog/learn-to-use-jekyll.html" class="leancloud_visitors" data-flag-title="从零开始折腾Jekyll">
+                           <span class="leancloud-visitors-count">?</span>
+                           <span class="post-meta-item-text"> <i>hits</i> </span>
+                           <span class="post-meta-divider">|</span>
+                          </span>
+                        
+                        4096 <i>words</i> | 17 <i>minutes to read</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
+                <blockquote>
+  <p>目录</p>
+</blockquote>
+
+<ul id="markdown-toc">
+  <li><a href="#一github-pages" id="markdown-toc-一github-pages">一、Github Pages</a></li>
+  <li><a href="#二jekyll是什么" id="markdown-toc-二jekyll是什么">二、Jekyll是什么</a></li>
+  <li><a href="#三jekyll怎么玩" id="markdown-toc-三jekyll怎么玩">三、Jekyll怎么玩</a>    <ul>
+      <li><a href="#1初见" id="markdown-toc-1初见">1、初见</a>        <ul>
+          <li><a href="#11归零复位" id="markdown-toc-11归零复位">1.1、归零复位</a></li>
+          <li><a href="#12简单套用" id="markdown-toc-12简单套用">1.2、简单套用</a></li>
+          <li><a href="#13临门一脚" id="markdown-toc-13临门一脚">1.3、临门一脚</a></li>
+        </ul>
+      </li>
+      <li><a href="#2回眸" id="markdown-toc-2回眸">2、回眸</a></li>
+      <li><a href="#3相识" id="markdown-toc-3相识">3、相识</a>        <ul>
+          <li><a href="#31-目录结构" id="markdown-toc-31-目录结构">3、1 目录结构</a></li>
+          <li><a href="#32-修改配置" id="markdown-toc-32-修改配置">3、2 修改配置</a></li>
+          <li><a href="#33-发布博客" id="markdown-toc-33-发布博客">3、3 发布博客</a></li>
+        </ul>
+      </li>
+      <li><a href="#4迷恋" id="markdown-toc-4迷恋">4、迷恋</a></li>
+    </ul>
+  </li>
+  <li><a href="#四参考文档" id="markdown-toc-四参考文档">四、参考文档</a></li>
+</ul>
+
+<h2 id="一github-pages">一、Github Pages</h2>
+
+<p>首先，建议搭好一个Github Pages空间。<br />
+如果不清楚，可以先看下「<a href="/blog/create-blog-in-github.html">从零开始用GitHub Pages创建博客</a>」。
+当然，这只是个建议。如果只是想纯玩Jekyll，也可以直接往下看。（本文主要以我的折腾经历作为介绍，Jekyll的学习过程自然是从零开始，但本人的其它基础并不是「从零开始」……所以，有些内容涉及一些基础工具的使用，只做了些简单注释。不清楚的可以根据关键词直接百度谷歌之乎者也，不要犹豫：简单！粗暴！快速！有效！）</p>
+
+<h2 id="二jekyll是什么">二、Jekyll是什么</h2>
+
+<blockquote>
+  <p>Transform your plain text into static websites and blogs.</p>
+</blockquote>
+
+<p>——这是来自「<a href="http://jekyllrb.com">Jekyll官网</a>」最直接的介绍。</p>
+
+<ul>
+  <li>个人认为，<strong>它就是</strong>一个可以做到相对闭环的打造博客页面的工具。<br />
+<em>（既可以一时兴起，在本地搭建临时玩玩，任它自生自灭；也可以长期积累，通过推至网上分享，并可随时维护。）</em></li>
+  <li>简单的说，<strong>它就是</strong>一个可以部署的cms。<br />
+<em>（这么理解吧，后端部署可通过Ruby支持，前台cms可通过Git管理）</em></li>
+  <li>再简单点，<strong>它就是</strong>一个壳。<br />
+<em>（可以自己按需调整页面——壳外包装；也可以专注于内容编写——壳中内容）</em></li>
+  <li>或者认为，<strong>它就是</strong>一把刀。<br />
+<em>（开始做相应个性化配置改改改——磨刀；后面只需要把灵感记录下来写写写——亮剑）</em></li>
+  <li>它是什么？<strong>它就是</strong><strong>「Jekyll」</strong>!</li>
+</ul>
+
+<h2 id="三jekyll怎么玩">三、Jekyll怎么玩</h2>
+
+<p>Jekyll虽屌，但毕竟不是瑞士军刀，并且，也不建议把它玩成瑞士军刀。<br />
+它的入门成本非常非常之低，只需要简单几步，即可上手。然后，如果想进一步折腾，那就需要有一些工具使用的经验和网页开发的基础。这个门槛，可高可低，就看各自的已有积累和钻研问题的本领了。想玩得6，「耐心模仿参考」、「仔细观察学习」、「善用搜索引擎」是不可或缺的法宝。<br />
+多说了八万句废话，下面开始进入正题。</p>
+
+<h3 id="1初见">1、初见</h3>
+
+<p>从何入手？从哪里来，就从哪里入手！
+从Github上用git把刚刚生成好的yourusername.github.io项目clone[<sup id="fnref:note_1"><a href="#fn:note_1" class="footnote">1</a></sup>]下来，假设放在一个叫<code class="highlighter-rouge">myblog</code>的目录中。</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/learn-to-use-jekyll/jekyllthemes1_clone.png" alt="img_1" /></p>
+
+<h4 id="11归零复位">1.1、归零复位</h4>
+
+<blockquote>
+  <p>若要化神，先要化凡！ ——《仙逆》</p>
+</blockquote>
+
+<p>因为我们正是要利用Jekyll来打通本地调试和线上生成的关系，这些一个个全是已经生成好的html文件了，对我们来说，毫无用处！<br />
+马上进到项目目录中，把除了<code class="highlighter-rouge">.git/</code>之外的其他文件夹全删了。（没错，一点不留，<strong>全删</strong>）删完，就算是从零开始正式入门，由简入深的上路了。</p>
+
+<h4 id="12简单套用">1.2、简单套用</h4>
+
+<blockquote>
+  <p>通常拜入师门，听完师傅传授口诀，不免得自己摸索一番。而机智の小师弟若想要有所”速成”，自然先去寻师兄请（tou）教（shi）。</p>
+</blockquote>
+
+<p>网上有很多已经完善得很好的Jekyll模板，作者一直在使用并且持续维护的，发扬拿来主义即可。</p>
+
+<ol>
+  <li>比如<a href="https://www.zhihu.com/question/20223939">「有哪些简洁明快的 Jekyll 模板？ - 知乎」</a>里，辣摸多赞多分高的，挑个喜欢的。</li>
+  <li>找到它的github地址，fork[<sup id="fnref:note_2"><a href="#fn:note_2" class="footnote">2</a></sup>]下来，把除了<code class="highlighter-rouge">.git/</code>之外的所有文件夹全部拷贝到<code class="highlighter-rouge">myblog</code>目录下，push[<sup id="fnref:note_3"><a href="#fn:note_3" class="footnote">3</a></sup>]到你自己的yourusername.github.io项目中。</li>
+  <li>刷新访问yourusername.github.io，看到了什么？</li>
+</ol>
+
+<p>哈哈，这时，博客已经完全变样，如你所挑的那个模板的样子，出现在你眼前。
+（不过等等……怎么全是别人的文章……莫慌，还差一步。）</p>
+
+<h4 id="13临门一脚">1.3、临门一脚</h4>
+
+<p>到了这里，别人已经帮你把所有该准备的都准备好了，只需把你的鞋换上而已。</p>
+
+<p>1) 修改配置文件<code class="highlighter-rouge">_config.yml</code></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span><span class="nb">cd </span>path/to/yourblog
+<span class="o">&gt;</span>vim _config.yml
+</code></pre></div></div>
+
+<p>并修改一些个性信息（以我为例）</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 网站配置</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://bluebiu.com"</span> <span class="c1"># 填写自己的网站地址</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># 一般都是设置为根目录path</span>
+
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Biu^Biu's</span><span class="nv"> </span><span class="s">Blog"</span> <span class="c1"># 网站标题</span>
+<span class="na">keyword</span><span class="pi">:</span> <span class="s2">"</span><span class="s">biubiu,</span><span class="nv"> </span><span class="s">@biubiu,</span><span class="nv"> </span><span class="s">..."</span> <span class="c1"># 据说是跟seo相关</span>
+
+<span class="na">comments</span><span class="pi">:</span>
+    <span class="na">duoshuo</span><span class="pi">:</span> 
+        <span class="na">short_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">bluebiu"</span> <span class="c1"># 不一定是这个结构，但如有duoshuo的short_name，要改成自己。</span>
+        <span class="c1"># 切记！这里一定不要用别人的！没有就置空。</span>
+        <span class="c1"># 再重复一次...</span>
+        <span class="c1"># 重要事情 x3</span>
+<span class="c1"># ...</span>
+<span class="c1"># 其他自行排查。如果还有什么是个人个性化的，都改为自己的即可。</span>
+<span class="c1"># 文件不长，建议至少过一遍。</span>
+</code></pre></div></div>
+
+<p>2) 添加文章</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span><span class="nb">cd </span>_post/
+<span class="o">&gt;</span><span class="nb">rm</span> <span class="k">*</span>
+<span class="o">&gt;</span><span class="nb">touch </span>2016-01-01-hello-world.md
+<span class="o">&gt;</span>vim <span class="o">!</span><span class="err">$</span>
+</code></pre></div></div>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
+title: "你好，世界"
+categories: "blog"
+---
+
+## Hello world.
+
+I am a student, my name is LiLei.
+...
+</code></pre></div></div>
+
+<p>再次提交改动至Github。</p>
+
+<p>over！<br />
+（完了？）</p>
+
+<h3 id="2回眸">2、回眸</h3>
+
+<p>按步骤做到这里的话，已经完成了Jekyll模板的简单使用。<br />
+来看看整个博客页面的改变。</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/learn-to-use-jekyll/jekyllthemes2_pages.png" alt="img_2" />
+<img src="http://source.bluebiu.com/posts//blog/learn-to-use-jekyll/jekyllthemes2_pages2.png" alt="img_3" />
+<img src="http://source.bluebiu.com/posts//blog/learn-to-use-jekyll/jekyllthemes3_hello.png" alt="img_4" /></p>
+
+<p>可以看到，模板的应用，以及新博客的发布，都已经生效。<br />
+回顾一下几个关键的步骤：</p>
+
+<ol>
+  <li>拷贝样式</li>
+  <li>修改配置</li>
+  <li>发布文章</li>
+</ol>
+
+<p>之后需要再次更换样式，更新内容，发布博客等等，也就这几板斧了。<br />
+如果还不是很清楚这些步骤的意义，那下面就来细说下这几个要点。</p>
+
+<h3 id="3相识">3、相识</h3>
+
+<blockquote>
+  <p>相识，而相知。需要一个过程，更需要时间的积累。</p>
+</blockquote>
+
+<h4 id="31-目录结构">3、1 目录结构</h4>
+
+<p>所谓<code class="highlighter-rouge">1. 拷贝样式</code>，也就是把整个文件夹拷贝过来，那么这几个文件/文件夹分别是什么呢，简单只需要记住几个</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- _config.yml   // 全局配置文件所在，位置与名字不可改动
+- _posts/       // 文章编写存放之处       
+- index.html    // 首页入口文件
+</code></pre></div></div>
+
+<p>还有其它的？不用管，那些都是themes所需要的，放着就行。
+（现在就想马上多了解的话，可以看看这里的更多官方描述：<a href="http://jekyllcn.com/docs/structure/">「目录结构 - jekyllcn.com」</a>。不急的话，后面自然会有机会挨个说到）</p>
+
+<h4 id="32-修改配置">3、2 修改配置</h4>
+
+<p>明显就是要修改<code class="highlighter-rouge">_config.yml</code>文件，来实现「证明我是我」的配置了。
+url: [yourdomian] //也就是写上你的实际博客地址咯
+baseurl: 这个又重要，又不重要的配置呢，主要是影响到站点具体生成的路径的区别。涉及到是yourusername.github.io的master分支，还是yoursomeproject.github.io的gh-pages分支。</p>
+
+<p>比如：你有域名<code class="highlighter-rouge">aaa.com</code>， 的username是<code class="highlighter-rouge">bbb</code>，那么</p>
+
+<ol>
+  <li>你「博客」的github地址就是<code class="highlighter-rouge">bbb.github.io</code>，做了CNAME指向你的domian后，实际地址就是<code class="highlighter-rouge">aaa.com</code>，baseurl配置为空<code class="highlighter-rouge">''</code>。</li>
+  <li>你的某个项目<code class="highlighter-rouge">ccc_project</code>有gh-pages分支，那么该「项目描述博客」的地址就是biubiubiu.github.io，实际上地址就是<code class="highlighter-rouge">aaa.com/ccc_project</code>，相应的baseurl: <code class="highlighter-rouge">ccc_project</code></li>
+  <li>也许有留意到了，配置的每一项，是英文格式冒号 + 空格 + “值”。格式不能写错，否则github就会发邮件嘤嘤嘤了……</li>
+</ol>
+
+<p>剩下的里面基本都有一些注释，或者非常明显的英文变量，耐心看下，比较直观可以看明白。
+（感觉不够清楚的，仍可以通过这里先看看：<a href="http://jekyllcn.com/docs/configuration/">「配置 - jekyllcn.com」</a>）</p>
+
+<h4 id="33-发布博客">3、3 发布博客</h4>
+
+<p>记住几点：</p>
+
+<ol>
+  <li>所有文章以markdown格式文件，保存在<code class="highlighter-rouge">_posts/</code>目录下</li>
+  <li><strong>[非常重要]</strong>文件名称格式: <code class="highlighter-rouge">年-月-日-标题.MARKUP</code>（例如: <code class="highlighter-rouge">2016-01-01-hello-world.md</code>）</li>
+  <li>要有「头信息」。<br />
+如</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: hello world
+subtitle: yeah
+---
+</code></pre></div></div>
+
+<p>即使都不写，也至少必须填上</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+---
+</code></pre></div></div>
+
+<p>保存，提交，推送。剩下的就交给github pages了。
+还有吗？没了。以后只需要不断的重复<code class="highlighter-rouge">3、3</code>即可发表博客，哪天真要改样式，无非按3个流程再走一遍（记得备份下<code class="highlighter-rouge">_post/</code>文件夹）。
+没了。
+真的没了。
+如果不想过于折腾，按上述这些，就已经足够用上jekyll（之于）github pages了。
+然后，人的欲望往往不会轻易止步……</p>
+
+<h3 id="4迷恋">4、迷恋</h3>
+
+<blockquote>
+  <p>谈不上一见钟情，那便是日久生情。</p>
+</blockquote>
+
+<p>对于一个有强迫症+好奇心的人来说，弄到这，不知不觉也已经了解并实践了不少东西，期间不免会遇上几个坑，或者卡在一些问题上，投入了精力，也破有收获。这样一来一回的好事，慢慢加深了兴趣。于是又有了后面很多的折腾点：「liquid语法」，「jekyll部署+插件」，「语法高亮」，「timeline优化」，「tags与categories调整」，「task-list展示」，「图片缓存与发布问题？」……等等。<br />
+只能说 <strong>「上一个坑的终点，也是下一个坑起点。」</strong> 
+（随手贴个效果图出来看看咯）</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/learn-to-use-jekyll/jekyllthemes4_todolist.png" alt="img_5" /></p>
+
+<p>由于本文篇幅有限，就只粗谈模板使用，还有一些细节和技巧的话，就留到下一篇来废话了。<br />
+于是乎，又有了下面这篇<a href="/blog/learn-to-use-jekyll-more.html">「折腾Jekyll实录」</a>的出现。<br />
+边记录，边整理，边更新。</p>
+
+<h2 id="四参考文档">四、参考文档</h2>
+
+<ul>
+  <li><a href="http://jekyllrb.com">Jekyll官网</a> (比较完整的介绍)</li>
+  <li><a href="http://jekyllcn.com">Jekyll中文官网</a> (由官网翻译而来)</li>
+  <li><a href="https://www.zhihu.com/question/20223939">有哪些简洁明快的 Jekyll 模板？ - 知乎</a> (非常多优秀的成熟Jekyll模板)</li>
+  <li><a href="http://jekyllthemes.org">Jekyll Themes</a> (比较纯粹的原始模板，使用的话还需要自行配置一部分)</li>
+  <li><a href="http://jekyllthemes.org/themes/clean-blog/">Clean Blog - Jekyll Themes</a> （本文示例所用的Jekyll Themes）</li>
+  <li><a href="https://help.github.com/articles/using-jekyll-with-pages/#platform-mac">Using Jekyll with Pages</a> （github中对于如何使用Jekyll的大概介绍）</li>
+  <li><a href="https://jekyllrb.com/docs/configuration/">configuration - jekyll</a> (配置说明 - 官网英文版)</li>
+</ul>
+
+<hr />
+
+<h6 id="注释">注释:</h6>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:note_1">
+      <p>-用<code class="highlighter-rouge">git clone</code>指令，把你远程仓库的源码，下载到本地。在项目页面的右上角有SSH的地址。 <a href="#fnref:note_1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_2">
+      <p>-别人的开源项目，git页码右上角点击<code class="highlighter-rouge">Fork</code>，即可拿到当前的源码并加入你的仓库中，然后按1的方式可自行下载。 <a href="#fnref:note_2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_3">
+      <p>-每次修改后，用<code class="highlighter-rouge">git add .</code>, <code class="highlighter-rouge">git commit -m "some simple notes"</code>, <code class="highlighter-rouge">git push origin master</code>完成修改内容提交并上传远程仓库。 <a href="#fnref:note_3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+                <p>(完)</p>
+                <!-- 转载声明 -->
+                <!-- 参考自Codeboy.me -160121  -->
+                    <blockquote>
+                        <!-- 这里baseurl没办法咯，where+map后面没法用prepend -160201 -->
+                        <p>分类：「 <a href="/categories.html#blog">blog</a> 」</p>
+                        <p>发表时间：2016-02-07 15:50:33</p>
+                        <p>最后更新：2016-03-02 17:19:15</p>
+                        <p>转载请注明原作者及出处：「 <a href="http://bluebiu.com">biubiu</a> - <a href="http://bluebiu.com/blog/learn-to-use-jekyll.html">http://bluebiu.com/blog/learn-to-use-jekyll.html</a> 」</p>
+                    </blockquote>
+                <!-- end转载声明 -->
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/blog/create-blog-in-github.html" data-toggle="tooltip" data-placement="top" title="从零开始用GitHub Pages创建博客">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/person/shock-for-kuaipan.html" data-toggle="tooltip" data-placement="top" title="好你个「金山快盘」">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                <!-- 畅言评论 -160130 -->
+                <div id="SOHUCS" sid="/blog/learn-to-use-jekyll" ></div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!--
+20160226
+<script>
+/*
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading');
+    })
+*/
+</script>
+ -->
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+<!-- 文章点击统计 -180420 -->
+
+  <!-- <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> -->
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("2sJh8aPYI7uG3cgEzUEKA9vL-gzGzoHsz", "rD9QQbYiGdVry0XOYEEixqbr");</script>
+  <script src="http://source.bluebiu.com/plugin/leancloud/hits.js"></script>
+
+
+<!-- 替换task list的js -160207 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/checklist/checklists.js" > </script>
+
+<!-- 顶部大图随机颜色 -160121 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/randomcolor/post-topimg-random-color.js" > </script>
+
+<!-- 畅言评论 -160130 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/changyan/comment.js" > </script>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   <!--  <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li> -->
+
+<!-- -160120
+                    
+                    <li>
+                        <a href="https://twitter.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+ -->
+                    
+                    <li>
+                        <a href="https://github.com/bluebiu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <!--
+                    
+                    <li>
+                        <a href="http://www.douban.com/people/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-douban fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    -->
+
+                    <!--
+                    
+                    <li>
+                        <a href="https://www.facebook.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    -->
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/bluebiu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/bluelooord">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                </ul>
+                <!-- <p class="copyright text-muted">
+                &copy; 2016~2018 http://bluebiu.com Power by biubiu. All Rights Reserved.
+                </p> -->
+                <p class="copyright text-muted">
+                &copy; 2016- biubiu All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+
+</html>

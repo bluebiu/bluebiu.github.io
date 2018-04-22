@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword" content="biubiu, @biubiu, Biu^Biu's blog, bluebiu github, biubiu的博客" >
+    <meta name="description" content="美好，美好。">
+
+    <title>linux的grep指令中color参数的坑 - Biu^Biu's Blog</title>
+
+    <link rel="canonical" href="http://bluebiu.com/blog/grep-color.html" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/bootstrap.min.css?vvv=1524211659" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/clean-blog.css?vvv=1524211659" />
+
+    <!-- -160201 -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/biubiu.css?vvv=1524211659" />
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/base/css/syntax.css?vvv=1524211659" /> -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/syntax-monokai.css?vvv=1524211659" />
+
+    <!-- Custom Fonts -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- 使用七牛的CDN, for font-awesome -->
+     <link href="//cdn.staticfile.org/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+   <!-- 感觉用不着 -160120 <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' /> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"> </script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"> </script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="http://source.bluebiu.com/base/js/jquery.min.js?vvv=1524211659"> </script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://source.bluebiu.com/base/js/bootstrap.min.js?vvv=1524211659"> </script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="http://source.bluebiu.com/base/js/clean-blog.min.js?vvv=1524211659"> </script>
+
+    <!-- biubiu Custom JavaScript -160201 -->
+    <script src="http://source.bluebiu.com/base/js/biubiu.js?vvv=1524211659"> </script>
+</head>
+
+
+<body ontouchstart="">
+
+    <!-- 自定义的一些html块 -160201 -->
+<div id="back-top">
+    <a href="#toptoptop" title="回到顶部"></a>
+</div>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href='/'></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <a href="http://www.bluebiu.com">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/documents.html">Timeline</a>
+                </li>
+                
+                <li>
+                    <a href="/categories.html">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="/tags.html">Tags</a>
+                </li>
+                
+                <li>
+                    <a href="/about.html">About</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('');
+        background-color:none;
+    }
+    h2,h3{
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+    h4,h5{
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a href="/tags.html#linux" title="linux" >linux</a>
+                        
+                        <a href="/tags.html#grep" title="grep" >grep</a>
+                        
+                        <a href="/tags.html#color" title="color" >color</a>
+                        
+                        <a href="/tags.html#centos" title="centos" >centos</a>
+                        
+                        <a href="/tags.html#auto" title="auto" >auto</a>
+                        
+                        <a href="/tags.html#always" title="always" >always</a>
+                        
+                        <a href="/tags.html#lsb_release" title="lsb_release" >lsb_release</a>
+                        
+                        <a href="/tags.html#version" title="version" >version</a>
+                        
+                    </div>
+                    <h1>linux的grep指令中color参数的坑</h1>
+                    
+                    <span class="meta">Posted by biubiu on August 20, 2017
+                    </span>
+                    <span>
+                        
+                          <span id="/blog/grep-color.html" class="leancloud_visitors" data-flag-title="linux的grep指令中color参数的坑">
+                           <span class="leancloud-visitors-count">?</span>
+                           <span class="post-meta-item-text"> <i>hits</i> </span>
+                           <span class="post-meta-divider">|</span>
+                          </span>
+                        
+                        1066 <i>words</i> | 5 <i>minutes to read</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
+                <h3 id="一我对你付出的青春-这么多年">一、我对你付出的青春 这么多年</h3>
+
+<p>之前一直用着一个挺好用的指令，查看文件内容时，可以过滤掉注释、空行：<br />
+<code class="highlighter-rouge">cat filename | grep -v '[#;]' | grep -v '^$'</code><br />
+好端端的，突然发现去空行不行了。</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/grep-color/no.png" alt="img_0" /></p>
+
+<h6 id="黑人问号脸">[？？？黑人问号脸]</h6>
+
+<p>换到另一台机器试了下，完全一样的文件，完全一样的指令，竟然又可以了……</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/grep-color/ok.png" alt="img_1" /></p>
+
+<h6 id="黑人问号脸2">[？？？？？？黑人问号脸*2]</h6>
+
+<p>这不科学……</p>
+
+<h3 id="二换来了一句-谢谢你的成全">二、换来了一句 谢谢你的成全</h3>
+
+<p>回到有问题的机器，再仔细的试了试。</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/grep-color/k.png" alt="img_2" /></p>
+
+<p>发现线索：这诡异的<code class="highlighter-rouge">[K</code>是什么？<br />
+沿线搜索——</p>
+
+<blockquote>
+  <p>这里用到grep的一个参数-color，color有三个值供选择：never、always、auto。<br />
+always和auto的区别就是，always会在任何情况下都给匹配字段加上颜色标记，当通过管道或重定向时就会多出一些控制字符，结果会变成<br />
+    export ^[[1;32m^[[KGREP^[[m^[[K_OPTIONS=’-color=always’<br />
+    export ^[[1;32m^[[KGREP^[[m^[[K_COLOR=’1;32′<br />
+而auto则只在输出到终端时才加上颜色。[<sup id="fnref:note_0"><a href="#fn:note_0" class="footnote">1</a></sup>]</p>
+</blockquote>
+
+<p>看到了很眼熟的<code class="highlighter-rouge">[K</code>，赶紧到<code class="highlighter-rouge">~/.bashrc</code>里看了一眼</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/grep-color/always.png" alt="img_3" /></p>
+
+<p>果然！之前为了好看（可以高亮出grep的搜索项）的逼格加上去的，这下算砸了自己脚……</p>
+
+<h3 id="三成全了-你的潇洒与冒险">三、成全了 你的潇洒与冒险</h3>
+
+<p>用其它参数试试：</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/grep-color/never.png" alt="img_4" /></p>
+
+<p>用「never」，立竿见影！</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/grep-color/ok2.png" alt="img_5" /></p>
+
+<p>用「auto」，也是妥妥的。<br />
+（心急，早就把<code class="highlighter-rouge">~/.bashrc</code>里的改好成<code class="highlighter-rouge">auto</code>了，哈哈）</p>
+
+<p>目前看来，答案就是 <strong>使用了<code class="highlighter-rouge">always</code>，造成给管道后提供数据源时，误增了<code class="highlighter-rouge">[K</code>这样的字符串，导致后续筛选有了偏差。</strong><br />
+至于到底是怎么影响到，真不知道，就把锅算在centos上的bug吧～<br />
+现在改成 <strong><code class="highlighter-rouge">auto</code>，也就是它能识别到使用者到底是在管道中的场景，还是输出时的场景</strong> 了。<br />
+那么，这个问题又搞定了，乐一个先～</p>
+
+<h3 id="四成全了-我的碧海蓝天">四、成全了 我的碧海蓝天</h3>
+
+<p>强迫症犯了，迫切想去把本地刚弄好的vagrant里的也改了，改之前最后试了一下，结果一愣，竟然没影响？</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/grep-color/centos6.9.png" alt="img_7" /></p>
+
+<h6 id="centos69表示毫无压力">centos6.9表示毫无压力</h6>
+
+<p><img src="http://source.bluebiu.com/posts//blog/grep-color/centos5.8.png" alt="img_6" /></p>
+
+<h6 id="centos58确认可以稳定重现">centos5.8确认可以稳定重现</h6>
+
+<p>行，这下真是找到centos的锅了，不过人家也默默把它修复了，可以翻篇了。</p>
+
+<p>篇外收获——<br />
+查看linux版本，<code class="highlighter-rouge">lsb_release- a</code>并不能通杀所有，<code class="highlighter-rouge">cat /etc/*-release</code>也是个很好的手段。</p>
+
+<h3 id="五参考文档">五、参考文档</h3>
+
+<ul>
+  <li><a href="http://blog.sina.com.cn/s/blog_8c6d7ff6010188uy.html">grep高亮显示匹配项</a></li>
+  <li><a href="http://www.cnblogs.com/dongzhiquan/archive/2013/01/09/2853879.html">grep使用</a></li>
+  <li><a href="https://www.crifan.com/how_to_check_which_linux_distribution_what_type_linux/">Linux系统中如何判断当前Linux是什么类型和什么版本即是哪个发行版</a></li>
+</ul>
+
+<hr />
+
+<h6 id="注释">注释:</h6>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:note_0">
+      <p><a href="http://blog.sina.com.cn/s/blog_8c6d7ff6010188uy.html">http://blog.sina.com.cn/s/blog_8c6d7ff6010188uy.html</a> <a href="#fnref:note_0" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+                <p>(完)</p>
+                <!-- 转载声明 -->
+                <!-- 参考自Codeboy.me -160121  -->
+                    <blockquote>
+                        <!-- 这里baseurl没办法咯，where+map后面没法用prepend -160201 -->
+                        <p>分类：「 <a href="/categories.html#blog">blog</a> 」</p>
+                        <p>发表时间：2017-08-20 13:23:34</p>
+                        <p>最后更新：2017-08-20 13:23:34</p>
+                        <p>转载请注明原作者及出处：「 <a href="http://bluebiu.com">biubiu</a> - <a href="http://bluebiu.com/blog/grep-color.html">http://bluebiu.com/blog/grep-color.html</a> 」</p>
+                    </blockquote>
+                <!-- end转载声明 -->
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/person/sad-for-duoshuo.html" data-toggle="tooltip" data-placement="top" title="好你个「多说」">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                <!-- 畅言评论 -160130 -->
+                <div id="SOHUCS" sid="/blog/grep-color" ></div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!--
+20160226
+<script>
+/*
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading');
+    })
+*/
+</script>
+ -->
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+<!-- 文章点击统计 -180420 -->
+
+  <!-- <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> -->
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("2sJh8aPYI7uG3cgEzUEKA9vL-gzGzoHsz", "rD9QQbYiGdVry0XOYEEixqbr");</script>
+  <script src="http://source.bluebiu.com/plugin/leancloud/hits.js"></script>
+
+
+<!-- 替换task list的js -160207 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/checklist/checklists.js" > </script>
+
+<!-- 顶部大图随机颜色 -160121 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/randomcolor/post-topimg-random-color.js" > </script>
+
+<!-- 畅言评论 -160130 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/changyan/comment.js" > </script>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   <!--  <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li> -->
+
+<!-- -160120
+                    
+                    <li>
+                        <a href="https://twitter.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+ -->
+                    
+                    <li>
+                        <a href="https://github.com/bluebiu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <!--
+                    
+                    <li>
+                        <a href="http://www.douban.com/people/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-douban fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    -->
+
+                    <!--
+                    
+                    <li>
+                        <a href="https://www.facebook.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    -->
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/bluebiu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/bluelooord">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                </ul>
+                <!-- <p class="copyright text-muted">
+                &copy; 2016~2018 http://bluebiu.com Power by biubiu. All Rights Reserved.
+                </p> -->
+                <p class="copyright text-muted">
+                &copy; 2016- biubiu All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+
+</html>

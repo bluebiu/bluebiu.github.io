@@ -1,43 +1,2577 @@
----
-layout: page
-title: Tags
-description: "虚虚实实"
-header-img: "/base/img/banners/blue_elephant.jpg"
----
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- 标签云 参考Codeboy.me里的 -160120 -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword" content="biubiu, @biubiu, Biu^Biu's blog, bluebiu github, biubiu的博客" >
+    <meta name="description" content="美好，美好。">
+
+    <title>Tags - Biu^Biu's Blog</title>
+
+    <link rel="canonical" href="http://bluebiu.com/tags.html" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/bootstrap.min.css?vvv=1524211659" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/clean-blog.css?vvv=1524211659" />
+
+    <!-- -160201 -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/biubiu.css?vvv=1524211659" />
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/base/css/syntax.css?vvv=1524211659" /> -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/syntax-monokai.css?vvv=1524211659" />
+
+    <!-- Custom Fonts -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- 使用七牛的CDN, for font-awesome -->
+     <link href="//cdn.staticfile.org/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+   <!-- 感觉用不着 -160120 <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' /> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"> </script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"> </script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="http://source.bluebiu.com/base/js/jquery.min.js?vvv=1524211659"> </script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://source.bluebiu.com/base/js/bootstrap.min.js?vvv=1524211659"> </script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="http://source.bluebiu.com/base/js/clean-blog.min.js?vvv=1524211659"> </script>
+
+    <!-- biubiu Custom JavaScript -160201 -->
+    <script src="http://source.bluebiu.com/base/js/biubiu.js?vvv=1524211659"> </script>
+</head>
+
+
+<body ontouchstart="">
+
+    <!-- 自定义的一些html块 -160201 -->
+<div id="back-top">
+    <a href="#toptoptop" title="回到顶部"></a>
+</div>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href='/'></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <a href="http://www.bluebiu.com">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/documents.html">Timeline</a>
+                </li>
+                
+                <li>
+                    <a href="/categories.html">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="/tags.html">Tags</a>
+                </li>
+                
+                <li>
+                    <a href="/about.html">About</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('http://source.bluebiu.com/base/img/banners/blue_elephant.jpg?vvv=1524211659')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Tags</h1>
+                    <hr class="small">
+                    <span class="subheading">虚虚实实</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<!-- 标签云 参考Codeboy.me里的 -160120 -->
 <div id='tag_cloud' class="tags">
-    {% for tag in site.tags %}
-    <a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
-    {% endfor %}
+    
+    <a href="#nanning" title="nanning" rel="1">nanning</a>
+    
+    <a href="#run" title="run" rel="6">run</a>
+    
+    <a href="#marathon" title="marathon" rel="6">marathon</a>
+    
+    <a href="#21k" title="21k" rel="3">21k</a>
+    
+    <a href="#gnosis" title="gnosis" rel="1">gnosis</a>
+    
+    <a href="#start" title="start" rel="1">start</a>
+    
+    <a href="#try" title="try" rel="2">try</a>
+    
+    <a href="#charles" title="charles" rel="1">charles</a>
+    
+    <a href="#fiddler" title="fiddler" rel="1">fiddler</a>
+    
+    <a href="#mac" title="mac" rel="1">mac</a>
+    
+    <a href="#https" title="https" rel="1">https</a>
+    
+    <a href="#ssl" title="ssl" rel="1">ssl</a>
+    
+    <a href="#packetcapture" title="packetcapture" rel="1">packetcapture</a>
+    
+    <a href="#done" title="done" rel="1">done</a>
+    
+    <a href="#github" title="github" rel="3">github</a>
+    
+    <a href="#blog" title="blog" rel="3">blog</a>
+    
+    <a href="#jekyll" title="jekyll" rel="1">jekyll</a>
+    
+    <a href="#git" title="git" rel="7">git</a>
+    
+    <a href="#aliyun" title="aliyun" rel="1">aliyun</a>
+    
+    <a href="#cname" title="cname" rel="1">cname</a>
+    
+    <a href="#markdown" title="markdown" rel="1">markdown</a>
+    
+    <a href="#Jekyll" title="Jekyll" rel="2">Jekyll</a>
+    
+    <a href="#ruby" title="ruby" rel="2">ruby</a>
+    
+    <a href="#gem" title="gem" rel="2">gem</a>
+    
+    <a href="#plun-in" title="plun-in" rel="2">plun-in</a>
+    
+    <a href="#Liquid" title="Liquid" rel="2">Liquid</a>
+    
+    <a href="#duoshuo" title="duoshuo" rel="3">duoshuo</a>
+    
+    <a href="#highlight" title="highlight" rel="2">highlight</a>
+    
+    <a href="#Rouge" title="Rouge" rel="2">Rouge</a>
+    
+    <a href="#task-lists" title="task-lists" rel="2">task-lists</a>
+    
+    <a href="#kingsoft" title="kingsoft" rel="1">kingsoft</a>
+    
+    <a href="#over" title="over" rel="2">over</a>
+    
+    <a href="#shock" title="shock" rel="1">shock</a>
+    
+    <a href="#qingyuan" title="qingyuan" rel="1">qingyuan</a>
+    
+    <a href="#guangzhou" title="guangzhou" rel="3">guangzhou</a>
+    
+    <a href="#10k" title="10k" rel="2">10k</a>
+    
+    <a href="#5k" title="5k" rel="1">5k</a>
+    
+    <a href="#rebase" title="rebase" rel="4">rebase</a>
+    
+    <a href="#definition" title="definition" rel="1">definition</a>
+    
+    <a href="#merge" title="merge" rel="1">merge</a>
+    
+    <a href="#HEAD" title="HEAD" rel="1">HEAD</a>
+    
+    <a href="#pick" title="pick" rel="1">pick</a>
+    
+    <a href="#squash" title="squash" rel="1">squash</a>
+    
+    <a href="#push" title="push" rel="1">push</a>
+    
+    <a href="#rejected" title="rejected" rel="1">rejected</a>
+    
+    <a href="#shaoguan" title="shaoguan" rel="1">shaoguan</a>
+    
+    <a href="#iTerm2" title="iTerm2" rel="1">iTerm2</a>
+    
+    <a href="#ssh" title="ssh" rel="3">ssh</a>
+    
+    <a href="#session" title="session" rel="2">session</a>
+    
+    <a href="#vim" title="vim" rel="1">vim</a>
+    
+    <a href="#ASCII" title="ASCII" rel="1">ASCII</a>
+    
+    <a href="#linux" title="linux" rel="6">linux</a>
+    
+    <a href="#alive" title="alive" rel="1">alive</a>
+    
+    <a href="#NAT" title="NAT" rel="1">NAT</a>
+    
+    <a href="#iptables" title="iptables" rel="1">iptables</a>
+    
+    <a href="#known_hosts" title="known_hosts" rel="1">known_hosts</a>
+    
+    <a href="#regex" title="regex" rel="1">regex</a>
+    
+    <a href="#excel" title="excel" rel="1">excel</a>
+    
+    <a href="#xml" title="xml" rel="1">xml</a>
+    
+    <a href="#number" title="number" rel="1">number</a>
+    
+    <a href="#string" title="string" rel="1">string</a>
+    
+    <a href="#php" title="php" rel="1">php</a>
+    
+    <a href="#curl" title="curl" rel="1">curl</a>
+    
+    <a href="#response" title="response" rel="1">response</a>
+    
+    <a href="#header" title="header" rel="1">header</a>
+    
+    <a href="#body" title="body" rel="1">body</a>
+    
+    <a href="#image" title="image" rel="1">image</a>
+    
+    <a href="#du" title="du" rel="1">du</a>
+    
+    <a href="#sort" title="sort" rel="1">sort</a>
+    
+    <a href="#dir" title="dir" rel="1">dir</a>
+    
+    <a href="#file" title="file" rel="1">file</a>
+    
+    <a href="#size" title="size" rel="1">size</a>
+    
+    <a href="#redis" title="redis" rel="1">redis</a>
+    
+    <a href="#command" title="command" rel="1">command</a>
+    
+    <a href="#client" title="client" rel="1">client</a>
+    
+    <a href="#copy" title="copy" rel="1">copy</a>
+    
+    <a href="#key" title="key" rel="1">key</a>
+    
+    <a href="#sad" title="sad" rel="1">sad</a>
+    
+    <a href="#wangyiyun" title="wangyiyun" rel="1">wangyiyun</a>
+    
+    <a href="#grep" title="grep" rel="1">grep</a>
+    
+    <a href="#color" title="color" rel="1">color</a>
+    
+    <a href="#centos" title="centos" rel="1">centos</a>
+    
+    <a href="#auto" title="auto" rel="1">auto</a>
+    
+    <a href="#always" title="always" rel="1">always</a>
+    
+    <a href="#lsb_release" title="lsb_release" rel="1">lsb_release</a>
+    
+    <a href="#version" title="version" rel="1">version</a>
+    
 </div>
 
 <!-- 标签列表集合 -->
 <div id="post-list">
-    {% for tag in site.tags %}
-        <h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
-        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world"{{ tb|capitalize }} #=> 'Hello world' -160120 -->
+    
+        <h2 id="nanning">Nanning</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
         <ul class="post-list">
-        {% assign pages_list = tag[1] %}
-        {% for post in pages_list %}
-            {% if post.title != null %}
-                {% if group == null or group == post.group %}
+        
+        
+            
+                
                 <li>
-                    <a href="{{ post.url | prepend : site.baseurl }}">
-                        <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%Y.%m.%d" }}</time> - {{ post.title }}
+                    <a href="/marathon/2015-12-12-nanning-21k.html">
+                        <time datetime="2015-12-12T00:00:00+08:00" itemprop="datePublished">2015.12.12</time> - 2015南宁国际半程马拉松21k
                     </a>
                 </li>
-                {% endif %}
-            {% endif %}
-        {% endfor %}
-        {% assign pages_list = nil %}
-        {% assign group = nil %}
+                
+            
+        
+        
+        
         </ul>
-    {% endfor %}
+    
+        <h2 id="run">Run</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-10-23-shaoguan-21k.html">
+                        <time datetime="2016-10-23T00:00:00+08:00" itemprop="datePublished">2016.10.23</time> - 2016韶关马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-05-22-guangzhou-5k.html">
+                        <time datetime="2016-05-22T00:00:00+08:00" itemprop="datePublished">2016.05.22</time> - 2016广州悦跑圈粉红跑5k-40兔子
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-05-15-guangzhou-10k.html">
+                        <time datetime="2016-05-15T00:00:00+08:00" itemprop="datePublished">2016.05.15</time> - 2016广州特步欢乐跑10k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-03-27-guangzhou-10k.html">
+                        <time datetime="2016-03-27T00:00:00+08:00" itemprop="datePublished">2016.03.27</time> - 2016广州李宁路跑10k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-03-20-qingyuan-21k.html">
+                        <time datetime="2016-03-20T00:00:00+08:00" itemprop="datePublished">2016.03.20</time> - 2016清远马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2015-12-12-nanning-21k.html">
+                        <time datetime="2015-12-12T00:00:00+08:00" itemprop="datePublished">2015.12.12</time> - 2015南宁国际半程马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="marathon">Marathon</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-10-23-shaoguan-21k.html">
+                        <time datetime="2016-10-23T00:00:00+08:00" itemprop="datePublished">2016.10.23</time> - 2016韶关马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-05-22-guangzhou-5k.html">
+                        <time datetime="2016-05-22T00:00:00+08:00" itemprop="datePublished">2016.05.22</time> - 2016广州悦跑圈粉红跑5k-40兔子
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-05-15-guangzhou-10k.html">
+                        <time datetime="2016-05-15T00:00:00+08:00" itemprop="datePublished">2016.05.15</time> - 2016广州特步欢乐跑10k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-03-27-guangzhou-10k.html">
+                        <time datetime="2016-03-27T00:00:00+08:00" itemprop="datePublished">2016.03.27</time> - 2016广州李宁路跑10k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-03-20-qingyuan-21k.html">
+                        <time datetime="2016-03-20T00:00:00+08:00" itemprop="datePublished">2016.03.20</time> - 2016清远马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2015-12-12-nanning-21k.html">
+                        <time datetime="2015-12-12T00:00:00+08:00" itemprop="datePublished">2015.12.12</time> - 2015南宁国际半程马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="21k">21k</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-10-23-shaoguan-21k.html">
+                        <time datetime="2016-10-23T00:00:00+08:00" itemprop="datePublished">2016.10.23</time> - 2016韶关马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-03-20-qingyuan-21k.html">
+                        <time datetime="2016-03-20T00:00:00+08:00" itemprop="datePublished">2016.03.20</time> - 2016清远马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2015-12-12-nanning-21k.html">
+                        <time datetime="2015-12-12T00:00:00+08:00" itemprop="datePublished">2015.12.12</time> - 2015南宁国际半程马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="gnosis">Gnosis</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/person/start-recoding-blog.html">
+                        <time datetime="2015-12-31T00:00:00+08:00" itemprop="datePublished">2015.12.31</time> - 开始记录博客
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="start">Start</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/person/start-recoding-blog.html">
+                        <time datetime="2015-12-31T00:00:00+08:00" itemprop="datePublished">2015.12.31</time> - 开始记录博客
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="try">Try</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/first-try-markdown.html">
+                        <time datetime="2016-01-31T00:00:00+08:00" itemprop="datePublished">2016.01.31</time> - Try Markdown
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/person/start-recoding-blog.html">
+                        <time datetime="2015-12-31T00:00:00+08:00" itemprop="datePublished">2015.12.31</time> - 开始记录博客
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="charles">Charles</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/packetcapture-by-charles-for-mac.html">
+                        <time datetime="2016-01-01T00:00:00+08:00" itemprop="datePublished">2016.01.01</time> - 在Mac上使用Charles抓包
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="fiddler">Fiddler</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/packetcapture-by-charles-for-mac.html">
+                        <time datetime="2016-01-01T00:00:00+08:00" itemprop="datePublished">2016.01.01</time> - 在Mac上使用Charles抓包
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="mac">Mac</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/packetcapture-by-charles-for-mac.html">
+                        <time datetime="2016-01-01T00:00:00+08:00" itemprop="datePublished">2016.01.01</time> - 在Mac上使用Charles抓包
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="https">Https</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/packetcapture-by-charles-for-mac.html">
+                        <time datetime="2016-01-01T00:00:00+08:00" itemprop="datePublished">2016.01.01</time> - 在Mac上使用Charles抓包
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="ssl">Ssl</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/packetcapture-by-charles-for-mac.html">
+                        <time datetime="2016-01-01T00:00:00+08:00" itemprop="datePublished">2016.01.01</time> - 在Mac上使用Charles抓包
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="packetcapture">Packetcapture</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/packetcapture-by-charles-for-mac.html">
+                        <time datetime="2016-01-01T00:00:00+08:00" itemprop="datePublished">2016.01.01</time> - 在Mac上使用Charles抓包
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="done">Done</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/first-try-markdown.html">
+                        <time datetime="2016-01-31T00:00:00+08:00" itemprop="datePublished">2016.01.31</time> - Try Markdown
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="github">Github</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/create-blog-in-github.html">
+                        <time datetime="2016-02-01T00:00:00+08:00" itemprop="datePublished">2016.02.01</time> - 从零开始用GitHub Pages创建博客
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="blog">Blog</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/create-blog-in-github.html">
+                        <time datetime="2016-02-01T00:00:00+08:00" itemprop="datePublished">2016.02.01</time> - 从零开始用GitHub Pages创建博客
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="jekyll">Jekyll</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/create-blog-in-github.html">
+                        <time datetime="2016-02-01T00:00:00+08:00" itemprop="datePublished">2016.02.01</time> - 从零开始用GitHub Pages创建博客
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="git">Git</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-push.html">
+                        <time datetime="2016-07-05T00:00:00+08:00" itemprop="datePublished">2016.07.05</time> - git rebase实践（四）
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-i.html">
+                        <time datetime="2016-06-10T00:00:00+08:00" itemprop="datePublished">2016.06.10</time> - git rebase实践（三）
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-merge.html">
+                        <time datetime="2016-06-09T00:00:00+08:00" itemprop="datePublished">2016.06.09</time> - git rebase实践（二）
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase.html">
+                        <time datetime="2016-06-08T00:00:00+08:00" itemprop="datePublished">2016.06.08</time> - git rebase实践（一）
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/create-blog-in-github.html">
+                        <time datetime="2016-02-01T00:00:00+08:00" itemprop="datePublished">2016.02.01</time> - 从零开始用GitHub Pages创建博客
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="aliyun">Aliyun</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/create-blog-in-github.html">
+                        <time datetime="2016-02-01T00:00:00+08:00" itemprop="datePublished">2016.02.01</time> - 从零开始用GitHub Pages创建博客
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="cname">Cname</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/create-blog-in-github.html">
+                        <time datetime="2016-02-01T00:00:00+08:00" itemprop="datePublished">2016.02.01</time> - 从零开始用GitHub Pages创建博客
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="markdown">Markdown</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/create-blog-in-github.html">
+                        <time datetime="2016-02-01T00:00:00+08:00" itemprop="datePublished">2016.02.01</time> - 从零开始用GitHub Pages创建博客
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="Jekyll">Jekyll</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="ruby">Ruby</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="gem">Gem</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="plun-in">Plun-in</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="Liquid">Liquid</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="duoshuo">Duoshuo</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/person/sad-for-duoshuo.html">
+                        <time datetime="2017-04-30T00:00:00+08:00" itemprop="datePublished">2017.04.30</time> - 好你个「多说」
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="highlight">Highlight</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="Rouge">Rouge</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="task-lists">Task-lists</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll-more.html">
+                        <time datetime="2016-02-21T00:00:00+08:00" itemprop="datePublished">2016.02.21</time> - 折腾Jekyll实录
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-to-use-jekyll.html">
+                        <time datetime="2016-02-07T00:00:00+08:00" itemprop="datePublished">2016.02.07</time> - 从零开始折腾Jekyll
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="kingsoft">Kingsoft</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/person/shock-for-kuaipan.html">
+                        <time datetime="2016-02-08T00:00:00+08:00" itemprop="datePublished">2016.02.08</time> - 好你个「金山快盘」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="over">Over</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/person/sad-for-duoshuo.html">
+                        <time datetime="2017-04-30T00:00:00+08:00" itemprop="datePublished">2017.04.30</time> - 好你个「多说」
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/person/shock-for-kuaipan.html">
+                        <time datetime="2016-02-08T00:00:00+08:00" itemprop="datePublished">2016.02.08</time> - 好你个「金山快盘」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="shock">Shock</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/person/shock-for-kuaipan.html">
+                        <time datetime="2016-02-08T00:00:00+08:00" itemprop="datePublished">2016.02.08</time> - 好你个「金山快盘」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="qingyuan">Qingyuan</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-03-20-qingyuan-21k.html">
+                        <time datetime="2016-03-20T00:00:00+08:00" itemprop="datePublished">2016.03.20</time> - 2016清远马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="guangzhou">Guangzhou</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-05-22-guangzhou-5k.html">
+                        <time datetime="2016-05-22T00:00:00+08:00" itemprop="datePublished">2016.05.22</time> - 2016广州悦跑圈粉红跑5k-40兔子
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-05-15-guangzhou-10k.html">
+                        <time datetime="2016-05-15T00:00:00+08:00" itemprop="datePublished">2016.05.15</time> - 2016广州特步欢乐跑10k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-03-27-guangzhou-10k.html">
+                        <time datetime="2016-03-27T00:00:00+08:00" itemprop="datePublished">2016.03.27</time> - 2016广州李宁路跑10k
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="10k">10k</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-05-15-guangzhou-10k.html">
+                        <time datetime="2016-05-15T00:00:00+08:00" itemprop="datePublished">2016.05.15</time> - 2016广州特步欢乐跑10k
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-03-27-guangzhou-10k.html">
+                        <time datetime="2016-03-27T00:00:00+08:00" itemprop="datePublished">2016.03.27</time> - 2016广州李宁路跑10k
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="5k">5k</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-05-22-guangzhou-5k.html">
+                        <time datetime="2016-05-22T00:00:00+08:00" itemprop="datePublished">2016.05.22</time> - 2016广州悦跑圈粉红跑5k-40兔子
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="rebase">Rebase</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-push.html">
+                        <time datetime="2016-07-05T00:00:00+08:00" itemprop="datePublished">2016.07.05</time> - git rebase实践（四）
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-i.html">
+                        <time datetime="2016-06-10T00:00:00+08:00" itemprop="datePublished">2016.06.10</time> - git rebase实践（三）
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-merge.html">
+                        <time datetime="2016-06-09T00:00:00+08:00" itemprop="datePublished">2016.06.09</time> - git rebase实践（二）
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase.html">
+                        <time datetime="2016-06-08T00:00:00+08:00" itemprop="datePublished">2016.06.08</time> - git rebase实践（一）
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="definition">Definition</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase.html">
+                        <time datetime="2016-06-08T00:00:00+08:00" itemprop="datePublished">2016.06.08</time> - git rebase实践（一）
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="merge">Merge</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-merge.html">
+                        <time datetime="2016-06-09T00:00:00+08:00" itemprop="datePublished">2016.06.09</time> - git rebase实践（二）
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="HEAD">Head</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-merge.html">
+                        <time datetime="2016-06-09T00:00:00+08:00" itemprop="datePublished">2016.06.09</time> - git rebase实践（二）
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="pick">Pick</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-i.html">
+                        <time datetime="2016-06-10T00:00:00+08:00" itemprop="datePublished">2016.06.10</time> - git rebase实践（三）
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="squash">Squash</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-i.html">
+                        <time datetime="2016-06-10T00:00:00+08:00" itemprop="datePublished">2016.06.10</time> - git rebase实践（三）
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="push">Push</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-push.html">
+                        <time datetime="2016-07-05T00:00:00+08:00" itemprop="datePublished">2016.07.05</time> - git rebase实践（四）
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="rejected">Rejected</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/learn-git-rebase-push.html">
+                        <time datetime="2016-07-05T00:00:00+08:00" itemprop="datePublished">2016.07.05</time> - git rebase实践（四）
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="shaoguan">Shaoguan</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/marathon/2016-10-23-shaoguan-21k.html">
+                        <time datetime="2016-10-23T00:00:00+08:00" itemprop="datePublished">2016.10.23</time> - 2016韶关马拉松21k
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="iTerm2">Iterm2</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/iterm2-ssh-session-idle.html">
+                        <time datetime="2017-01-22T00:00:00+08:00" itemprop="datePublished">2017.01.22</time> - iTerm2中ssh保持连接不断开
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="ssh">Ssh</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/ssh-known-hosts.html">
+                        <time datetime="2017-02-02T00:00:00+08:00" itemprop="datePublished">2017.02.02</time> - known_hosts可以用通配符吗
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/linux-ssh-session-alive.html">
+                        <time datetime="2017-01-24T00:00:00+08:00" itemprop="datePublished">2017.01.24</time> - Linux使用ssh超时断开连接的真正原因
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/iterm2-ssh-session-idle.html">
+                        <time datetime="2017-01-22T00:00:00+08:00" itemprop="datePublished">2017.01.22</time> - iTerm2中ssh保持连接不断开
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="session">Session</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/linux-ssh-session-alive.html">
+                        <time datetime="2017-01-24T00:00:00+08:00" itemprop="datePublished">2017.01.24</time> - Linux使用ssh超时断开连接的真正原因
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/iterm2-ssh-session-idle.html">
+                        <time datetime="2017-01-22T00:00:00+08:00" itemprop="datePublished">2017.01.22</time> - iTerm2中ssh保持连接不断开
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="vim">Vim</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/iterm2-ssh-session-idle.html">
+                        <time datetime="2017-01-22T00:00:00+08:00" itemprop="datePublished">2017.01.22</time> - iTerm2中ssh保持连接不断开
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="ASCII">Ascii</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/iterm2-ssh-session-idle.html">
+                        <time datetime="2017-01-22T00:00:00+08:00" itemprop="datePublished">2017.01.22</time> - iTerm2中ssh保持连接不断开
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="linux">Linux</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/grep-color.html">
+                        <time datetime="2017-08-20T00:00:00+08:00" itemprop="datePublished">2017.08.20</time> - linux的grep指令中color参数的坑
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/redis-copy-key-to-key.html">
+                        <time datetime="2017-04-12T00:00:00+08:00" itemprop="datePublished">2017.04.12</time> - redis如何拷贝一个key的值到另一个key
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/du-and-sort-combination.html">
+                        <time datetime="2017-03-02T00:00:00+08:00" itemprop="datePublished">2017.03.02</time> - du和sort组合使用：显示文件夹/文件大小并排序
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/excel-export-error.html">
+                        <time datetime="2017-02-14T00:00:00+08:00" itemprop="datePublished">2017.02.14</time> - excel的一次谜の报错
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/ssh-known-hosts.html">
+                        <time datetime="2017-02-02T00:00:00+08:00" itemprop="datePublished">2017.02.02</time> - known_hosts可以用通配符吗
+                    </a>
+                </li>
+                
+            
+        
+            
+                
+                <li>
+                    <a href="/blog/linux-ssh-session-alive.html">
+                        <time datetime="2017-01-24T00:00:00+08:00" itemprop="datePublished">2017.01.24</time> - Linux使用ssh超时断开连接的真正原因
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="alive">Alive</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/linux-ssh-session-alive.html">
+                        <time datetime="2017-01-24T00:00:00+08:00" itemprop="datePublished">2017.01.24</time> - Linux使用ssh超时断开连接的真正原因
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="NAT">Nat</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/linux-ssh-session-alive.html">
+                        <time datetime="2017-01-24T00:00:00+08:00" itemprop="datePublished">2017.01.24</time> - Linux使用ssh超时断开连接的真正原因
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="iptables">Iptables</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/linux-ssh-session-alive.html">
+                        <time datetime="2017-01-24T00:00:00+08:00" itemprop="datePublished">2017.01.24</time> - Linux使用ssh超时断开连接的真正原因
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="known_hosts">Known_hosts</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/ssh-known-hosts.html">
+                        <time datetime="2017-02-02T00:00:00+08:00" itemprop="datePublished">2017.02.02</time> - known_hosts可以用通配符吗
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="regex">Regex</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/ssh-known-hosts.html">
+                        <time datetime="2017-02-02T00:00:00+08:00" itemprop="datePublished">2017.02.02</time> - known_hosts可以用通配符吗
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="excel">Excel</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/excel-export-error.html">
+                        <time datetime="2017-02-14T00:00:00+08:00" itemprop="datePublished">2017.02.14</time> - excel的一次谜の报错
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="xml">Xml</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/excel-export-error.html">
+                        <time datetime="2017-02-14T00:00:00+08:00" itemprop="datePublished">2017.02.14</time> - excel的一次谜の报错
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="number">Number</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/excel-export-error.html">
+                        <time datetime="2017-02-14T00:00:00+08:00" itemprop="datePublished">2017.02.14</time> - excel的一次谜の报错
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="string">String</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/excel-export-error.html">
+                        <time datetime="2017-02-14T00:00:00+08:00" itemprop="datePublished">2017.02.14</time> - excel的一次谜の报错
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="php">Php</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/php-curl-response.html">
+                        <time datetime="2017-02-28T00:00:00+08:00" itemprop="datePublished">2017.02.28</time> - PHP利用curl「转发」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="curl">Curl</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/php-curl-response.html">
+                        <time datetime="2017-02-28T00:00:00+08:00" itemprop="datePublished">2017.02.28</time> - PHP利用curl「转发」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="response">Response</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/php-curl-response.html">
+                        <time datetime="2017-02-28T00:00:00+08:00" itemprop="datePublished">2017.02.28</time> - PHP利用curl「转发」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="header">Header</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/php-curl-response.html">
+                        <time datetime="2017-02-28T00:00:00+08:00" itemprop="datePublished">2017.02.28</time> - PHP利用curl「转发」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="body">Body</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/php-curl-response.html">
+                        <time datetime="2017-02-28T00:00:00+08:00" itemprop="datePublished">2017.02.28</time> - PHP利用curl「转发」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="image">Image</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/php-curl-response.html">
+                        <time datetime="2017-02-28T00:00:00+08:00" itemprop="datePublished">2017.02.28</time> - PHP利用curl「转发」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="du">Du</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/du-and-sort-combination.html">
+                        <time datetime="2017-03-02T00:00:00+08:00" itemprop="datePublished">2017.03.02</time> - du和sort组合使用：显示文件夹/文件大小并排序
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="sort">Sort</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/du-and-sort-combination.html">
+                        <time datetime="2017-03-02T00:00:00+08:00" itemprop="datePublished">2017.03.02</time> - du和sort组合使用：显示文件夹/文件大小并排序
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="dir">Dir</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/du-and-sort-combination.html">
+                        <time datetime="2017-03-02T00:00:00+08:00" itemprop="datePublished">2017.03.02</time> - du和sort组合使用：显示文件夹/文件大小并排序
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="file">File</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/du-and-sort-combination.html">
+                        <time datetime="2017-03-02T00:00:00+08:00" itemprop="datePublished">2017.03.02</time> - du和sort组合使用：显示文件夹/文件大小并排序
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="size">Size</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/du-and-sort-combination.html">
+                        <time datetime="2017-03-02T00:00:00+08:00" itemprop="datePublished">2017.03.02</time> - du和sort组合使用：显示文件夹/文件大小并排序
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="redis">Redis</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/redis-copy-key-to-key.html">
+                        <time datetime="2017-04-12T00:00:00+08:00" itemprop="datePublished">2017.04.12</time> - redis如何拷贝一个key的值到另一个key
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="command">Command</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/redis-copy-key-to-key.html">
+                        <time datetime="2017-04-12T00:00:00+08:00" itemprop="datePublished">2017.04.12</time> - redis如何拷贝一个key的值到另一个key
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="client">Client</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/redis-copy-key-to-key.html">
+                        <time datetime="2017-04-12T00:00:00+08:00" itemprop="datePublished">2017.04.12</time> - redis如何拷贝一个key的值到另一个key
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="copy">Copy</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/redis-copy-key-to-key.html">
+                        <time datetime="2017-04-12T00:00:00+08:00" itemprop="datePublished">2017.04.12</time> - redis如何拷贝一个key的值到另一个key
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="key">Key</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/redis-copy-key-to-key.html">
+                        <time datetime="2017-04-12T00:00:00+08:00" itemprop="datePublished">2017.04.12</time> - redis如何拷贝一个key的值到另一个key
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="sad">Sad</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/person/sad-for-duoshuo.html">
+                        <time datetime="2017-04-30T00:00:00+08:00" itemprop="datePublished">2017.04.30</time> - 好你个「多说」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="wangyiyun">Wangyiyun</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/person/sad-for-duoshuo.html">
+                        <time datetime="2017-04-30T00:00:00+08:00" itemprop="datePublished">2017.04.30</time> - 好你个「多说」
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="grep">Grep</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/grep-color.html">
+                        <time datetime="2017-08-20T00:00:00+08:00" itemprop="datePublished">2017.08.20</time> - linux的grep指令中color参数的坑
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="color">Color</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/grep-color.html">
+                        <time datetime="2017-08-20T00:00:00+08:00" itemprop="datePublished">2017.08.20</time> - linux的grep指令中color参数的坑
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="centos">Centos</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/grep-color.html">
+                        <time datetime="2017-08-20T00:00:00+08:00" itemprop="datePublished">2017.08.20</time> - linux的grep指令中color参数的坑
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="auto">Auto</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/grep-color.html">
+                        <time datetime="2017-08-20T00:00:00+08:00" itemprop="datePublished">2017.08.20</time> - linux的grep指令中color参数的坑
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="always">Always</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/grep-color.html">
+                        <time datetime="2017-08-20T00:00:00+08:00" itemprop="datePublished">2017.08.20</time> - linux的grep指令中color参数的坑
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="lsb_release">Lsb_release</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/grep-color.html">
+                        <time datetime="2017-08-20T00:00:00+08:00" itemprop="datePublished">2017.08.20</time> - linux的grep指令中color参数的坑
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
+        <h2 id="version">Version</h2>
+        <!-- capitalize - 输出字符串，字符串（句子）首字母大写 e.g. 假设tb为"hello world" #=> 'Hello world' -160120 -->
+        <ul class="post-list">
+        
+        
+            
+                
+                <li>
+                    <a href="/blog/grep-color.html">
+                        <time datetime="2017-08-20T00:00:00+08:00" itemprop="datePublished">2017.08.20</time> - linux的grep指令中color参数的坑
+                    </a>
+                </li>
+                
+            
+        
+        
+        
+        </ul>
+    
 </div>
 
 <!-- 云tags-依赖 div: tag_cloud -->
-{% include tagcloud.html %}
+<!-- 云tags-160120 -->
+<script src="http://source.bluebiu.com/plugin/tagcloud/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript">
+    $.fn.tagcloud.defaults = {
+        //size: {start: 1, end: 1, unit: 'em'},
+        color: {start: '#FF99FF', end: '#FF99FF'},
+    };
+    $(function () {
+        $('#tag_cloud a').tagcloud();
+    });
+</script>
 
 <!-- search -->
-{% include search.html %}
+<!-- 搜索条 -160120 -->
+<div class="search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
+      opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px"
+           placeholder="文章标题 日期 标签"
+           >
+
+    <div style="position: fixed; top: 16px; right: 16px;">
+        <img src="http://source.bluebiu.com/plugin/search/img/cb-close.png"  id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px;">
+    <img src="http://source.bluebiu.com/plugin/search/img/cb-search.png"  id="search-btn"  title="双击ctrl试一下"/>
+</div>
+
+<link rel="stylesheet" href="http://source.bluebiu.com/plugin/search/css/cb-search.css" />
+
+<script src="http://source.bluebiu.com/plugin/search/js/bootstrap3-typeahead.min.js"> </script>
+<script src="http://source.bluebiu.com/plugin/search/js/cb-search.js"> </script>
+<!-- end搜索条 -160120 -->
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   <!--  <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li> -->
+
+<!-- -160120
+                    
+                    <li>
+                        <a href="https://twitter.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+ -->
+                    
+                    <li>
+                        <a href="https://github.com/bluebiu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <!--
+                    
+                    <li>
+                        <a href="http://www.douban.com/people/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-douban fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    -->
+
+                    <!--
+                    
+                    <li>
+                        <a href="https://www.facebook.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    -->
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/bluebiu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/bluelooord">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                </ul>
+                <!-- <p class="copyright text-muted">
+                &copy; 2016~2018 http://bluebiu.com Power by biubiu. All Rights Reserved.
+                </p> -->
+                <p class="copyright text-muted">
+                &copy; 2016- biubiu All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,30 +1,1551 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ "/" | prepend: site.baseurl | prepend: site.url }}</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Biu^Biu's Blog</title>
+    <description>美好，美好。</description>
+    <link>http://bluebiu.com/</link>
+    <atom:link href="http://bluebiu.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 22 Apr 2018 12:57:39 +0800</pubDate>
+    <lastBuildDate>Sun, 22 Apr 2018 12:57:39 +0800</lastBuildDate>
+    <generator>Jekyll v3.7.3</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>linux的grep指令中color参数的坑</title>
+        <description>&lt;h3 id=&quot;一我对你付出的青春-这么多年&quot;&gt;一、我对你付出的青春 这么多年&lt;/h3&gt;
+
+&lt;p&gt;之前一直用着一个挺好用的指令，查看文件内容时，可以过滤掉注释、空行：&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cat filename | grep -v '[#;]' | grep -v '^$'&lt;/code&gt;&lt;br /&gt;
+好端端的，突然发现去空行不行了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/grep-color/no.png&quot; alt=&quot;img_0&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;黑人问号脸&quot;&gt;[？？？黑人问号脸]&lt;/h6&gt;
+
+&lt;p&gt;换到另一台机器试了下，完全一样的文件，完全一样的指令，竟然又可以了……&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/grep-color/ok.png&quot; alt=&quot;img_1&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;黑人问号脸2&quot;&gt;[？？？？？？黑人问号脸*2]&lt;/h6&gt;
+
+&lt;p&gt;这不科学……&lt;/p&gt;
+
+&lt;h3 id=&quot;二换来了一句-谢谢你的成全&quot;&gt;二、换来了一句 谢谢你的成全&lt;/h3&gt;
+
+&lt;p&gt;回到有问题的机器，再仔细的试了试。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/grep-color/k.png&quot; alt=&quot;img_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;发现线索：这诡异的&lt;code class=&quot;highlighter-rouge&quot;&gt;[K&lt;/code&gt;是什么？&lt;br /&gt;
+沿线搜索——&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这里用到grep的一个参数-color，color有三个值供选择：never、always、auto。&lt;br /&gt;
+always和auto的区别就是，always会在任何情况下都给匹配字段加上颜色标记，当通过管道或重定向时就会多出一些控制字符，结果会变成&lt;br /&gt;
+    export ^[[1;32m^[[KGREP^[[m^[[K_OPTIONS=’-color=always’&lt;br /&gt;
+    export ^[[1;32m^[[KGREP^[[m^[[K_COLOR=’1;32′&lt;br /&gt;
+而auto则只在输出到终端时才加上颜色。[&lt;sup id=&quot;fnref:note_0&quot;&gt;&lt;a href=&quot;#fn:note_0&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;看到了很眼熟的&lt;code class=&quot;highlighter-rouge&quot;&gt;[K&lt;/code&gt;，赶紧到&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt;里看了一眼&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/grep-color/always.png&quot; alt=&quot;img_3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;果然！之前为了好看（可以高亮出grep的搜索项）的逼格加上去的，这下算砸了自己脚……&lt;/p&gt;
+
+&lt;h3 id=&quot;三成全了-你的潇洒与冒险&quot;&gt;三、成全了 你的潇洒与冒险&lt;/h3&gt;
+
+&lt;p&gt;用其它参数试试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/grep-color/never.png&quot; alt=&quot;img_4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;用「never」，立竿见影！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/grep-color/ok2.png&quot; alt=&quot;img_5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;用「auto」，也是妥妥的。&lt;br /&gt;
+（心急，早就把&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt;里的改好成&lt;code class=&quot;highlighter-rouge&quot;&gt;auto&lt;/code&gt;了，哈哈）&lt;/p&gt;
+
+&lt;p&gt;目前看来，答案就是 &lt;strong&gt;使用了&lt;code class=&quot;highlighter-rouge&quot;&gt;always&lt;/code&gt;，造成给管道后提供数据源时，误增了&lt;code class=&quot;highlighter-rouge&quot;&gt;[K&lt;/code&gt;这样的字符串，导致后续筛选有了偏差。&lt;/strong&gt;&lt;br /&gt;
+至于到底是怎么影响到，真不知道，就把锅算在centos上的bug吧～&lt;br /&gt;
+现在改成 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;auto&lt;/code&gt;，也就是它能识别到使用者到底是在管道中的场景，还是输出时的场景&lt;/strong&gt; 了。&lt;br /&gt;
+那么，这个问题又搞定了，乐一个先～&lt;/p&gt;
+
+&lt;h3 id=&quot;四成全了-我的碧海蓝天&quot;&gt;四、成全了 我的碧海蓝天&lt;/h3&gt;
+
+&lt;p&gt;强迫症犯了，迫切想去把本地刚弄好的vagrant里的也改了，改之前最后试了一下，结果一愣，竟然没影响？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/grep-color/centos6.9.png&quot; alt=&quot;img_7&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;centos69表示毫无压力&quot;&gt;centos6.9表示毫无压力&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/grep-color/centos5.8.png&quot; alt=&quot;img_6&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;centos58确认可以稳定重现&quot;&gt;centos5.8确认可以稳定重现&lt;/h6&gt;
+
+&lt;p&gt;行，这下真是找到centos的锅了，不过人家也默默把它修复了，可以翻篇了。&lt;/p&gt;
+
+&lt;p&gt;篇外收获——&lt;br /&gt;
+查看linux版本，&lt;code class=&quot;highlighter-rouge&quot;&gt;lsb_release- a&lt;/code&gt;并不能通杀所有，&lt;code class=&quot;highlighter-rouge&quot;&gt;cat /etc/*-release&lt;/code&gt;也是个很好的手段。&lt;/p&gt;
+
+&lt;h3 id=&quot;五参考文档&quot;&gt;五、参考文档&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_8c6d7ff6010188uy.html&quot;&gt;grep高亮显示匹配项&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/dongzhiquan/archive/2013/01/09/2853879.html&quot;&gt;grep使用&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.crifan.com/how_to_check_which_linux_distribution_what_type_linux/&quot;&gt;Linux系统中如何判断当前Linux是什么类型和什么版本即是哪个发行版&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;注释&quot;&gt;注释:&lt;/h6&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:note_0&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_8c6d7ff6010188uy.html&quot;&gt;http://blog.sina.com.cn/s/blog_8c6d7ff6010188uy.html&lt;/a&gt; &lt;a href=&quot;#fnref:note_0&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 20 Aug 2017 00:00:00 +0800</pubDate>
+        <link>http://bluebiu.com/blog/grep-color.html</link>
+        <guid isPermaLink="true">http://bluebiu.com/blog/grep-color.html</guid>
+        
+        <category>linux</category>
+        
+        <category>grep</category>
+        
+        <category>color</category>
+        
+        <category>centos</category>
+        
+        <category>auto</category>
+        
+        <category>always</category>
+        
+        <category>lsb_release</category>
+        
+        <category>version</category>
+        
+        
+        <category>blog</category>
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>好你个「多说」</title>
+        <description>&lt;h2 id=&quot;转眼走到了-自传最终章&quot;&gt;转眼走到了 自传最终章&lt;/h2&gt;
+
+&lt;p&gt;终于在放假时间，闲下来整理下博客了。&lt;/p&gt;
+
+&lt;p&gt;翻了翻之前的博文，实在写得废话连篇。什么「于是」，「所以」，「然后」，「接着」……各种解释，各种思路的转弯，牵引……感觉吧，毕竟是偏理科的性子，扎实的逻辑思维方法，导致了这么个「&lt;strong&gt;总想把前因后果描述得清清楚楚，来龙去脉诠释得干干净净的想法&lt;/strong&gt;」，结果却只不过是写成了「&lt;strong&gt;由着自己的思绪航线胡乱飞翔的流水账&lt;/strong&gt;」……确实不怎么样，改。少说这些「废话」。&lt;/p&gt;
+
+&lt;p&gt;下面还是进入正题……&lt;/p&gt;
+
+&lt;h2 id=&quot;双颊曾光滑-夜色曾沁凉&quot;&gt;双颊曾光滑 夜色曾沁凉&lt;/h2&gt;
+
+&lt;p&gt;有一段时间没去博客拔草了，刚登录了一下评论功能的多说，又来惊喜了……&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/guanbi.png&quot; alt=&quot;img_0&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;重要通知-多说即将关闭httpdevduoshuocomthreads58d1169ae293b89a20c57241多说网-发表于-3月21日&quot;&gt;「[重要通知: 多说即将关闭][http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241]」——多说网 发表于 3月21日&lt;/h6&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这很可以，一锤定音，说完蛋就完蛋了。&lt;br /&gt;
+俱往矣。好在「多说」这个评论功能我也没用很深（主要是博客也没啥人看-0-），得，赶紧找个后浪推一推吧。&lt;/p&gt;
+
+&lt;h2 id=&quot;在我的时代-还有唱片行&quot;&gt;在我的时代 还有唱片行&lt;/h2&gt;
+
+&lt;p&gt;一百度，铺天盖地——&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/57426274&quot;&gt;如何评价“多说”即将关闭？有什么替代方案？——知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/57444893&quot;&gt;如何看待多说社会化评论系统即将关闭？——知乎&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.v2ex.com/t/352545&quot;&gt;V2EX› 分享创造› 多说挂了，用 GitHub Issues 来当评论系统吧&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://imsun.net/posts/gitment-introduction/&quot;&gt;Gitment：使用 GitHub Issues 搭建评论系统&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://it.sohu.com/20170327/n484983201.shtml&quot;&gt;多说甩下的锅，畅言来稳稳地接——搜狐科技&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.renyyy.com/articles/694/&quot;&gt;多说没了，我的评论将何去何从——人云亦云&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;厉害了，表面上都是评论，实际上全都是狠狠的刷了一波硬广！硬就硬吧，反正也只能从骡子里找马了。知乎上看了几大片回复，大致捋了捋：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.disqus.com&quot;&gt;disqus&lt;/a&gt;：全球第一，但要翻墙。早先刚搭建博客时就有考虑，想想为了给留言的朋友减少麻烦（不用自备梯子），弃之，与人方便自己方便。现在还是暂不考虑吧。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://changyan.kuaizhan.com&quot;&gt;畅言&lt;/a&gt;：看到的第一个硬广，很及时。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gentie.163.com/index.html&quot;&gt;网易云跟帖&lt;/a&gt;：硬广+1，很及时+1。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://livere.com&quot;&gt;来必力&lt;/a&gt;：看推荐都说得卜错，我就上官网看了下，首页就开了半天，什么玩意，退下……&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/imsun/gitment&quot;&gt;Gitment&lt;/a&gt;：国人利用github issues硬是做出了一个，粗看了下，感觉卜错，但授权有点奇怪，等以后有空研究了再用吧。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;就在「畅言」和「网易云跟帖」里挑一个吧。来回斟酌，想了下「搜狐新闻」和「网易新闻」……然后就选了「网易云跟帖」……&lt;/p&gt;
+
+&lt;h2 id=&quot;以为的日常-原来是无常&quot;&gt;以为的日常 原来是无常&lt;/h2&gt;
+
+&lt;p&gt;说下迁移过程：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;首先&lt;/strong&gt;，（注册就不用说了吧）开通网易云跟帖，设置一下站点信息，基本的皮肤，功能。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/setting0.png&quot; alt=&quot;img_2&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;留意下这里的站点名称会显示在每个评论人的昵称旁边按需调整&quot;&gt;留意下这里的站点名称，会显示在每个评论人的昵称旁边，按需调整&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/setting1.png&quot; alt=&quot;img_3&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;blue-i-like-it-&quot;&gt;blue, I like it ~&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/setting2.png&quot; alt=&quot;img_4&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;值得说下之前看到网友推荐的帖子里会提到这个名称和文案毫无违和感但我这里看已经是可以自定义的了所以算是加分项&quot;&gt;值得说下，之前看到网友推荐的帖子里，会提到这个名称和文案毫无违和感，但我这里看，已经是可以自定义的了，所以算是加分项。&lt;/h6&gt;
+
+&lt;p&gt;&lt;strong&gt;接着&lt;/strong&gt;，转移数据。多说导出，导入网易云跟帖。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/export.png&quot; alt=&quot;img_5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/import.png&quot; alt=&quot;img_6&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;导出时是zip文件导入上传时也是这个zip文件即可&quot;&gt;导出时是[zip]文件，导入上传时也是这个[zip]文件即可。&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/json.png&quot; alt=&quot;img_7&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;解压检查看看很稳&quot;&gt;解压检查看看，很稳。&lt;/h6&gt;
+
+&lt;p&gt;&lt;strong&gt;然后&lt;/strong&gt;，就是放置代码。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/script.png&quot; alt=&quot;img_8&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;模板加上管理后台拿到的js代码我这里是找到_layouts下的posthtml&quot;&gt;模板加上管理后台拿到的js代码。（我这里是找到&lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;下的&lt;code class=&quot;highlighter-rouge&quot;&gt;post.html&lt;/code&gt;）&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/diff.png&quot; alt=&quot;img_9&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;同时也去掉多说的代码片段&quot;&gt;同时也去掉多说的代码片段~&lt;/h6&gt;
+
+&lt;p&gt;&lt;strong&gt;最后&lt;/strong&gt;，看效果咯。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/dashang.png&quot; alt=&quot;img_10&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;先看看之前的手动捂脸&quot;&gt;先看看之前的……[手动捂脸]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/dashang2.png&quot; alt=&quot;img_11&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;这打赏我可是没忘阿二次捂脸&quot;&gt;这打赏我可是没忘阿……[二次捂脸]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//person/sad-for-duoshuo/now.png&quot; alt=&quot;img_12&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;现在是这样了数据都对但总有读取不出的author_name只能默默成为有态度的人了&quot;&gt;现在是这样了……（数据都对，但总有读取不出的「author_name」，只能默默成为有态度的人了……）&lt;/h6&gt;
+
+&lt;p&gt;替换之后的变化：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;评论都是从上往下倒序了。&lt;/li&gt;
+  &lt;li&gt;回复有引用框了。（继承了网易盖楼风格）&lt;/li&gt;
+  &lt;li&gt;登录少了一些常用的第三方联登方式（比如微信）&lt;/li&gt;
+  &lt;li&gt;介于3，所以会出现一些未登录的「有态度的」网友，以及一些获取不到头像的头像了。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;写这首长诗-用一生时光&quot;&gt;写这首长诗 用一生时光&lt;/h2&gt;
+
+&lt;p&gt;参考文档，都在上面有附上链接，不再重复了……&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 30 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://bluebiu.com/person/sad-for-duoshuo.html</link>
+        <guid isPermaLink="true">http://bluebiu.com/person/sad-for-duoshuo.html</guid>
+        
+        <category>duoshuo</category>
+        
+        <category>over</category>
+        
+        <category>sad</category>
+        
+        <category>wangyiyun</category>
+        
+        
+        <category>person</category>
+        
+      </item>
+    
+      <item>
+        <title>redis如何拷贝一个key的值到另一个key</title>
+        <description>&lt;h2 id=&quot;一命运偷走如果-只留下结果&quot;&gt;一、命运偷走如果 只留下结果&lt;/h2&gt;
+
+&lt;p&gt;测试，又是测试。在某一次测试中，打算从一个cache里copy一个key到另一个环境去。以为挺简单的，结果一路失败到底……&lt;/p&gt;
+
+&lt;p&gt;（4月12日）&lt;del&gt;提前说下结果，本人才疏学浅，目前为止尚未找到解决办法……有大神小仙路过，还盼不吝赐教！……&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;（4月20日更新）已经找到处理方法，追加于【二、4】。&lt;/p&gt;
+
+&lt;p&gt;咱们来做个实验，还原下现场。&lt;/p&gt;
+
+&lt;h2 id=&quot;二时间偷走初衷-只留下了苦衷&quot;&gt;二、时间偷走初衷 只留下了苦衷&lt;/h2&gt;
+
+&lt;p&gt;先看看数据源——是一段curl获取来的html代码片段。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/origin_714.png&quot; alt=&quot;img_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;注意原始大小：&lt;code class=&quot;highlighter-rouge&quot;&gt;74714&lt;/code&gt;字节&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;testcopy1: 74714
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;1-猎户-天狼-织女-光年外沉默&quot;&gt;1. 猎户 天狼 织女 光年外沉默&lt;/h3&gt;
+
+&lt;p&gt;首先，我原想着，就按平常最普通的方式拷贝就行了。于是就点击编辑 - 全选 - 复制。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/copying.png&quot; alt=&quot;img_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;接着，新建一个key，粘贴，确定。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/addtest2.png&quot; alt=&quot;img_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/test2_728.png&quot; alt=&quot;img_3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后，看到了神奇的一幕——&lt;code class=&quot;highlighter-rouge&quot;&gt;74728&lt;/code&gt;字节？？！&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;testcopy1: 74714
+testcopy2: 74728
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2-回忆-青春-梦想-何时偷偷陨落&quot;&gt;2. 回忆 青春 梦想 何时偷偷陨落&lt;/h3&gt;
+
+&lt;p&gt;难道是通过页面的形式拷贝，会由于html的textarea标签输出有转义，导致拷贝时字符有变化了？&lt;/p&gt;
+
+&lt;p&gt;那么，我们通过命令行来试试？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/command.png&quot; alt=&quot;img_4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;擦，整出个&lt;code class=&quot;highlighter-rouge&quot;&gt;74715&lt;/code&gt;字节？差一点就对了？&lt;/p&gt;
+
+&lt;p&gt;对了，这里用到了&lt;code class=&quot;highlighter-rouge&quot;&gt;xargs&lt;/code&gt;命令，和它的&lt;code class=&quot;highlighter-rouge&quot;&gt;-0&lt;/code&gt;参数，&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-0 当sdtin含有特殊字元时候，将其当成一般字符，像/'空格等 [[^note_0]]
+例如：root@localhost:~/test#echo &quot;//&quot;|xargs  echo 
+      root@localhost:~/test#echo &quot;//&quot;|xargs -0 echo 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;testcopy1: 74714
+testcopy2: 74728
+testcopy3: 74715
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;区别在哪呢？自己查看了一下值，发现末尾有不同：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/test3_715.png&quot; alt=&quot;img_5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/test1.png&quot; alt=&quot;img_6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;原始是没有的，但通过commmand拷贝完确实多出个&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;，怀疑是linux的stdin时多出来的「换行符」造成的？&lt;/p&gt;
+
+&lt;h3 id=&quot;3-当故事失去美梦-美梦失去线索-而我们失去联络&quot;&gt;3. 当故事失去美梦 美梦失去线索 而我们失去联络&lt;/h3&gt;
+
+&lt;p&gt;怎么去掉这个「换行符」？q群问了一圈，偶遇一位大神指点，甩了一串命令，试了试：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;redis get testcopy1 | perl -pe 'chop;' | xargs -0 redis set testcopy4&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/test4_712.png&quot; alt=&quot;img_7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;差点就！……好吧，还是偏差了一丢丢。&lt;/p&gt;
+
+&lt;p&gt;但！……通过检查（这里忘了说使用场景，补一下上下文联系：这里拿到写入cache的html，是用来输出到前端页面用的，直接输出，所以成功与否，还得看那个页面浏览是否正常。）各个cache的情况：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/console_ok.png&quot; alt=&quot;img_8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/console_error.png&quot; alt=&quot;img_9&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;结果：&lt;br /&gt;
+testcopy1, testcopy4能成功输出。
+testcopy2, testcopy3页面报错。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;testcopy1: 74714
+testcopy2: 74728
+testcopy3: 74715
+testcopy4: 74712
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-寂寞可以是忍受-也可以是享受-享受仅有的拥有&quot;&gt;4. 寂寞可以是忍受 也可以是享受 享受仅有的拥有&lt;/h3&gt;
+
+&lt;p&gt;气的翻墙，然后找到了终极武器&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;You can do this with a Lua script:
+
+redis.call('SET', KEYS[2], redis.call('GET', KEYS[1])); return 1;
+KEYS1 is the source key
+KEYS2 is the target key
+The example below uses SCRIPT LOAD to create the script and invokes it using EVALSHA passing the following arguments:
+
+The SHA1 returned from the script load
+a 2 for the number of keys that will be passed
+The source key
+The target key.
+Output:
+
+redis 127.0.0.1:6379&amp;gt; set src.key XXX
+OK
+redis 127.0.0.1:6379&amp;gt; get src.key
+&quot;XXX&quot;
+redis 127.0.0.1:6379&amp;gt; SCRIPT LOAD &quot;redis.call('SET', KEYS[2], redis.call('GET', KEYS[1])); return 1;&quot;
+&quot;1119c244463dce1ac3a19cdd4fda744e15e02cab&quot;
+redis 127.0.0.1:6379&amp;gt; EVALSHA 1119c244463dce1ac3a19cdd4fda744e15e02cab 2 src.key target.key
+(integer) 1
+redis 127.0.0.1:6379&amp;gt; get target.key
+&quot;XXX&quot;
+It does appear to be a lot of stuff compared to simply doing a GET and then s SET, but once you've loaded the script (and memorized the SHA1) then you can reuse it repeatedly.[[^note_1]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;立刻上路：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/redis-copy-key-to-key/test5_714.png&quot; alt=&quot;img_10&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;总算是妥妥的了。&lt;/p&gt;
+
+&lt;h2 id=&quot;三摸不到的颜色-是否叫彩虹&quot;&gt;三、摸不到的颜色 是否叫彩虹&lt;/h2&gt;
+
+&lt;p&gt;小结下，redis中的key-value，是可以通过网页工具，命令行，redis-cli客户端等，进行新增修改删除，但没有复制。「&lt;a href=&quot;http://doc.redisfans.com&quot;&gt;REDIS 命令参考&lt;/a&gt;」需要自行处理。
+方式可以有：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;网页工具操作：编辑 - 复制 - 新建 - 粘贴&lt;/li&gt;
+  &lt;li&gt;命令行：结合shell执行，可以stdout看到输出，也可以stdin配合执行多维指令&lt;/li&gt;
+  &lt;li&gt;登入client端，使用指令，或结合LUA等进行高级过程化操作。&lt;/li&gt;
+  &lt;li&gt;copy时需要留意确认原始值和目标值的一致性，有效性。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;四参考文档&quot;&gt;四、参考文档&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/zhangfn2011/article/details/6776925/&quot;&gt;Xargs用法详解&lt;/a&gt; （用多了，自然就记住了……）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://doc.redisfans.com&quot;&gt;REDIS 命令参考&lt;/a&gt;（多看，多用，才知道有没有）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/spring21st/article/details/15771861&quot;&gt;批量删除Redis数据库中的Key&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;注释&quot;&gt;注释:&lt;/h6&gt;
+
+</description>
+        <pubDate>Wed, 12 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://bluebiu.com/blog/redis-copy-key-to-key.html</link>
+        <guid isPermaLink="true">http://bluebiu.com/blog/redis-copy-key-to-key.html</guid>
+        
+        <category>linux</category>
+        
+        <category>redis</category>
+        
+        <category>command</category>
+        
+        <category>client</category>
+        
+        <category>copy</category>
+        
+        <category>key</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>du和sort组合使用：显示文件夹/文件大小并排序</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;那些网络上各种互相抄袭，说用du -sh * | sort -rn的，真的自己试过吗？！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;一飞过人间的无常-才懂爱才是宝藏&quot;&gt;一、飞过人间的无常 才懂爱才是宝藏&lt;/h2&gt;
+
+&lt;p&gt;项目测试中，突然发现请求全部超时无响应。&lt;/p&gt;
+
+&lt;p&gt;一看，log全是499、504。&lt;br /&gt;
+一想，代码没动过，估计db或cache出问题了。&lt;br /&gt;
+一查，好吧，连db的那台，硬盘爆了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/du-and-sort-combination/df_h.png&quot; alt=&quot;img_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;硬盘满了，查看哪些文件比较占空间。首先，就想看哪个文件夹比较大。&lt;br /&gt;
+一般用&lt;code class=&quot;highlighter-rouge&quot;&gt;du -sh *&lt;/code&gt;查看当前目录。发现是mysql相关文件最大。进到相关目录，继续排查。&lt;/p&gt;
+
+&lt;p&gt;这里有个差别，下图看到对比：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/du-and-sort-combination/du_sh.png&quot; alt=&quot;img_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;du -h --max-depth=1&lt;/code&gt;：仅统计文件夹（包括当前目录&lt;code class=&quot;highlighter-rouge&quot;&gt;./&lt;/code&gt;）。&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;du -sh *&lt;/code&gt;：包含当前目录文件夹和文件。&lt;/p&gt;
+
+&lt;p&gt;大小看到了，接着是排序。&lt;/p&gt;
+
+&lt;h2 id=&quot;二像孩子依赖着肩膀-像眼泪依赖着脸庞&quot;&gt;二、像孩子依赖着肩膀 像眼泪依赖着脸庞&lt;/h2&gt;
+
+&lt;p&gt;排序，一般用管道符&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt;+&lt;code class=&quot;highlighter-rouge&quot;&gt;sort&lt;/code&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sort命令是帮我们依据不同的数据类型进行排序，其语法及常用参数格式：
+　　sort [-bcfMnrtk][源文件][-o 输出文件] 
+补充说明：sort可针对文本文件的内容，以行为单位来排序。
+
+参　　数：
+  -b   忽略每行前面开始出的空格字符。
+  -c   检查文件是否已经按照顺序排序。
+  -f   排序时，忽略大小写字母。
+  -M   将前面3个字母依照月份的缩写进行排序。
+  -n   依照数值的大小排序。
+  -o&amp;lt;输出文件&amp;gt;   将排序后的结果存入指定的文件。
+  -r   以相反的顺序来排序。
+  -t&amp;lt;分隔字符&amp;gt;   指定排序时所用的栏位分隔字符。
+  -k  选择以哪个区间进行排序。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;根据文档，&lt;code class=&quot;highlighter-rouge&quot;&gt;sort&lt;/code&gt;指令选用&lt;code class=&quot;highlighter-rouge&quot;&gt;-n&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;-r&lt;/code&gt;即可。&lt;/p&gt;
+
+&lt;p&gt;但是，问题来了。上面的&lt;code class=&quot;highlighter-rouge&quot;&gt;du&lt;/code&gt;命令中，带了个&lt;code class=&quot;highlighter-rouge&quot;&gt;-h&lt;/code&gt;的参数，这个参数表示：&lt;br /&gt;
+&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;h或–human-readable 以K，M，G为单位，提高信息的可读性。&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
+尝试一下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/du-and-sort-combination/sort_sh.png&quot; alt=&quot;img_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;捂脸……明显不行！看着就是只按了得到的「数值」的大小来排序，根本没有考虑后面单位。&lt;/p&gt;
+
+&lt;p&gt;仔细看看文档：&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;du命令功能说明：统计目录(或文件)所占磁盘空间的大小。
+
+语　　法：du [-abcDhHklmsSx] [-L &amp;lt;符号连接&amp;gt;][-X &amp;lt;文件&amp;gt;][--block-size][--exclude=&amp;lt;目录或文件&amp;gt;] [--max-depth=&amp;lt;目录层数&amp;gt;][--help][--version][目录或文件]
+
+常用参数：
+    -a或-all  为每个指定文件显示磁盘使用情况，或者为目录中每个文件显示各自磁盘使用情况。
+    -b或-bytes 显示目录或文件大小时，以byte为单位。
+    -c或–total 除了显示目录或文件的大小外，同时也显示所有目录或文件的总和。
+    -D或–dereference-args 显示指定符号连接的源文件大小。
+    -h或–human-readable 以K，M，G为单位，提高信息的可读性。
+    -H或–si 与-h参数相同，但是K，M，G是以1000为换算单位,而不是以1024为换算单位。
+    -k或–kilobytes 以1024 bytes为单位。
+    -l或–count-links 重复计算硬件连接的文件。
+    -L&amp;lt;符号连接&amp;gt;或–dereference&amp;lt;符号连接&amp;gt; 显示选项中所指定符号连接的源文件大小。
+    -m或–megabytes 以1MB为单位。
+    -s或–summarize 仅显示总计，即当前目录的大小。
+    -S或–separate-dirs 显示每个目录的大小时，并不含其子目录的大小。
+    -x或–one-file-xystem 以一开始处理时的文件系统为准，若遇上其它不同的文件系统目录则略过。
+    -X&amp;lt;文件&amp;gt;或–exclude-from=&amp;lt;文件&amp;gt; 在&amp;lt;文件&amp;gt;指定目录或文件。
+    –exclude=&amp;lt;目录或文件&amp;gt; 略过指定的目录或文件。
+    –max-depth=&amp;lt;目录层数&amp;gt; 超过指定层数的目录后，予以忽略。
+    –help 显示帮助。
+    –version 显示版本信息。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;其中两个参数&lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;-k&lt;/code&gt;可以尝试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/du-and-sort-combination/sort_sm.png&quot; alt=&quot;img_3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;du -sm&lt;/code&gt;后可以看到，统一了单位（Mb），再进行排序，已经可以实现大小的区分。不过精度就略有不足。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/du-and-sort-combination/sort_sk.png&quot; alt=&quot;img_4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;du -sk&lt;/code&gt;则精确到了Kb，再次排序成功。&lt;/p&gt;
+
+&lt;p&gt;所以，结论：可根据精度需要，&lt;code class=&quot;highlighter-rouge&quot;&gt;du&lt;/code&gt;指令选择&lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt;or&lt;code class=&quot;highlighter-rouge&quot;&gt;-k&lt;/code&gt;参数。&lt;code class=&quot;highlighter-rouge&quot;&gt;sort&lt;/code&gt;指令选择&lt;code class=&quot;highlighter-rouge&quot;&gt;-n&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;-r&lt;/code&gt;对数值排序，并倒序显示—&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;du -sk * | sort -rn&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;三像诗人依赖着月亮-像海豚依赖海洋&quot;&gt;三、像诗人依赖着月亮 像海豚依赖海洋&lt;/h2&gt;
+
+&lt;p&gt;最后还有点收尾工作。&lt;/p&gt;
+
+&lt;p&gt;前面说到硬盘爆满问题，现在找到起因是mysql导致，接着尝试了一些简单的处理。不过最后发现效果并不大。最主要的几个大文件，看到了也不能轻易删除。是个坑，没敢乱来，暂且这样。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/du-and-sort-combination/variables_innodb.png&quot; alt=&quot;img_5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;查看innodb的存放路径和规则。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/du-and-sort-combination/ibdata.png&quot; alt=&quot;img_6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;确实吻合1000M，简单查了下，都说不能删（包括ibdata1, ib_logfile0, ib_logfile1等），好吧。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/du-and-sort-combination/log_bin.png&quot; alt=&quot;img_7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;还有说是同步的binlog。查了下，看到是&lt;code class=&quot;highlighter-rouge&quot;&gt;On&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/du-and-sort-combination/reset_master.png&quot; alt=&quot;img_8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;于是执行了下&lt;code class=&quot;highlighter-rouge&quot;&gt;reset master&lt;/code&gt;。才有了那么点效果，然后临时解决完就接着联调去了。&lt;/p&gt;
+
+&lt;p&gt;这个留着以后再破。&lt;/p&gt;
+
+&lt;h2 id=&quot;四参考文档&quot;&gt;四、参考文档&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.linuxso.com/command/du.html&quot;&gt;linux du命令参数及用法详解—linux统计磁盘空间大小命令&lt;/a&gt; （再「详解」，也得自己去参透，实践）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/dong008259/archive/2011/12/08/2281214.html&quot;&gt;linux之sort用法&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.chinaunix.net/uid-20761674-id-3417025.html&quot;&gt;mysql硬盘满怎么办 &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/u010433704/article/details/50517848&quot;&gt;mysql-bin占用空间太大的问题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/zm2714/article/details/8479974/&quot;&gt;mysql的innodb扩容、ibdata1 瘦身&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Thu, 02 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://bluebiu.com/blog/du-and-sort-combination.html</link>
+        <guid isPermaLink="true">http://bluebiu.com/blog/du-and-sort-combination.html</guid>
+        
+        <category>linux</category>
+        
+        <category>du</category>
+        
+        <category>sort</category>
+        
+        <category>dir</category>
+        
+        <category>file</category>
+        
+        <category>size</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>PHP利用curl「转发」</title>
+        <description>&lt;h2 id=&quot;一php不是最好的语言&quot;&gt;一、PHP不是最好的语言&lt;/h2&gt;
+
+&lt;p&gt;最近做个需求，需要转发一个图片素材。（假设提供服务接口的我为A，图片源为B，请求接口方为C，流程就是C请求A，A需要从B获取图片，然后再返回给C。）&lt;/p&gt;
+
+&lt;p&gt;按以往的经验，我就先curl获取B的图片，再输出给C就好。&lt;/p&gt;
+
+&lt;p&gt;问题来了，我一直以为，A要把源文件先从B处curl获取，然后存成a，给把a文件提供给C下载获取。这么一来，好像很麻烦！PHP要这样实现吗？……&lt;/p&gt;
+
+&lt;h2 id=&quot;二java才是最好的语言&quot;&gt;二、JAVA才是最好的语言？&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-java可以实现&quot;&gt;1. java可以实现&lt;/h3&gt;
+
+&lt;p&gt;跟对接同事商量了一下，发现这样效率太差，不过给出了一个说法：「可以直接转发二进制内容过来，不用下载存放」，我：「java可以这样？」，答：「是」。&lt;/p&gt;
+
+&lt;p&gt;「如果java能实现的话，php应该也可以？」&lt;/p&gt;
+
+&lt;h3 id=&quot;2-php也可以实现&quot;&gt;2. php也可以实现&lt;/h3&gt;
+
+&lt;p&gt;马上去试了下。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;刚开始，用&lt;code class=&quot;highlighter-rouge&quot;&gt;file_get_contents&lt;/code&gt;，拿到body，然后直接输出，确实可以了！&lt;/li&gt;
+  &lt;li&gt;紧接着，用&lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt;来实现。同理，输出body。可行。&lt;/li&gt;
+  &lt;li&gt;问题来了，上面的输出，都需要声明一个头部（Header），如果这样，只能写死。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;代码：&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;amp;media_id=MEDIA_ID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;// 这里获取到的，并不能预先知道是什么类型，如jpg,jpeg,png,gif&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;curl_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_setopt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLOPT_URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$url&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_setopt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLOPT_HEADER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_setopt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLOPT_TIMEOUT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_setopt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLOPT_RETURNTRANSFER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_setopt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLOPT_SSL_VERIFYPEER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_setopt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLOPT_SSL_VERIFYHOST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;curl_exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$httpCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;curl_getinfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CURLINFO_HTTP_CODE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$headerSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;curl_getinfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLINFO_HEADER_SIZE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Content-Type: image/jpeg; image/gif; image/jpg; image/png; charset=utf-8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/php-curl-response/4type.png&quot; alt=&quot;img_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;再看看获取图片的原始返回：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/php-curl-response/origin.png&quot; alt=&quot;img_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;两者相差在头部&lt;/p&gt;
+
+&lt;p&gt;这个还是不太好，所以php就真的是不完美的吗?&lt;/p&gt;
+
+&lt;h2 id=&quot;三php是最好的语言&quot;&gt;三、PHP是最好的语言&lt;/h2&gt;
+
+&lt;p&gt;继续尝试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/php-curl-response/outputheader.png&quot; alt=&quot;img_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果把&lt;code class=&quot;highlighter-rouge&quot;&gt;CURLOPT_HEADER&lt;/code&gt;设置为&lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;，返回中就带有头部信息。但直接输出的话，会发现头部也被当成body一起输出了。PHP一定要用header方法设置头部才可以！&lt;/p&gt;
+
+&lt;p&gt;找到一个分开header和body的方法：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这里可以看到结果中header和body信息是在一起的，那么如何分离它们呢。[&lt;sup id=&quot;fnref:note_0&quot;&gt;&lt;a href=&quot;#fn:note_0&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;]方法有二种，&lt;br /&gt;
+一是通过curl自带的curl_getinfo()方法[&lt;sup id=&quot;fnref:note_1&quot;&gt;&lt;a href=&quot;#fn:note_1&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;]获取头的长度，然后使用substr来分割字符串。示例代码如下：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;curl_exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;curl_getinfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLINFO_HTTP_CODE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'200'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$headerSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;curl_getinfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLINFO_HEADER_SIZE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;substr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$headerSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;substr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$headerSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;第二种方法基于header和body是通过两个回车换行来分割的，所以可以通过如下代码实现：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;curl_exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;curl_getinfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLINFO_HTTP_CODE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'200'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;explode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\r\n\r\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;马上调整：&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$httpCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;substr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$headerSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;substr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$headerSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$headerArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;explode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$headerArr&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意，这里php的header不支持一下传多个参数，所以只能用循环的方式全部转发！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/php-curl-response/done.png&quot; alt=&quot;img_3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;好了，这下就已用php完美实现了。&lt;/p&gt;
+
+&lt;h2 id=&quot;五参考文档&quot;&gt;五、参考文档&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/vieri_ch/article/details/21258571&quot;&gt;php curl 分离header和body信息&lt;/a&gt; （涨姿势了）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.php.net/manual/zh/function.curl-getinfo.php&quot;&gt;PHP-手册-函数参考-其它服务-cURL-curl_getinfo函数&lt;/a&gt; （要多积累）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;注释&quot;&gt;注释:&lt;/h6&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:note_0&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/vieri_ch/article/details/21258571&quot;&gt;http://blog.csdn.net/vieri_ch/article/details/21258571&lt;/a&gt; &lt;a href=&quot;#fnref:note_0&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:note_1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.php.net/manual/zh/function.curl-getinfo.php&quot;&gt;http://www.php.net/manual/zh/function.curl-getinfo.php&lt;/a&gt; &lt;a href=&quot;#fnref:note_1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 28 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://bluebiu.com/blog/php-curl-response.html</link>
+        <guid isPermaLink="true">http://bluebiu.com/blog/php-curl-response.html</guid>
+        
+        <category>php</category>
+        
+        <category>curl</category>
+        
+        <category>response</category>
+        
+        <category>header</category>
+        
+        <category>body</category>
+        
+        <category>image</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>excel的一次谜の报错</title>
+        <description>&lt;h2 id=&quot;一有人在吗excel打不开报错&quot;&gt;一、「有人在吗？excel打不开，报错」&lt;/h2&gt;
+
+&lt;p&gt;眼看就要下班了，需求方妹纸竟然说用后台导出的excel打不开？惊出一身冷汗。&lt;/p&gt;
+
+&lt;p&gt;——「发过来，我看能重现卜」&lt;/p&gt;
+
+&lt;p&gt;——[已成功接收到文件xxx0214.xls]&lt;/p&gt;
+
+&lt;p&gt;——「我这打开也报错了，我看看吧……」&lt;/p&gt;
+
+&lt;h2 id=&quot;二这谁写的代码&quot;&gt;二、「这谁写的代码？」&lt;/h2&gt;
+
+&lt;p&gt;一翻记录，都2年多前离职同事留下的世界遗产了，每次都是边骂边看，算，还是自己看着办吧……&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/excel-export-error/error.png&quot; alt=&quot;img_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;打不开，报错，而且这报错信息，一点用都没看出来。&lt;/p&gt;
+
+&lt;p&gt;导了另外一天的数据，打开，正常。这时反应过来了，应该是「这天」的数据有问题。&lt;/p&gt;
+
+&lt;p&gt;随手就往打开好的ide里一扔，火眼金睛看了半天，找到了「问题」所在。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/excel-export-error/number.png&quot; alt=&quot;img_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;嗯，就你不一样，这还不抓个现行。总之满满的都是&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Data ss:Type=&quot;String&quot;&amp;gt;111111&amp;lt;/Data&amp;gt;&lt;/code&gt;，是你的锅了。那么，改成&lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;看看。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/excel-export-error/excel.png&quot; alt=&quot;img_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;打开了，破案！&lt;/p&gt;
+
+&lt;h2 id=&quot;三行了发你一份能打开的了你再试试&quot;&gt;三、「行了，发你一份能打开的了，你再试试」&lt;/h2&gt;
+
+&lt;p&gt;打发完需求方，回头理下。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/excel-export-error/value.png&quot; alt=&quot;img_3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;按感觉又改了改，发现这样也行。不太明白，是不是xml里还有格式的对应限制的？（提问：老司机们，&lt;strong&gt;xml的number类型，有长度限制吗？大小是多少？&lt;/strong&gt;）&lt;/p&gt;
+
+&lt;p&gt;这个暂时放一放，去找源头，毕竟php输出的……&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/excel-export-error/php.png&quot; alt=&quot;img_4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;好吧，网上这么多 &lt;strong&gt;「php生成Excel文件」&lt;/strong&gt; 的方法，非选了这么个麻烦货……（按我之前自己的做法，是直接用&lt;code class=&quot;highlighter-rouge&quot;&gt;\t&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt;输出一个&lt;code class=&quot;highlighter-rouge&quot;&gt;.csv&lt;/code&gt;文件就可以了阿）&lt;/p&gt;
+
+&lt;p&gt;好了，这个就暂时先不深究了。&lt;/p&gt;
+
+&lt;h2 id=&quot;四总结&quot;&gt;四、总结&lt;/h2&gt;
+
+&lt;p&gt;最后还是觉得没弄清楚，就去XML的教程上看了一遍。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;可扩展标记语言，标准通用标记语言的子集，是一种用于标记电子文件使其具有结构性的标记语言。&lt;br /&gt;
+——&lt;a href=&quot;http://baike.baidu.com/link?url=sBUGvQsG9tiFF3lrlnOjVOnNy_fZh7uus8Bjp_EEh_oIw8fYwAjlm9Y2lGnj7r4O4MHo7z2t38qORT7OkYiuv2tgMsc6mVrYT8E6UQ_bEtdmDKcP-Y4DLvuVQdcv-ABEIDo4KiXhnQzER6TV5k_wFuhlLvYiJ3ZlL2kaFV3b2MIjafTjkeBGbemBE9pyAz9V0sVD_lJosF050P-to1TQ7q&quot;&gt;百度百科：XML&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;XML 元素是可扩展，以携带更多的信息。&lt;br /&gt;
+XML 的优势之一，就是可以在不中断应用程序的情况下进行扩展。&lt;br /&gt;
+——&lt;a href=&quot;http://www.runoob.com/xml/xml-elements.html&quot;&gt;XML教程&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;突然意识到：XML的元素，只是一个标志符和里面的数值，并不会对「标志符」是什么，进而对「数值」做限制的。那么我前面的疑问「&lt;strong&gt;xml的number类型，有长度限制吗？大小是多少？&lt;/strong&gt;」应该就不是XML的问题，问题应该在excel上：因为XML的标签和数值给的是&lt;code class=&quot;highlighter-rouge&quot;&gt;number&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;一个超长的数字值&lt;/code&gt;，但excel读取时，就「傻傻」的按它自己的number标准去读取了，然后发现数据超出，异常，于是就报错了！（excel：怪我咯？……）&lt;/p&gt;
+
+&lt;p&gt;好吧，到这，才是真正破案了……&lt;/p&gt;
+
+&lt;h2 id=&quot;五又收获一个linux语句&quot;&gt;五、又收获一个linux语句&lt;/h2&gt;
+
+&lt;p&gt;为什么用「又」？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/excel-export-error/head.png&quot; alt=&quot;img_5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;截取的文件可以用重定向输入到新的文件中：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;head -100  filename &amp;gt;a.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;现用现查，轻松简单，快记下来（从图上还看得出熟练使用了二分法……为了找到上面那行异常的&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;number&amp;gt;&lt;/code&gt;,鬼知道我经历了什么）&lt;/p&gt;
+
+&lt;p&gt;还有&lt;code class=&quot;highlighter-rouge&quot;&gt;tail&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;sed&lt;/code&gt;，各种好东西，要多消化吸收。&lt;/p&gt;
+
+&lt;h2 id=&quot;六参考文档&quot;&gt;六、参考文档&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jyald.iteye.com/blog/523988&quot;&gt;PHP生成Excel&lt;/a&gt; （没懂到底为什么要用这种方法）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.jb51.net/article/46561.htm&quot;&gt;php生成excel文件的简单方法&lt;/a&gt; （生成csv）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/kangaroo_07/article/details/43733891&quot;&gt;linux文件截取前几行，后几行，中间几行命令&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://msdn.microsoft.com/zh-cn/library/ms175894.aspx&quot;&gt;xml 数据类型方法的使用准则&lt;/a&gt;（基本也没什么用，不过是官方的说明）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.runoob.com/xml/xml-attributes.html&quot;&gt;XML教程 - XML元素&lt;/a&gt;（很详细的基础教程）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Tue, 14 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://bluebiu.com/blog/excel-export-error.html</link>
+        <guid isPermaLink="true">http://bluebiu.com/blog/excel-export-error.html</guid>
+        
+        <category>excel</category>
+        
+        <category>linux</category>
+        
+        <category>xml</category>
+        
+        <category>number</category>
+        
+        <category>string</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>known_hosts可以用通配符吗</title>
+        <description>&lt;h2 id=&quot;一事出有因&quot;&gt;一、事出有因&lt;/h2&gt;
+
+&lt;h3 id=&quot;1事出&quot;&gt;1、事出&lt;/h3&gt;
+
+&lt;p&gt;这两天真是跟ssh怼上了……挺久没有更新blog了，于是趁放假来刷了一波，往github这么一push，又出翔了……&lt;/p&gt;
+
+&lt;p&gt;事情是这样：github.com是用git方式去维护更新仓库，它是基于ssh来实现的，而ssh连接对于客户端和服务端都会记录和检验一个私钥公钥的配对，以及RSA安全验证，如果曾经连过的服务端发生了变更，则客户端会有Warning提示，询问并更新记录的文件，防止DNS劫持等带来的安全问题。此时需要客户端删除旧的记录，以便保持known_hosts文件的准确，但这时这么多条ip记录，谁记得清楚……（这我到底想说的啥……）&lt;/p&gt;
+
+&lt;p&gt;简单点，说话的方式简单点：其实就是出现了&lt;code class=&quot;highlighter-rouge&quot;&gt;Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.&lt;/code&gt;怎么破……&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/ssh-known-hosts/sourcetree.png&quot; alt=&quot;img_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这本没什么，但我就那么一查，又跪了……&lt;/p&gt;
+
+&lt;h3 id=&quot;3有因&quot;&gt;3、有因&lt;/h3&gt;
+
+&lt;p&gt;已经吃过搜索引擎的亏，所以这次特别的尝试了各种关键字的组合，试了各种角度姿势，甚至最后搬梯子用了「真正的」搜索引擎谷大哥，都没能查到我想要的答案……（问题是什么？——看标题！——&lt;strong&gt;「known_hosts可以用通配符吗？」&lt;/strong&gt;）&lt;/p&gt;
+
+&lt;p&gt;很明显，这个「最后的」问题，不是一开始的问题，也是在搜索的过程中诞生的。因为查到这里时，就卡住了，因为，搜不到答案了……&lt;/p&gt;
+
+&lt;p&gt;于是，我还是自己来记录一下这个坑吧……&lt;/p&gt;
+
+&lt;p&gt;（还是忍不住说，严重怀疑自己提取关键词的能力，真的是搜到怀疑人生……）&lt;/p&gt;
+
+&lt;h2 id=&quot;二事发现场&quot;&gt;二、事发现场&lt;/h2&gt;
+
+&lt;h3 id=&quot;1还原真相&quot;&gt;1、还原真相&lt;/h3&gt;
+
+&lt;p&gt;第一时间，我就想到了是ssh问题，马上试了一下——&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/ssh-known-hosts/ssh_t.png&quot; alt=&quot;img_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;发现几个线索：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;再次ssh连接，竟然不报warning了？！&lt;/li&gt;
+  &lt;li&gt;known_hosts里有github.com这个域名的记录。&lt;/li&gt;
+  &lt;li&gt;类似192.30.252/253的记录，有多条，并且最后一条明显区别较大。&lt;/li&gt;
+  &lt;li&gt;这些ip后面生成rsa公钥完全一样。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;ping了下……发现ip跟最近的那条吻合（192.30.253.113）！那么就把它去掉，再试试！果然重现，而且，这次ip还有了变化。（192.30.253.112）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/ssh-known-hosts/ssh_t2.png&quot; alt=&quot;img_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;好像有点眉目了，known_hosts里存储的域名、ip地址，如果跟当前ssh连接时的信息不吻合的话，就会跳出警告部分了？&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;用OpenSSH的人都知ssh会把你每个你访问过计算机的公钥(public key)都记录在~/.ssh/known_hosts。&lt;br /&gt;
+&lt;strong&gt;当下次再连接这台主机，&lt;/strong&gt;&lt;br /&gt;
+系统就会认出它的公钥已经保存在本地了，OpenSSH会核对公钥，&lt;br /&gt;
+&lt;strong&gt;如果公钥相同，&lt;/strong&gt;从而跳过警告部分，直接提示输入密码。&lt;br /&gt;
+&lt;strong&gt;如果公钥不同，&lt;/strong&gt;OpenSSH会发出警告，避免你受到DNS Hijack之类的攻击。[&lt;sup id=&quot;fnref:note_0&quot;&gt;&lt;a href=&quot;#fn:note_0&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;2确认嫌疑&quot;&gt;2、确认嫌疑&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/ssh-known-hosts/ssh_t3.png&quot; alt=&quot;img_3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;稍微改了下known_hosts里的记录，把那些多余的记录都删了，然后再试，发现可以了，不告警了！&lt;/p&gt;
+
+&lt;p&gt;（本文完?）&lt;/p&gt;
+
+&lt;p&gt;真的，确实没事了。如果是伸手党，看到这里，基本可以洗洗睡了，也用不着看后面的废话了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;三两个问题&quot;&gt;三、两个问题&lt;/h2&gt;
+
+&lt;p&gt;但，秉着总是给自己找事的一贯作风，这博主又开始闷声挖坑了……&lt;/p&gt;
+
+&lt;p&gt;于是，盯着原先这串ip发了会呆，问了自己一句：&lt;strong&gt;「它又变了咋办？」&lt;/strong&gt;……&lt;/p&gt;
+
+&lt;h3 id=&quot;1第一个问题&quot;&gt;1、第一个问题&lt;/h3&gt;
+
+&lt;p&gt;对阿，要是以后这ip又变了呢？咱又得这么改一回？玩我呢？&lt;strong&gt;「应该有办法可以让ssh连接时不检查这个配对关系吧？」&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;结果谁知道就这样，带着这个问题，起飞了……&lt;/p&gt;
+
+&lt;p&gt;愣是查到天黑都没能降落……&lt;/p&gt;
+
+&lt;p&gt;前面也提到了，连搜索引擎也搞不定……&lt;/p&gt;
+
+&lt;p&gt;搜来搜去，全都没用！我可能用了假搜索引擎……&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;有以下两个解决方案：&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;手动删除修改known_hosts里面的内容；&lt;/li&gt;
+    &lt;li&gt;修改配置文件“~/.ssh/config”，加上这两行，重启服务器。&lt;br /&gt;
+StrictHostKeyChecking no&lt;br /&gt;
+UserKnownHostsFile /dev/null&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;就上面这两句话吧，至少能搜到20遍（百度：ssh known_hosts），然而，屁用没有！……&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;要手动的话，我还查个鸟阿，直接结案了。&lt;/li&gt;
+  &lt;li&gt;这两配置，排列组合我分开试，一起试，混合试，都不能满足需求。&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;StrictHostKeyChecking&lt;/code&gt;设置是否将新主机公钥加入known_hosts文件。no就是自动加；yes就是要手动加，并且访问被拒绝；ask就是询问同意后自动加。&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;UserKnownHostsFile&lt;/code&gt;指定其它文件作为known_hosts文件。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/ssh-known-hosts/params.png&quot; alt=&quot;img_4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;所以，这两参数，有啥用？有鸟用！摔！……&lt;/p&gt;
+
+&lt;p&gt;接着查……&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;修改&lt;strong&gt;服务端&lt;/strong&gt;的ssh配置,如下[&lt;sup id=&quot;fnref:note_1&quot;&gt;&lt;a href=&quot;#fn:note_1&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;]:&lt;br /&gt;
+vi /etc/ssh/sshd_config&lt;br /&gt;
+#打开host_based的验证&lt;br /&gt;
+HostbasedAuthentication yes&lt;br /&gt;
+#不允许忽略~/.ssh/known_hosts&lt;br /&gt;
+&lt;strong&gt;IgnoreUserKnownHosts no&lt;/strong&gt;&lt;br /&gt;
+#不允许忽略~/.shosts&lt;br /&gt;
+IgnoreRhosts no&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;终于明白，这是&lt;strong&gt;服务端&lt;/strong&gt;设置而要求的，难怪客户端怎么设置都没用！然而，&lt;strong&gt;一般不建议调整服务端配置&lt;/strong&gt;，也不太可能让别人的服务端随意修改，所以，这条路基本又走到头了。&lt;/p&gt;
+
+&lt;h3 id=&quot;2第二个问题&quot;&gt;2、第二个问题&lt;/h3&gt;
+
+&lt;p&gt;虽然第一个问题就这么完蛋了，但仍留下了很重要的信息：&lt;strong&gt;原因是来自服务端配置。但本质还是由于本地known_hosts更新不及时，就会导致ssh出现告警&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;这个「更新不及时」在场景上是不可避免的，因为我根本无法预估这个东西变化的时间点而去随时更新。所以注意力就来到了known_hosts这个文件上：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;……3. 类似192.30.252/253的记录，有多条，并且最后一条明显区别较大。……&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;前面提到，这里的ip地址，很有规则。发现前2位一样，从第3位开始不同（估计252是16年的，253是现在的）。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-linux&quot;&gt;192.30.252.128
+192.30.252.129
+192.30.252.121
+192.30.252.130
+192.30.253.113
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;于是，很自然就想到&lt;strong&gt;通配符&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;那么，问题也就来了，&lt;strong&gt;「known_hosts可以用通配符吗」&lt;/strong&gt;？&lt;/p&gt;
+
+&lt;p&gt;这个问题，完全没能在搜索引擎上找到答案。找到些好像是接近的：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;可以使用关键字Host来使声明只作用于特定的系统。Host声明作用于它与下一个Host声明之间的所有配置行。在主机名中，可以使用通配符*和?。&lt;br /&gt;
+Host [hostnames]&lt;br /&gt;
+将下面的声明（直到下一条Host声明）都指定为只适用于hostnames。hostnames采用的格式应该与在命令行上所用的格式一样，而且也能够包含通配符*和?。单个*指定所有主机。[&lt;sup id=&quot;fnref:note_2&quot;&gt;&lt;a href=&quot;#fn:note_2&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;其实这个说的就是平时用的&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.ssh/config&lt;/code&gt;里，针对于Host的设置，那就对known_hosts试试。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/ssh-known-hosts/wildcard_1.png&quot; alt=&quot;img_5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/ssh-known-hosts/wildcard_2.png&quot; alt=&quot;img_6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/ssh-known-hosts/ssh_v.png&quot; alt=&quot;img_8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;先后尝试了「*」，「?」，「???」等通配符。配合known_hosts文件的变化，以及使用-v参数观察&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-linux&quot;&gt;debug1: Host 'github.com' is known and matches the RSA host key.
+debug1: Found key in /Users/biubiu/.ssh/known_hosts:24
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;很快，就试出了结果：&lt;strong&gt;答案是「可以」！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;通配符验证：&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;是多个字符&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;?&lt;/code&gt;是单个字符&lt;/p&gt;
+
+&lt;p&gt;最后，根据前面记录github的ip，暂时决定用图中所修改的试试，观察一段时间再说。修改后是：&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;github.com 192.30.25* ssh-rsa XXXXXX……&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;四最后小结&quot;&gt;四、最后小结&lt;/h2&gt;
+
+&lt;p&gt;又被「万能」的搜索引擎玩了一回……不得不再次吐槽：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;这东西可能根本就没人说过，找不到也是正常……&lt;/li&gt;
+  &lt;li&gt;中途找到那2个配置根本就是扯淡，为啥还这么多人抄来抄去……&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;不过通过搜索引擎积累的信息也是非常有用的，也许网上的答案是针对人家的问题的，并不一定通用。&lt;/p&gt;
+
+&lt;p&gt;采集有用的资料，排除掉没用的信息，沿着查到线索，再通过自己一些实践，最后得到自己想要的答案，这个还是非常畅快的！&lt;/p&gt;
+
+&lt;h2 id=&quot;五其它收获&quot;&gt;五、其它收获&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;事实上OpenSSH在工具ssh-keygen加了三个选项，协助你管理hash了的known_hosts。你可以用”ssh-keygen -F 计算机名称”找出相关的公钥：&lt;br /&gt;
+ssh-keygen -F www.example.net&lt;br /&gt;
+如果你想更新某计算机的公钥，可以先打”ssh-keygen -R 计算机名称”删除该计算机的公钥，然后再”ssh 计算机名称”再进入该计算机，ssh自然会重新下载新的公钥。&lt;br /&gt;
+如果你的known_hosts 档案仍未被hash，你可以打”ssh-keygen -H” [&lt;sup id=&quot;fnref:note_3&quot;&gt;&lt;a href=&quot;#fn:note_3&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/ssh-known-hosts/ssh_keygen.png&quot; alt=&quot;img_7&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;六参考文档&quot;&gt;六、参考文档&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.chinaunix.net/uid-20395453-id-3264845.html&quot;&gt;ssh 配置讲解大全&lt;/a&gt; （这里找出了服务端配置导致由于known_hosts引起告警的原因）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/yasaken/article/details/7348441&quot;&gt;ssh登陆之忽略known_hosts文件&lt;/a&gt;（误导答案很多，还互相抄袭。随便放个出来。）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://unix.stackexchange.com/questions/31549/is-it-possible-to-find-out-the-hosts-in-the-known-hosts-file#comment42847_31550&quot;&gt;Is it possible to find out the hosts in the known_hosts file?&lt;/a&gt;（ssh-keygen -F）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tianxiamall.blog.163.com/blog/static/208489112201521487463/&quot;&gt;OpenSSH 中 known_hosts 的维护&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cn.linux.vbird.org/linux_server/0310telnetssh_2.php&quot;&gt;第十一章、远程联机服务器SSH / XDMCP / VNC / RDP —— 鸟哥的Linux私房菜&lt;/a&gt;（里面也没能提到关于known_hosts格式的问题，不过说得比较细致，还有一些例如重置系统公钥等等的细节也不错。）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;注释&quot;&gt;注释:&lt;/h6&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:note_0&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://tianxiamall.blog.163.com/blog/static/208489112201521487463/&quot;&gt;http://tianxiamall.blog.163.com/blog/static/208489112201521487463/&lt;/a&gt; &lt;a href=&quot;#fnref:note_0&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:note_1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://blog.chinaunix.net/uid-20395453-id-3264845.html&quot;&gt;http://blog.chinaunix.net/uid-20395453-id-3264845.html&lt;/a&gt; &lt;a href=&quot;#fnref:note_1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:note_2&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.hao32.com/unix-linux/462.html&quot;&gt;http://www.hao32.com/unix-linux/462.html&lt;/a&gt; &lt;a href=&quot;#fnref:note_2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:note_3&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://tianxiamall.blog.163.com/blog/static/208489112201521487463/&quot;&gt;http://tianxiamall.blog.163.com/blog/static/208489112201521487463/&lt;/a&gt; &lt;a href=&quot;#fnref:note_3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 02 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://bluebiu.com/blog/ssh-known-hosts.html</link>
+        <guid isPermaLink="true">http://bluebiu.com/blog/ssh-known-hosts.html</guid>
+        
+        <category>linux</category>
+        
+        <category>ssh</category>
+        
+        <category>known_hosts</category>
+        
+        <category>regex</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Linux使用ssh超时断开连接的真正原因</title>
+        <description>&lt;h2 id=&quot;一挖坑&quot;&gt;一、挖坑&lt;/h2&gt;
+
+&lt;p&gt;这篇的起因主要是来自上一个问题「&lt;a href=&quot;/blog/iterm2-ssh-session-idle.html&quot;&gt;iTerm2中ssh保持连接不断开&lt;/a&gt;」。&lt;/p&gt;
+
+&lt;p&gt;原本以为是个很常见的小问题，随手一搜，解决办法一大堆，试了试可行，就觉得没什么问题了。但，正因为觉得太简单了，在文末去查看了一下服务端配置，想找找问题起因，结果却发现开辟了一个深坑……&lt;/p&gt;
+
+&lt;p&gt;查看的默认配置：&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$TMOUT&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# ...&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#TCPKeepAlive yes&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ...&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ClientAliveInterval 0&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ClientAliveCountMax 3&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;二入坑&quot;&gt;二、入坑&lt;/h2&gt;
+
+&lt;h3 id=&quot;1提问&quot;&gt;1、提问&lt;/h3&gt;
+
+&lt;p&gt;提个问题：既然ssh是空闲过久导致连接超时而断开，那么&lt;code class=&quot;highlighter-rouge&quot;&gt;「ssh默认是多久时间，会自动断开连接？」&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;结果翻遍大半个搜索引擎……全都是诸如「如何设置，才能让ssh不超时自动断」这样的鬼title，而且大部分都是互相抄，复制粘贴的内容……而我想问的问题是「到底多久超时」，却没人说过……或者说，其实跟本没有ssh超时这一说？！&lt;/p&gt;
+
+&lt;p&gt;再提个问题：如果ssh默认设置都没有限制，那&lt;code class=&quot;highlighter-rouge&quot;&gt;「为什么ssh会断开连接？」&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;本以为是ssh自动断开超时连接的，但通过配置看到，默认值中并没有做任何限制，那么理论上，ssh的连接是不会断开的。那到底是谁，干了这件「坏事」？&lt;/p&gt;
+
+&lt;h3 id=&quot;2再问&quot;&gt;2、再问&lt;/h3&gt;
+
+&lt;p&gt;实在没什么头绪，跑到QQ群问了一番，结果真有大神回应，并且顺利找到了线索！&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;最后通过各种摸索，终于知道了问题的主要原因，因为连接是可以的，只是会超时断开，根据网络结构来看，问题就可能出现在一下这几个部分[&lt;sup id=&quot;fnref:note_0&quot;&gt;&lt;a href=&quot;#fn:note_0&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;] ：&lt;br /&gt;
+    1. 服务器存在防火墙，会关闭超时空闲连接，或设置了关闭超时空闲连接。&lt;br /&gt;
+    2. 客服端和服务器之间存在路由器，路由器也可能带有防火墙，会关闭超时空闲连接。&lt;br /&gt;
+    3. 客服端存在防火墙，会关闭超时空闲连接。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原来，问题出在&lt;strong&gt;防火墙&lt;/strong&gt;！！&lt;/p&gt;
+
+&lt;h3 id=&quot;3追问&quot;&gt;3、追问&lt;/h3&gt;
+
+&lt;p&gt;为什么会是防火墙呢？根据大神指点：在iptables的一些NAT配置说明里有提到——&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;4.3.6 State match
+状态匹配扩展要有内核里的连接跟踪代码的协助，因为它是从连接跟踪机制中得到包的状态的。这样我们就可以了解连接所处的状态。它几乎适用于所有的协议，包括那些无状态的协议，如ICMP和UDP。&lt;strong&gt;针对每个连接都有一个缺省的超时值，如果连接的时间超过了这个值，那么这个连接的记录就被会从连接跟踪的记录数据库中删除，也就是说连接就不再存在了。&lt;/strong&gt;这个match必须有-m state作为前提才能使用。状态机制的详细内容在章节状态机制中。[&lt;sup id=&quot;fnref:note_1&quot;&gt;&lt;a href=&quot;#fn:note_1&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;NAT firewalls like to time out idle sessions to keep their state tables clean and their memory footprint low.&lt;br /&gt;
+&lt;strong&gt;NAT防火墙喜欢对空闲的会话进行超时处理，以确保它们状态表的干净和内存的低占用率。&lt;/strong&gt;&lt;br /&gt;
+Some firewalls are nice, and let you idle for up to a day or so; some are gestapo and terminate your session after 5 minutes.&lt;br /&gt;
+&lt;strong&gt;一些防火墙比较友好，允许你的空闲会话时间为一天甚至超过一天；另一些却如盖世太保，5分钟空闲就终止你的会话。&lt;/strong&gt;[&lt;sup id=&quot;fnref:note_2&quot;&gt;&lt;a href=&quot;#fn:note_2&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;通过这段描述（好吧，其实这段我没看得太透彻-0-。看来平时缺少些TCP等的知识细节的积累，对处理问题时的一些方向，线索，还是会有不少的障碍的。），我们就比较能大致想到断开的原因了——&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;通过ssh连接后，客户端和服务端长时间没响应时，在两方机器设置中均没任何限制，但在各自的防火墙，或是中转网络连接路由的防火墙中，出现了「闲置超时断开」的缺省机制！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;三填坑&quot;&gt;三、填坑&lt;/h2&gt;
+
+&lt;p&gt;总算知道了问题所在。既然如此，那就可以「对症下药」了：&lt;strong&gt;让连接「忙」起来，别「闲」着！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;方法有几种，选其一即可。&lt;/p&gt;
+
+&lt;h3 id=&quot;1修改服务端配置&quot;&gt;1、修改服务端配置&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/linux-ssh-session-alive/server_sshd_config.png&quot; alt=&quot;img_0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TCPKeepAlive yes&lt;/code&gt; #表示TCP保持连接不断开&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ClientAliveInterval 300&lt;/code&gt; #指定服务端向客户端请求消息的时间间隔，单位是秒，默认是0，不发送。设置个300表示5分钟发送一次（注意，这里是服务端主动发起），然后等待客户端响应，成功，则保持连接。&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ClientAliveCountMax 3&lt;/code&gt; #指服务端发出请求后客户端无响应则自动断开的最大次数。使用默认给的3即可。&lt;br /&gt;
+（注意：TCPKeepAlive必须打开，否则直接影响后面的设置。ClientAliveInterval设置的值要小于各层防火墙的最小值，不然，也就没用了。）&lt;/p&gt;
+
+&lt;p&gt;注意：最后要重启sshd服务才生效&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo /etc/init.d/ssh restart&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;修改服务端的配置往往会比较麻烦，也涉及到权限问题，以及安全问题。还是比较推荐下面的方法。&lt;/p&gt;
+
+&lt;h3 id=&quot;2修改客户端配置&quot;&gt;2、修改客户端配置&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vim ~/.ssh/config&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Host &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+    ServerAliveInterval 60
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这个在上一个问题「&lt;a href=&quot;/blog/iterm2-ssh-session-idle.html&quot;&gt;iTerm2中ssh保持连接不断开&lt;/a&gt;」中有说到的方案。&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Host *&lt;/code&gt; #表示需要启用该规则的服务端（域名或ip）&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ServerAliveInterval 60&lt;/code&gt; #表示没60秒去给服务端发起一次请求消息（这个设置好就行了）&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ServerAliveCountMax 3&lt;/code&gt; #表示最大连续尝试连接次数（这个基本不用设置）&lt;/p&gt;
+
+&lt;h3 id=&quot;3修改连接工具的配置&quot;&gt;3、修改连接工具的配置&lt;/h3&gt;
+
+&lt;p&gt;通过改变连接工具的一些默认配置，把keepalive的配置打开起来即可：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;secureCRT：会话选项 - 终端 - 反空闲 - 发送NO-OP每xxx秒，设置一个非0值。&lt;/li&gt;
+  &lt;li&gt;putty：Connection - Seconds between keepalive(0 to turn off)，设置一个非0值。&lt;/li&gt;
+  &lt;li&gt;iTerm2：profiles - sessions - When idle - send ASCII code.&lt;/li&gt;
+  &lt;li&gt;XShell：session properties - connection - Keep Alive - Send keep alive message while this session connected. Interval [xxx] sec.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当然，用这个办法的副作用也是有的，比如iTerm2会出现一些并不想输入的字符、vim会有些多余字符插入等等，这些情况就按个人的需要酌情取舍了。&lt;/p&gt;
+
+&lt;h3 id=&quot;4连接参数-o&quot;&gt;4、连接参数-o&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh -o ServerAliveInterval=30 user@host&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;四坑不停&quot;&gt;四、坑不停&lt;/h2&gt;
+
+&lt;p&gt;上面基本就把现象，原因，处理方法都说得差不多了，不过，这里还要多说两句。&lt;/p&gt;
+
+&lt;p&gt;一般来说，&lt;strong&gt;不建议修改服务端。&lt;/strong&gt;会涉及到权限问题，以及安全问题。还是比较推荐修改客服端或工具等的方法。查的过程有看到过说关于抓包看到服务器发包时握手问题的，具体原因……&lt;/p&gt;
+
+&lt;p&gt;还有，细心的读者可能还会发现，「三、1」中提到的&lt;code class=&quot;highlighter-rouge&quot;&gt;TCPKeepAlive&lt;/code&gt;，其实还有更深一层的意思和相关作用。但这里涉及的TCP心跳包，保活，探测报文等等……&lt;/p&gt;
+
+&lt;p&gt;与上面搭配的还有系统变量&lt;code class=&quot;highlighter-rouge&quot;&gt;echo $TMOUT&lt;/code&gt;……&lt;/p&gt;
+
+&lt;p&gt;对上面提到的防火墙问题，前文提到的QQ群大神又帮忙往下查一查，告知还可以看到一个关于防火墙配置时的参数&lt;code class=&quot;highlighter-rouge&quot;&gt;ip_conntrack_tcp_timeout_established&lt;/code&gt;[&lt;sup id=&quot;fnref:note_3&quot;&gt;&lt;a href=&quot;#fn:note_3&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;]，要研究下这个参数以及其所在文件的设置详情……&lt;/p&gt;
+
+&lt;p&gt;好吧……总结一下就是，有时从一个比较「小」的坑，可能就这样不知不觉的牵扯到了一堆底层的知识，一不留神就蒙逼了……&lt;/p&gt;
+
+&lt;p&gt;不过，这种能够不断的挖掘深坑，坑中有坑，坑复一坑，坑坑向上的感觉，总的来说还是非常有意思的。以后要继续发掘……&lt;/p&gt;
+
+&lt;p&gt;对于开头提到的问题，至少目前是可以「见好就收」了。对于期间遇到的一些「既有深度又有广度」的问题，本文无法一一兼顾。一口吃不下一个广西粽，一铲填不平全部的坑，暂时不能一下子研究到位的，还可以保持关注，记录下来。后面有兴趣的话，让我们再慢慢揭开它们的面纱吧。:)&lt;/p&gt;
+
+&lt;h2 id=&quot;五参考文档&quot;&gt;五、参考文档&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/kevingrace/p/6110842.html&quot;&gt;Linux系统下的ssh使用(依据个人经验总结)&lt;/a&gt; （有alive相关的ssh服务端和客服端的配置）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.chinaunix.net/uid-20395453-id-3264845.html&quot;&gt;ssh配置讲解大全&lt;/a&gt;（里面有详细的debug过程，tcpdump抓包信息）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/whatlonelytear/p/5532433.html&quot;&gt;客户端连接linux经常间隔性断开链接&lt;/a&gt; （点出根源是防火墙问题）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.chinaunix.net/uid-10697776-id-3341317.html&quot;&gt;ssh 设置超时时间&lt;/a&gt;（文中有一段英文以及翻译，很有价值）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://lilinji.blog.51cto.com/5441000/1129350&quot;&gt;linux 配置防火墙 配置nat转发服务&lt;/a&gt;（提到ip_conntrack_tcp_timeout_established，还有防火墙iptables，NAT等配置，值得研究学习）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;注释&quot;&gt;注释:&lt;/h6&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:note_0&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/whatlonelytear/p/5532433.html&quot;&gt;http://www.cnblogs.com/whatlonelytear/p/5532433.html&lt;/a&gt; &lt;a href=&quot;#fnref:note_0&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:note_1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.360doc.com/content/16/0627/16/1157518_571159455.shtml&quot;&gt;http://www.360doc.com/content/16/0627/16/1157518_571159455.shtml&lt;/a&gt; &lt;a href=&quot;#fnref:note_1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:note_2&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://blog.chinaunix.net/uid-10697776-id-3341317.html&quot;&gt;http://blog.chinaunix.net/uid-10697776-id-3341317.html&lt;/a&gt; &lt;a href=&quot;#fnref:note_2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:note_3&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://lilinji.blog.51cto.com/5441000/1129350&quot;&gt;http://lilinji.blog.51cto.com/5441000/1129350&lt;/a&gt; &lt;a href=&quot;#fnref:note_3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 24 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://bluebiu.com/blog/linux-ssh-session-alive.html</link>
+        <guid isPermaLink="true">http://bluebiu.com/blog/linux-ssh-session-alive.html</guid>
+        
+        <category>linux</category>
+        
+        <category>ssh</category>
+        
+        <category>session</category>
+        
+        <category>alive</category>
+        
+        <category>NAT</category>
+        
+        <category>iptables</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>iTerm2中ssh保持连接不断开</title>
+        <description>&lt;h2 id=&quot;一一个iterm2蛋疼的问题&quot;&gt;一、一个iTerm2蛋疼的问题&lt;/h2&gt;
+
+&lt;p&gt;最近基友搞了台mbp，在装一些常用app时，跟我交流到一个情况：「用iTerm2进行ssh时，空闲了一段时间就会断掉了……」想来，这个情形也是之前总遇到的，尤其正开着vim开开心心的一把梭时，突然有产品汪跑来跟你沟通需求细节，等好不容易聊完，人家的需求有了，你TM代码呢？……于是又吭哧吭哧回到刚才的界面，正准备撸起袖子加油干，却发现冰冷的窗口上一点反应都没有了……&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/iterm2-ssh-session-idle/broken_pipe.png&quot; alt=&quot;img_0&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;二解决解决&quot;&gt;二、解决？解决！&lt;/h2&gt;
+
+&lt;p&gt;看这情况，是服务器端把空闲连接给断开了。只能重新连接了。这么蛋疼，是该找点法子处理下了。&lt;/p&gt;
+
+&lt;p&gt;随手一搜，锦囊到手。&lt;/p&gt;
+
+&lt;h3 id=&quot;1方案一通过iterm2参数配置&quot;&gt;1、方案一（通过iTerm2参数配置）&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;刚接触iTerm2，用起来感觉还不错，就是不知道如何保持连接，让ssh不断线。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;profiles -&amp;gt; sessions -&amp;gt; When idel, send ASCII code&lt;/code&gt; [&lt;sup id=&quot;fnref:note_0&quot;&gt;&lt;a href=&quot;#fn:note_0&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(我就不说这回答把「idle」都拼错了……-0-)&lt;/p&gt;
+
+&lt;p&gt;很快，按照设置，配好，验证，好了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/iterm2-ssh-session-idle/iterm2_ssh_session.png&quot; alt=&quot;img_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我配置的ASCII code是97，所以是一串aaaaaa，一看效果，果然没断。但是接着用了用，就发现有坑了……&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/iterm2-ssh-session-idle/aaaaaa.png&quot; alt=&quot;img_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/iterm2-ssh-session-idle/vim.png&quot; alt=&quot;img_3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;开着vim，过了一段时间再回来时，这一长串aaaaaa……还要手工ESC，u一下，才恢复，而且指不定还会有其它副作用，实在蛋疼……&lt;/p&gt;
+
+&lt;h3 id=&quot;2方案二通过客户端ssh参数配置&quot;&gt;2、方案二（通过客户端ssh参数配置）&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;正确的做法是，通过配置 ServerAliveInterval 来实现，在 ~/.ssh/config 中加入：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ServerAliveInterval=30&lt;/code&gt;[&lt;sup id=&quot;fnref:note_1&quot;&gt;&lt;a href=&quot;#fn:note_1&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ServerAliveInterval 30 #表示ssh客户端每隔30秒给远程主机发送一个no-op包，no-op是无任何操作的意思，这样远程主机就不会关闭这个SSH会话。[&lt;sup id=&quot;fnref:note_2&quot;&gt;&lt;a href=&quot;#fn:note_2&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;好的，二话不说，马上改！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/iterm2-ssh-session-idle/ssh_config.png&quot; alt=&quot;img_4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我只需要在当前用户的ssh连接调整就好（注意：是本地发起连接的客户端！并非修改所要连接的远程服务器端），那么&lt;code class=&quot;highlighter-rouge&quot;&gt;vim ~/.ssh/config&lt;/code&gt;，然后新增&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Host &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+    ServerAliveInterval 60
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;我觉得60秒就好了，而且基本去连的机器都保持，所以配置了&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;，如果有需要针对某个机器，可以自行配置为需要的&lt;code class=&quot;highlighter-rouge&quot;&gt;serverHostName&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;再经过最后的验证，方案二确实为最优选择。&lt;/p&gt;
+
+&lt;h2 id=&quot;三补充&quot;&gt;三、补充&lt;/h2&gt;
+
+&lt;h3 id=&quot;1单次连接&quot;&gt;1、单次连接&lt;/h3&gt;
+
+&lt;p&gt;若只是单次连接时需要，可使用-o参数实现：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh -o ServerAliveInterval=30 user@host&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2罪魁祸首&quot;&gt;2、罪魁祸首？&lt;/h3&gt;
+
+&lt;p&gt;最后看下服务端的配置：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//blog/iterm2-ssh-session-idle/sshd_config.png&quot; alt=&quot;img_5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我去……结果发现服务端其实只是默认配置？并没有主动做什么限制，那这次问题的根源，其实只是因为Mac的wifi断开了造成的而已？并非ssh连接的问题吗？（wifi：这锅我不背……）&lt;/p&gt;
+
+&lt;p&gt;好吧，这个问题记下了，留着下次研究。
+（果然发现，之前把问题想得太简单了，后面原来隐藏了这么个秘密……「&lt;a href=&quot;/blog/linux-ssh-session-alive.html&quot;&gt;Linux使用ssh超时断开连接的真正原因&lt;/a&gt;」）&lt;/p&gt;
+
+&lt;h2 id=&quot;四参考文档&quot;&gt;四、参考文档&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.v2ex.com/t/155773&quot;&gt;V2EX›问与答——iTerm2 如何保持连接&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.liaohuqiu.net/cn/posts/keep-alive-terminal-connection/&quot;&gt;命令行终端保持连接&lt;/a&gt; (简单明了，提到了Vim的副作用)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.win789.com/linux/2017/47601.html&quot;&gt;防止远程Linux主机自动断开SSH连接&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.linuxidc.com/Linux/2013-02/79941.htm&quot;&gt;SSH 连接超时(ssh timeout) 解决办法&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;注释&quot;&gt;注释:&lt;/h6&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:note_0&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.v2ex.com/t/155773&quot;&gt;https://www.v2ex.com/t/155773&lt;/a&gt; &lt;a href=&quot;#fnref:note_0&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:note_1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.liaohuqiu.net/cn/posts/keep-alive-terminal-connection/&quot;&gt;https://www.liaohuqiu.net/cn/posts/keep-alive-terminal-connection/&lt;/a&gt; &lt;a href=&quot;#fnref:note_1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:note_2&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.win789.com/linux/2017/47601.html&quot;&gt;http://www.win789.com/linux/2017/47601.html&lt;/a&gt; &lt;a href=&quot;#fnref:note_2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 22 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://bluebiu.com/blog/iterm2-ssh-session-idle.html</link>
+        <guid isPermaLink="true">http://bluebiu.com/blog/iterm2-ssh-session-idle.html</guid>
+        
+        <category>iTerm2</category>
+        
+        <category>ssh</category>
+        
+        <category>session</category>
+        
+        <category>vim</category>
+        
+        <category>ASCII</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>2016韶关马拉松21k</title>
+        <description>&lt;h2 id=&quot;一跑前&quot;&gt;一、跑前&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/hapi.jpg&quot; alt=&quot;img_0&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;很长一段时间没出来跑马了跟基友组团其实就2人一起哈啤&quot;&gt;[↑很长一段时间没出来跑马了，跟基友组团（其实就2人）……一起哈啤！]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/makeup.jpg&quot; alt=&quot;img_1&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;定妆照一切就绪&quot;&gt;[↑定妆照，一切就绪]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/morning.jpg&quot; alt=&quot;img_2&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;韶关不算太大早早就走到了起点&quot;&gt;[↑韶关不算太大，早早就走到了起点]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/3R_before.jpg&quot; alt=&quot;img_3&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;还有3r的跑友们后话这可是和3r超级女一号的欧欧大神第一次合照当时还不知道呢哈哈&quot;&gt;[↑还有3R的跑友们（后话：这可是和3R超级女一号的欧欧大神第一次合照……当时还不知道呢哈哈）]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/3R_start.jpg&quot; alt=&quot;img_4&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;开跑前相当欢乐结果兴奋到开跑前10k一直在找厕所&quot;&gt;[↑开跑前，相当欢乐，结果兴奋到开跑前10k一直在找厕所……]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/start.jpg&quot; alt=&quot;img_5&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;起点大门也是终点大门&quot;&gt;[↑起点大门，也是终点大门……]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/mao_and_long.jpg&quot; alt=&quot;img_8&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;偶遇牌控群的猫姐和龙龙&quot;&gt;[↑偶遇牌控群的猫姐和龙龙]&lt;/h6&gt;
+
+&lt;h2 id=&quot;二跑中&quot;&gt;二、跑中&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/with3R.jpg&quot; alt=&quot;img_16&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;3r型男frank出发后一起跑了一段&quot;&gt;[↑3R型男frank，出发后一起跑了一段]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/liliyi.jpg&quot; alt=&quot;img_6&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;3r粒粒仪超级能跑的小女生&quot;&gt;[↑3R粒粒仪，超级能跑的小女生]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/anyi.jpg&quot; alt=&quot;img_7&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;牌控群的安怡偶遇10后话没想到后面还接着偶遇了203040&quot;&gt;[↑牌控群的安怡，偶遇1.0（后话：没想到后面还接着偶遇了2.0,3.0,4.0……）]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/move.jpg&quot; alt=&quot;img_9&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;这次被抓拍的不多就这张还行吧&quot;&gt;[↑这次被抓拍的不多，就这张还行吧……]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/enddoor.jpg&quot; alt=&quot;img_10&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;终点前的一张&quot;&gt;[↑终点前的一张……]&lt;/h6&gt;
+
+&lt;h2 id=&quot;三跑后&quot;&gt;三、跑后&lt;/h2&gt;
+
+&lt;h3 id=&quot;1小伙伴&quot;&gt;1、小伙伴&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/3R_end.jpg&quot; alt=&quot;img_11&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;3r队伍完赛集结&quot;&gt;[↑3R队伍完赛集结~]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/3R_end2.jpg&quot; alt=&quot;img_12&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;还有第二波集结&quot;&gt;[↑还有第二波集结~]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/21k_done.jpg&quot; alt=&quot;img_13&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;终点忘拍了这里补一张-0-&quot;&gt;[↑终点忘拍了，这里补一张-0-]&lt;/h6&gt;
+
+&lt;h3 id=&quot;2成绩&quot;&gt;2、成绩&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/track.png&quot; alt=&quot;img_14&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;轨迹图&quot;&gt;[↑轨迹图]&lt;/h6&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://source.bluebiu.com/posts//marathon/2016-10-23-shaoguan-21k/certificate.jpg&quot; alt=&quot;img_15&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;完赛证书&quot;&gt;[↑完赛证书]&lt;/h6&gt;
+
+&lt;h3 id=&quot;3结语&quot;&gt;3、结语&lt;/h3&gt;
+
+&lt;p&gt;随着韶关跑起久违的半马，就顺势开启了下半年的疯狂跑马历程……后面几乎每个星期都有，直到年底哈哈。&lt;/p&gt;
+
+&lt;p&gt;这次韶关，跑前2天，小腿突然有点小抽筋，还以为跑不了了，吓得背了泡沫轴，网球等等，还想着赛前再按摩下……结果前一天才匆忙赶到，跟基友吃饭喝酒，回住地睡了一觉，第二天醒来，完全好了，回复如初！兴致盎然，来到起点。&lt;/p&gt;
+
+&lt;p&gt;前10K，在慢悠悠的找厕所，跟着型男Frank跑了好几K，还被贞贞大神超过加了个油……后来开始加了下速度，可赛道到了13-18k时却越来越窄……顾得各种躲避，直到听到贞贞大神第二次加油，才发现错过了……一直到18k才追上基友，这货竟然如此兴奋，前面跑得飞起（结果埋下了一坑，后来长沙马就抛弃我了……），追上时还想带跑一会，发现他有些喘，稍微一起跑了一段，后来还是让他自行调整了，我就杀去了终点，然后小小PB了一下……&lt;/p&gt;
+
+&lt;p&gt;这次3R来的跑友不多，其中就偶遇了2位女大神欧欧和贞贞（之后才知道的……怎么知道的？当然是被拉爆了……），还有牌控群的一些朋友，而且在下半年的跑马中，还偶遇了好几次，看来疯狂的人不止我一个……&lt;/p&gt;
+
+&lt;p&gt;另外，这次在基友的建议下，尝试了能量胶的补给，尽管只是半马，感觉还是挺有效的，听说全马是肯定要补给的，那就看看到时怎么制定补给计划了。&lt;/p&gt;
+
+&lt;p&gt;接下来，就要迎来第一个全马了，拭目以待吧。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/runningabout/marathon-records.html&quot;&gt;&lt;u&gt;更多跑马记录&amp;gt;&amp;gt;&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 23 Oct 2016 00:00:00 +0800</pubDate>
+        <link>http://bluebiu.com/marathon/2016-10-23-shaoguan-21k.html</link>
+        <guid isPermaLink="true">http://bluebiu.com/marathon/2016-10-23-shaoguan-21k.html</guid>
+        
+        <category>shaoguan</category>
+        
+        <category>run</category>
+        
+        <category>marathon</category>
+        
+        <category>21k</category>
+        
+        
+        <category>marathon</category>
+        
+      </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword" content="biubiu, @biubiu, Biu^Biu's blog, bluebiu github, biubiu的博客" >
+    <meta name="description" content="美好，美好。">
+
+    <title>known_hosts可以用通配符吗 - Biu^Biu's Blog</title>
+
+    <link rel="canonical" href="http://bluebiu.com/blog/ssh-known-hosts.html" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/bootstrap.min.css?vvv=1524211659" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/clean-blog.css?vvv=1524211659" />
+
+    <!-- -160201 -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/biubiu.css?vvv=1524211659" />
+
+    <!-- Pygments Github CSS -->
+    <!-- <link rel="stylesheet" href="/base/css/syntax.css?vvv=1524211659" /> -->
+    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/syntax-monokai.css?vvv=1524211659" />
+
+    <!-- Custom Fonts -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- 使用七牛的CDN, for font-awesome -->
+     <link href="//cdn.staticfile.org/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+   <!-- 感觉用不着 -160120 <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' /> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"> </script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"> </script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="http://source.bluebiu.com/base/js/jquery.min.js?vvv=1524211659"> </script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://source.bluebiu.com/base/js/bootstrap.min.js?vvv=1524211659"> </script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="http://source.bluebiu.com/base/js/clean-blog.min.js?vvv=1524211659"> </script>
+
+    <!-- biubiu Custom JavaScript -160201 -->
+    <script src="http://source.bluebiu.com/base/js/biubiu.js?vvv=1524211659"> </script>
+</head>
+
+
+<body ontouchstart="">
+
+    <!-- 自定义的一些html块 -160201 -->
+<div id="back-top">
+    <a href="#toptoptop" title="回到顶部"></a>
+</div>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href='/'></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <a href="http://www.bluebiu.com">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/documents.html">Timeline</a>
+                </li>
+                
+                <li>
+                    <a href="/categories.html">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="/tags.html">Tags</a>
+                </li>
+                
+                <li>
+                    <a href="/about.html">About</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('');
+        background-color:none;
+    }
+    h2,h3{
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+    h4,h5{
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a href="/tags.html#linux" title="linux" >linux</a>
+                        
+                        <a href="/tags.html#ssh" title="ssh" >ssh</a>
+                        
+                        <a href="/tags.html#known_hosts" title="known_hosts" >known_hosts</a>
+                        
+                        <a href="/tags.html#regex" title="regex" >regex</a>
+                        
+                    </div>
+                    <h1>known_hosts可以用通配符吗</h1>
+                    
+                    <span class="meta">Posted by biubiu on February 2, 2017
+                    </span>
+                    <span>
+                        
+                          <span id="/blog/ssh-known-hosts.html" class="leancloud_visitors" data-flag-title="known_hosts可以用通配符吗">
+                           <span class="leancloud-visitors-count">?</span>
+                           <span class="post-meta-item-text"> <i>hits</i> </span>
+                           <span class="post-meta-divider">|</span>
+                          </span>
+                        
+                        3881 <i>words</i> | 16 <i>minutes to read</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
+                <h2 id="一事出有因">一、事出有因</h2>
+
+<h3 id="1事出">1、事出</h3>
+
+<p>这两天真是跟ssh怼上了……挺久没有更新blog了，于是趁放假来刷了一波，往github这么一push，又出翔了……</p>
+
+<p>事情是这样：github.com是用git方式去维护更新仓库，它是基于ssh来实现的，而ssh连接对于客户端和服务端都会记录和检验一个私钥公钥的配对，以及RSA安全验证，如果曾经连过的服务端发生了变更，则客户端会有Warning提示，询问并更新记录的文件，防止DNS劫持等带来的安全问题。此时需要客户端删除旧的记录，以便保持known_hosts文件的准确，但这时这么多条ip记录，谁记得清楚……（这我到底想说的啥……）</p>
+
+<p>简单点，说话的方式简单点：其实就是出现了<code class="highlighter-rouge">Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.</code>怎么破……</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/ssh-known-hosts/sourcetree.png" alt="img_0" /></p>
+
+<p>这本没什么，但我就那么一查，又跪了……</p>
+
+<h3 id="3有因">3、有因</h3>
+
+<p>已经吃过搜索引擎的亏，所以这次特别的尝试了各种关键字的组合，试了各种角度姿势，甚至最后搬梯子用了「真正的」搜索引擎谷大哥，都没能查到我想要的答案……（问题是什么？——看标题！——<strong>「known_hosts可以用通配符吗？」</strong>）</p>
+
+<p>很明显，这个「最后的」问题，不是一开始的问题，也是在搜索的过程中诞生的。因为查到这里时，就卡住了，因为，搜不到答案了……</p>
+
+<p>于是，我还是自己来记录一下这个坑吧……</p>
+
+<p>（还是忍不住说，严重怀疑自己提取关键词的能力，真的是搜到怀疑人生……）</p>
+
+<h2 id="二事发现场">二、事发现场</h2>
+
+<h3 id="1还原真相">1、还原真相</h3>
+
+<p>第一时间，我就想到了是ssh问题，马上试了一下——</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/ssh-known-hosts/ssh_t.png" alt="img_1" /></p>
+
+<p>发现几个线索：</p>
+
+<ol>
+  <li>再次ssh连接，竟然不报warning了？！</li>
+  <li>known_hosts里有github.com这个域名的记录。</li>
+  <li>类似192.30.252/253的记录，有多条，并且最后一条明显区别较大。</li>
+  <li>这些ip后面生成rsa公钥完全一样。</li>
+</ol>
+
+<p>ping了下……发现ip跟最近的那条吻合（192.30.253.113）！那么就把它去掉，再试试！果然重现，而且，这次ip还有了变化。（192.30.253.112）</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/ssh-known-hosts/ssh_t2.png" alt="img_2" /></p>
+
+<p>好像有点眉目了，known_hosts里存储的域名、ip地址，如果跟当前ssh连接时的信息不吻合的话，就会跳出警告部分了？</p>
+
+<blockquote>
+  <p>用OpenSSH的人都知ssh会把你每个你访问过计算机的公钥(public key)都记录在~/.ssh/known_hosts。<br />
+<strong>当下次再连接这台主机，</strong><br />
+系统就会认出它的公钥已经保存在本地了，OpenSSH会核对公钥，<br />
+<strong>如果公钥相同，</strong>从而跳过警告部分，直接提示输入密码。<br />
+<strong>如果公钥不同，</strong>OpenSSH会发出警告，避免你受到DNS Hijack之类的攻击。[<sup id="fnref:note_0"><a href="#fn:note_0" class="footnote">1</a></sup>]</p>
+</blockquote>
+
+<h3 id="2确认嫌疑">2、确认嫌疑</h3>
+
+<p><img src="http://source.bluebiu.com/posts//blog/ssh-known-hosts/ssh_t3.png" alt="img_3" /></p>
+
+<p>稍微改了下known_hosts里的记录，把那些多余的记录都删了，然后再试，发现可以了，不告警了！</p>
+
+<p>（本文完?）</p>
+
+<p>真的，确实没事了。如果是伸手党，看到这里，基本可以洗洗睡了，也用不着看后面的废话了。</p>
+
+<hr />
+
+<h2 id="三两个问题">三、两个问题</h2>
+
+<p>但，秉着总是给自己找事的一贯作风，这博主又开始闷声挖坑了……</p>
+
+<p>于是，盯着原先这串ip发了会呆，问了自己一句：<strong>「它又变了咋办？」</strong>……</p>
+
+<h3 id="1第一个问题">1、第一个问题</h3>
+
+<p>对阿，要是以后这ip又变了呢？咱又得这么改一回？玩我呢？<strong>「应该有办法可以让ssh连接时不检查这个配对关系吧？」</strong></p>
+
+<p>结果谁知道就这样，带着这个问题，起飞了……</p>
+
+<p>愣是查到天黑都没能降落……</p>
+
+<p>前面也提到了，连搜索引擎也搞不定……</p>
+
+<p>搜来搜去，全都没用！我可能用了假搜索引擎……</p>
+
+<blockquote>
+  <p>有以下两个解决方案：</p>
+  <ol>
+    <li>手动删除修改known_hosts里面的内容；</li>
+    <li>修改配置文件“~/.ssh/config”，加上这两行，重启服务器。<br />
+StrictHostKeyChecking no<br />
+UserKnownHostsFile /dev/null</li>
+  </ol>
+</blockquote>
+
+<p>就上面这两句话吧，至少能搜到20遍（百度：ssh known_hosts），然而，屁用没有！……</p>
+
+<ol>
+  <li>要手动的话，我还查个鸟阿，直接结案了。</li>
+  <li>这两配置，排列组合我分开试，一起试，混合试，都不能满足需求。<br />
+<code class="highlighter-rouge">StrictHostKeyChecking</code>设置是否将新主机公钥加入known_hosts文件。no就是自动加；yes就是要手动加，并且访问被拒绝；ask就是询问同意后自动加。<br />
+<code class="highlighter-rouge">UserKnownHostsFile</code>指定其它文件作为known_hosts文件。</li>
+</ol>
+
+<p><img src="http://source.bluebiu.com/posts//blog/ssh-known-hosts/params.png" alt="img_4" /></p>
+
+<p>所以，这两参数，有啥用？有鸟用！摔！……</p>
+
+<p>接着查……</p>
+
+<blockquote>
+  <p>修改<strong>服务端</strong>的ssh配置,如下[<sup id="fnref:note_1"><a href="#fn:note_1" class="footnote">2</a></sup>]:<br />
+vi /etc/ssh/sshd_config<br />
+#打开host_based的验证<br />
+HostbasedAuthentication yes<br />
+#不允许忽略~/.ssh/known_hosts<br />
+<strong>IgnoreUserKnownHosts no</strong><br />
+#不允许忽略~/.shosts<br />
+IgnoreRhosts no</p>
+</blockquote>
+
+<p>终于明白，这是<strong>服务端</strong>设置而要求的，难怪客户端怎么设置都没用！然而，<strong>一般不建议调整服务端配置</strong>，也不太可能让别人的服务端随意修改，所以，这条路基本又走到头了。</p>
+
+<h3 id="2第二个问题">2、第二个问题</h3>
+
+<p>虽然第一个问题就这么完蛋了，但仍留下了很重要的信息：<strong>原因是来自服务端配置。但本质还是由于本地known_hosts更新不及时，就会导致ssh出现告警</strong>。</p>
+
+<p>这个「更新不及时」在场景上是不可避免的，因为我根本无法预估这个东西变化的时间点而去随时更新。所以注意力就来到了known_hosts这个文件上：</p>
+
+<blockquote>
+  <p>……3. 类似192.30.252/253的记录，有多条，并且最后一条明显区别较大。……</p>
+</blockquote>
+
+<p>前面提到，这里的ip地址，很有规则。发现前2位一样，从第3位开始不同（估计252是16年的，253是现在的）。</p>
+
+<pre><code class="language-linux">192.30.252.128
+192.30.252.129
+192.30.252.121
+192.30.252.130
+192.30.253.113
+</code></pre>
+
+<p>于是，很自然就想到<strong>通配符</strong>。</p>
+
+<p>那么，问题也就来了，<strong>「known_hosts可以用通配符吗」</strong>？</p>
+
+<p>这个问题，完全没能在搜索引擎上找到答案。找到些好像是接近的：</p>
+
+<blockquote>
+  <p>可以使用关键字Host来使声明只作用于特定的系统。Host声明作用于它与下一个Host声明之间的所有配置行。在主机名中，可以使用通配符*和?。<br />
+Host [hostnames]<br />
+将下面的声明（直到下一条Host声明）都指定为只适用于hostnames。hostnames采用的格式应该与在命令行上所用的格式一样，而且也能够包含通配符*和?。单个*指定所有主机。[<sup id="fnref:note_2"><a href="#fn:note_2" class="footnote">3</a></sup>]</p>
+</blockquote>
+
+<p>其实这个说的就是平时用的<code class="highlighter-rouge">~/.ssh/config</code>里，针对于Host的设置，那就对known_hosts试试。</p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/ssh-known-hosts/wildcard_1.png" alt="img_5" /></p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/ssh-known-hosts/wildcard_2.png" alt="img_6" /></p>
+
+<p><img src="http://source.bluebiu.com/posts//blog/ssh-known-hosts/ssh_v.png" alt="img_8" /></p>
+
+<p>先后尝试了「*」，「?」，「???」等通配符。配合known_hosts文件的变化，以及使用-v参数观察</p>
+
+<pre><code class="language-linux">debug1: Host 'github.com' is known and matches the RSA host key.
+debug1: Found key in /Users/biubiu/.ssh/known_hosts:24
+</code></pre>
+
+<p>很快，就试出了结果：<strong>答案是「可以」！</strong></p>
+
+<p>通配符验证：<br />
+<code class="highlighter-rouge">*</code>是多个字符<br />
+<code class="highlighter-rouge">?</code>是单个字符</p>
+
+<p>最后，根据前面记录github的ip，暂时决定用图中所修改的试试，观察一段时间再说。修改后是：<br />
+<code class="highlighter-rouge">github.com 192.30.25* ssh-rsa XXXXXX……</code></p>
+
+<h2 id="四最后小结">四、最后小结</h2>
+
+<p>又被「万能」的搜索引擎玩了一回……不得不再次吐槽：</p>
+
+<ol>
+  <li>这东西可能根本就没人说过，找不到也是正常……</li>
+  <li>中途找到那2个配置根本就是扯淡，为啥还这么多人抄来抄去……</li>
+</ol>
+
+<p>不过通过搜索引擎积累的信息也是非常有用的，也许网上的答案是针对人家的问题的，并不一定通用。</p>
+
+<p>采集有用的资料，排除掉没用的信息，沿着查到线索，再通过自己一些实践，最后得到自己想要的答案，这个还是非常畅快的！</p>
+
+<h2 id="五其它收获">五、其它收获</h2>
+
+<blockquote>
+  <p>事实上OpenSSH在工具ssh-keygen加了三个选项，协助你管理hash了的known_hosts。你可以用”ssh-keygen -F 计算机名称”找出相关的公钥：<br />
+ssh-keygen -F www.example.net<br />
+如果你想更新某计算机的公钥，可以先打”ssh-keygen -R 计算机名称”删除该计算机的公钥，然后再”ssh 计算机名称”再进入该计算机，ssh自然会重新下载新的公钥。<br />
+如果你的known_hosts 档案仍未被hash，你可以打”ssh-keygen -H” [<sup id="fnref:note_3"><a href="#fn:note_3" class="footnote">4</a></sup>]</p>
+</blockquote>
+
+<p><img src="http://source.bluebiu.com/posts//blog/ssh-known-hosts/ssh_keygen.png" alt="img_7" /></p>
+
+<h2 id="六参考文档">六、参考文档</h2>
+
+<ul>
+  <li><a href="http://blog.chinaunix.net/uid-20395453-id-3264845.html">ssh 配置讲解大全</a> （这里找出了服务端配置导致由于known_hosts引起告警的原因）</li>
+  <li><a href="http://blog.csdn.net/yasaken/article/details/7348441">ssh登陆之忽略known_hosts文件</a>（误导答案很多，还互相抄袭。随便放个出来。）</li>
+  <li><a href="http://unix.stackexchange.com/questions/31549/is-it-possible-to-find-out-the-hosts-in-the-known-hosts-file#comment42847_31550">Is it possible to find out the hosts in the known_hosts file?</a>（ssh-keygen -F）</li>
+  <li><a href="http://tianxiamall.blog.163.com/blog/static/208489112201521487463/">OpenSSH 中 known_hosts 的维护</a></li>
+  <li><a href="http://cn.linux.vbird.org/linux_server/0310telnetssh_2.php">第十一章、远程联机服务器SSH / XDMCP / VNC / RDP —— 鸟哥的Linux私房菜</a>（里面也没能提到关于known_hosts格式的问题，不过说得比较细致，还有一些例如重置系统公钥等等的细节也不错。）</li>
+</ul>
+
+<hr />
+
+<h6 id="注释">注释:</h6>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:note_0">
+      <p><a href="http://tianxiamall.blog.163.com/blog/static/208489112201521487463/">http://tianxiamall.blog.163.com/blog/static/208489112201521487463/</a> <a href="#fnref:note_0" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_1">
+      <p><a href="http://blog.chinaunix.net/uid-20395453-id-3264845.html">http://blog.chinaunix.net/uid-20395453-id-3264845.html</a> <a href="#fnref:note_1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_2">
+      <p><a href="http://www.hao32.com/unix-linux/462.html">http://www.hao32.com/unix-linux/462.html</a> <a href="#fnref:note_2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:note_3">
+      <p><a href="http://tianxiamall.blog.163.com/blog/static/208489112201521487463/">http://tianxiamall.blog.163.com/blog/static/208489112201521487463/</a> <a href="#fnref:note_3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+                <p>(完)</p>
+                <!-- 转载声明 -->
+                <!-- 参考自Codeboy.me -160121  -->
+                    <blockquote>
+                        <!-- 这里baseurl没办法咯，where+map后面没法用prepend -160201 -->
+                        <p>分类：「 <a href="/categories.html#blog">blog</a> 」</p>
+                        <p>发表时间：2017-02-02 11:39:01</p>
+                        <p>最后更新：2017-02-04 00:03:36</p>
+                        <p>转载请注明原作者及出处：「 <a href="http://bluebiu.com">biubiu</a> - <a href="http://bluebiu.com/blog/ssh-known-hosts.html">http://bluebiu.com/blog/ssh-known-hosts.html</a> 」</p>
+                    </blockquote>
+                <!-- end转载声明 -->
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/blog/linux-ssh-session-alive.html" data-toggle="tooltip" data-placement="top" title="Linux使用ssh超时断开连接的真正原因">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/blog/excel-export-error.html" data-toggle="tooltip" data-placement="top" title="excel的一次谜の报错">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                <!-- 畅言评论 -160130 -->
+                <div id="SOHUCS" sid="/blog/ssh-known-hosts" ></div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!--
+20160226
+<script>
+/*
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading');
+    })
+*/
+</script>
+ -->
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+<!-- 文章点击统计 -180420 -->
+
+  <!-- <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> -->
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("2sJh8aPYI7uG3cgEzUEKA9vL-gzGzoHsz", "rD9QQbYiGdVry0XOYEEixqbr");</script>
+  <script src="http://source.bluebiu.com/plugin/leancloud/hits.js"></script>
+
+
+<!-- 替换task list的js -160207 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/checklist/checklists.js" > </script>
+
+<!-- 顶部大图随机颜色 -160121 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/randomcolor/post-topimg-random-color.js" > </script>
+
+<!-- 畅言评论 -160130 -->
+<script type="text/javascript" src="http://source.bluebiu.com/plugin/changyan/comment.js" > </script>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   <!--  <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li> -->
+
+<!-- -160120
+                    
+                    <li>
+                        <a href="https://twitter.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+ -->
+                    
+                    <li>
+                        <a href="https://github.com/bluebiu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <!--
+                    
+                    <li>
+                        <a href="http://www.douban.com/people/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-douban fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    -->
+
+                    <!--
+                    
+                    <li>
+                        <a href="https://www.facebook.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    -->
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/bluebiu">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/bluelooord">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                </ul>
+                <!-- <p class="copyright text-muted">
+                &copy; 2016~2018 http://bluebiu.com Power by biubiu. All Rights Reserved.
+                </p> -->
+                <p class="copyright text-muted">
+                &copy; 2016- biubiu All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+
+</html>

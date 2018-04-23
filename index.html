@@ -1,526 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: page
+title: "永动机"
+description: "动次打次动次打次"
+header-img: "/base/img/banners/sz_wori.jpg"
+---
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keyword" content="biubiu, @biubiu, Biu^Biu's blog, bluebiu github, biubiu的博客" >
-    <meta name="description" content="美好，美好。">
-
-    <title>永动机 - Biu^Biu's Blog</title>
-
-    <link rel="canonical" href="http://bluebiu.com/" />
-
-    <!-- Icons -->
-    <link rel="shortcut icon" href="/favicon.ico" />
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/bootstrap.min.css?vvv=1524211659" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/clean-blog.css?vvv=1524211659" />
-
-    <!-- -160201 -->
-    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/biubiu.css?vvv=1524211659" />
-
-    <!-- Pygments Github CSS -->
-    <!-- <link rel="stylesheet" href="/base/css/syntax.css?vvv=1524211659" /> -->
-    <link rel="stylesheet" href="http://source.bluebiu.com/base/css/syntax-monokai.css?vvv=1524211659" />
-
-    <!-- Custom Fonts -->
-    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
-    <!-- 使用七牛的CDN, for font-awesome -->
-     <link href="//cdn.staticfile.org/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-   <!-- 感觉用不着 -160120 <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' /> -->
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"> </script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"> </script>
-    <![endif]-->
-
-    <!-- jQuery -->
-    <script src="http://source.bluebiu.com/base/js/jquery.min.js?vvv=1524211659"> </script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="http://source.bluebiu.com/base/js/bootstrap.min.js?vvv=1524211659"> </script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="http://source.bluebiu.com/base/js/clean-blog.min.js?vvv=1524211659"> </script>
-
-    <!-- biubiu Custom JavaScript -160201 -->
-    <script src="http://source.bluebiu.com/base/js/biubiu.js?vvv=1524211659"> </script>
-</head>
-
-
-<body ontouchstart="">
-
-    <!-- 自定义的一些html块 -160201 -->
-<div id="back-top">
-    <a href="#toptoptop" title="回到顶部"></a>
-</div>
-
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href='/'></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                
-                <li>
-                    <a href="http://www.bluebiu.com">Home</a>
-                </li>
-                
-                <li>
-                    <a href="/documents.html">Timeline</a>
-                </li>
-                
-                <li>
-                    <a href="/categories.html">Categories</a>
-                </li>
-                
-                <li>
-                    <a href="/tags.html">Tags</a>
-                </li>
-                
-                <li>
-                    <a href="/about.html">About</a>
-                </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-
-
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('http://source.bluebiu.com/base/img/banners/sz_wori.jpg?vvv=1524211659')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>永动机</h1>
-                    <hr class="small">
-                    <span class="subheading">动次打次动次打次</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
+{% for post in paginator.posts %}
 <div class="post-preview">
-    <a href="/blog/grep-color.html">
+    <a href="{{ post.url | prepend: site.baseurl }}">
     <!-- prepend是添加前缀字符串 -160120 biu -->
         <h2 class="post-title">
-            linux的grep指令中color参数的坑
+            {{ post.title }}
         </h2>
-        
-        <div class="post-content-preview">
-            一、我对你付出的青春 这么多年
-
-之前一直用着一个挺好用的指令，查看文件内容时，可以过滤掉注释、空行：
-cat filename | grep -v '[#;]' | grep -v '^$'
-好端端的，突然发现去空行不行了。
-
-
-
-[？？？黑人问号脸]
-
-换到另一台机器试了下，完全一样的文件...
-        </div>
-    </a>
-    <p class="post-meta">Posted by biubiu on August 20, 2017
-        
-          <span id="/blog/grep-color.html" class="leancloud_visitors" data-flag-title="linux的grep指令中color参数的坑">
-           <span class="post-meta-divider">|</span>
-           <span class="post-meta-item-text"> Hits:  </span>
-           <span class="leancloud-visitors-count"></span>
-          </span>
-        
-    </p>
-</div>
-
-<hr>
-
-<div class="post-preview">
-    <a href="/person/sad-for-duoshuo.html">
-    <!-- prepend是添加前缀字符串 -160120 biu -->
-        <h2 class="post-title">
-            好你个「多说」
-        </h2>
-        
-        <div class="post-content-preview">
-            转眼走到了 自传最终章
-
-终于在放假时间，闲下来整理下博客了。
-
-翻了翻之前的博文，实在写得废话连篇。什么「于是」，「所以」，「然后」，「接着」……各种解释，各种思路的转弯，牵引……感觉吧，毕竟是偏理科的性子，扎实的逻辑思维方法，导致了这么个「总想把前因后果描述得清清楚楚，来龙去脉诠释得干干净...
-        </div>
-    </a>
-    <p class="post-meta">Posted by biubiu on April 30, 2017
-        
-          <span id="/person/sad-for-duoshuo.html" class="leancloud_visitors" data-flag-title="好你个「多说」">
-           <span class="post-meta-divider">|</span>
-           <span class="post-meta-item-text"> Hits:  </span>
-           <span class="leancloud-visitors-count"></span>
-          </span>
-        
-    </p>
-</div>
-
-<hr>
-
-<div class="post-preview">
-    <a href="/blog/redis-copy-key-to-key.html">
-    <!-- prepend是添加前缀字符串 -160120 biu -->
-        <h2 class="post-title">
-            redis如何拷贝一个key的值到另一个key
-        </h2>
-        
-        <div class="post-content-preview">
-            一、命运偷走如果 只留下结果
-
-测试，又是测试。在某一次测试中，打算从一个cache里copy一个key到另一个环境去。以为挺简单的，结果一路失败到底……
-
-（4月12日）提前说下结果，本人才疏学浅，目前为止尚未找到解决办法……有大神小仙路过，还盼不吝赐教！……
-
-（4月20日更新）已经找到处...
-        </div>
-    </a>
-    <p class="post-meta">Posted by biubiu on April 12, 2017
-        
-          <span id="/blog/redis-copy-key-to-key.html" class="leancloud_visitors" data-flag-title="redis如何拷贝一个key的值到另一个key">
-           <span class="post-meta-divider">|</span>
-           <span class="post-meta-item-text"> Hits:  </span>
-           <span class="leancloud-visitors-count"></span>
-          </span>
-        
-    </p>
-</div>
-
-<hr>
-
-<div class="post-preview">
-    <a href="/blog/du-and-sort-combination.html">
-    <!-- prepend是添加前缀字符串 -160120 biu -->
-        <h2 class="post-title">
-            du和sort组合使用：显示文件夹/文件大小并排序
-        </h2>
-        
-        <div class="post-content-preview">
-            
-  那些网络上各种互相抄袭，说用du -sh * | sort -rn的，真的自己试过吗？！
-
-
-一、飞过人间的无常 才懂爱才是宝藏
-
-项目测试中，突然发现请求全部超时无响应。
-
-一看，log全是499、504。
-一想，代码没动过，估计db或cache出问题了。
-一查，好吧，连db的那台，硬...
-        </div>
-    </a>
-    <p class="post-meta">Posted by biubiu on March 2, 2017
-        
-          <span id="/blog/du-and-sort-combination.html" class="leancloud_visitors" data-flag-title="du和sort组合使用：显示文件夹/文件大小并排序">
-           <span class="post-meta-divider">|</span>
-           <span class="post-meta-item-text"> Hits:  </span>
-           <span class="leancloud-visitors-count"></span>
-          </span>
-        
-    </p>
-</div>
-
-<hr>
-
-<div class="post-preview">
-    <a href="/blog/php-curl-response.html">
-    <!-- prepend是添加前缀字符串 -160120 biu -->
-        <h2 class="post-title">
-            PHP利用curl「转发」
-        </h2>
-        
+        {% if post.subtitle %}
         <h3 class="post-subtitle">
-            ——「偷梁换柱」，暗渡陈仓
+            {{ post.subtitle }}
         </h3>
-        
+        {% endif %}
         <div class="post-content-preview">
-            一、PHP不是最好的语言
-
-最近做个需求，需要转发一个图片素材。（假设提供服务接口的我为A，图片源为B，请求接口方为C，流程就是C请求A，A需要从B获取图片，然后再返回给C。）
-
-按以往的经验，我就先curl获取B的图片，再输出给C就好。
-
-问题来了，我一直以为，A要把源文件先从B处curl获...
+            {{ post.content | strip_html | truncate:150 }}
         </div>
     </a>
-    <p class="post-meta">Posted by biubiu on February 28, 2017
-        
-          <span id="/blog/php-curl-response.html" class="leancloud_visitors" data-flag-title="PHP利用curl「转发」">
+    <p class="post-meta">Posted by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}
+        {% if site.leancloud.enable %}
+          <span id="{{ post.url }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
            <span class="post-meta-divider">|</span>
            <span class="post-meta-item-text"> Hits:  </span>
            <span class="leancloud-visitors-count"></span>
           </span>
-        
+        {% endif %}
     </p>
 </div>
 
 <hr>
-
-<div class="post-preview">
-    <a href="/blog/excel-export-error.html">
-    <!-- prepend是添加前缀字符串 -160120 biu -->
-        <h2 class="post-title">
-            excel的一次谜の报错
-        </h2>
-        
-        <div class="post-content-preview">
-            一、「有人在吗？excel打不开，报错」
-
-眼看就要下班了，需求方妹纸竟然说用后台导出的excel打不开？惊出一身冷汗。
-
-——「发过来，我看能重现卜」
-
-——[已成功接收到文件xxx0214.xls]
-
-——「我这打开也报错了，我看看吧……」
-
-二、「这谁写的代码？」
-
-一翻记录，都2年多前...
-        </div>
-    </a>
-    <p class="post-meta">Posted by biubiu on February 14, 2017
-        
-          <span id="/blog/excel-export-error.html" class="leancloud_visitors" data-flag-title="excel的一次谜の报错">
-           <span class="post-meta-divider">|</span>
-           <span class="post-meta-item-text"> Hits:  </span>
-           <span class="leancloud-visitors-count"></span>
-          </span>
-        
-    </p>
-</div>
-
-<hr>
-
-<div class="post-preview">
-    <a href="/blog/ssh-known-hosts.html">
-    <!-- prepend是添加前缀字符串 -160120 biu -->
-        <h2 class="post-title">
-            known_hosts可以用通配符吗
-        </h2>
-        
-        <div class="post-content-preview">
-            一、事出有因
-
-1、事出
-
-这两天真是跟ssh怼上了……挺久没有更新blog了，于是趁放假来刷了一波，往github这么一push，又出翔了……
-
-事情是这样：github.com是用git方式去维护更新仓库，它是基于ssh来实现的，而ssh连接对于客户端和服务端都会记录和检验一个私钥公钥的配...
-        </div>
-    </a>
-    <p class="post-meta">Posted by biubiu on February 2, 2017
-        
-          <span id="/blog/ssh-known-hosts.html" class="leancloud_visitors" data-flag-title="known_hosts可以用通配符吗">
-           <span class="post-meta-divider">|</span>
-           <span class="post-meta-item-text"> Hits:  </span>
-           <span class="leancloud-visitors-count"></span>
-          </span>
-        
-    </p>
-</div>
-
-<hr>
-
-<div class="post-preview">
-    <a href="/blog/linux-ssh-session-alive.html">
-    <!-- prepend是添加前缀字符串 -160120 biu -->
-        <h2 class="post-title">
-            Linux使用ssh超时断开连接的真正原因
-        </h2>
-        
-        <div class="post-content-preview">
-            一、挖坑
-
-这篇的起因主要是来自上一个问题「iTerm2中ssh保持连接不断开」。
-
-原本以为是个很常见的小问题，随手一搜，解决办法一大堆，试了试可行，就觉得没什么问题了。但，正因为觉得太简单了，在文末去查看了一下服务端配置，想找找问题起因，结果却发现开辟了一个深坑……
-
-查看的默认配置：
-
-...
-        </div>
-    </a>
-    <p class="post-meta">Posted by biubiu on January 24, 2017
-        
-          <span id="/blog/linux-ssh-session-alive.html" class="leancloud_visitors" data-flag-title="Linux使用ssh超时断开连接的真正原因">
-           <span class="post-meta-divider">|</span>
-           <span class="post-meta-item-text"> Hits:  </span>
-           <span class="leancloud-visitors-count"></span>
-          </span>
-        
-    </p>
-</div>
-
-<hr>
-
+{% endfor %}
 
 <!-- Pager -->
-
+{% if paginator.total_pages > 1 %}
 <ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
     </li>
-    
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
 </ul>
-
+{% endif %}
 
 <!-- 文章点击统计 -180420 -->
-
-  <!-- <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> -->
-  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("2sJh8aPYI7uG3cgEzUEKA9vL-gzGzoHsz", "rD9QQbYiGdVry0XOYEEixqbr");</script>
-  <script src="http://source.bluebiu.com/plugin/leancloud/hits.js"></script>
-
-
-		</div>
-	</div>
-</div>
-
-<hr>
-
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                   <!--  <li>
-                        <a href="/feed.xml">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li> -->
-
-<!-- -160120
-                    
-                    <li>
-                        <a href="https://twitter.com/">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
- -->
-                    
-                    <li>
-                        <a href="https://github.com/bluebiu">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-
-                    <!--
-                    
-                    <li>
-                        <a href="http://www.douban.com/people/">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-douban fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    -->
-
-                    <!--
-                    
-                    <li>
-                        <a href="https://www.facebook.com/">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    -->
-
-                    
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/bluebiu">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                    
-
-
-                    
-                    <li>
-                        <a target="_blank" href="http://weibo.com/bluelooord">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-
-
-                </ul>
-                <!-- <p class="copyright text-muted">
-                &copy; 2016~2018 http://bluebiu.com Power by biubiu. All Rights Reserved.
-                </p> -->
-                <p class="copyright text-muted">
-                &copy; 2015- biubiu All Rights Reserved. 粤ICP备16014509号
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-
-</body>
-
-</html>
+{% include leancloud-analytics.html %}

@@ -1,0 +1,6 @@
+{% if site.leancloud.enable %}
+  <!-- <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> -->
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("{{site.leancloud.app_id}}", "{{site.leancloud.app_key}}");</script>
+  <script src="{{ "/plugin/leancloud/hits.js" | prepend: site.source_url }}"></script>
+{% endif %}

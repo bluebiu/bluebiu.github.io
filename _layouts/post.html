@@ -131,6 +131,9 @@ layout: default
     }
 </style>
 
+<!-- 需要用到page.id之类的jeykll变量的，就用html，放在_includes里，再那里引用js -->
+<!-- 不用的，就直接引用js好了 -->
+
 <!-- 文章点击统计 -180420 -->
 {% include leancloud-analytics.html %}
 
@@ -140,6 +143,9 @@ layout: default
 <!-- 顶部大图随机颜色 -160121 -->
 <script type="text/javascript" src="{{ site.source_url }}/plugin/randomcolor/post-topimg-random-color.js" > </script>
 
-<!-- 畅言评论 -160130 -->
+<!-- 畅言评论 -160130 有个div加在上面了-->
 <script type="text/javascript" src="{{ site.source_url }}/plugin/changyan/comment.js" > </script>
+
+<!-- 百度收录 -180427 -->
+<script type="text/javascript" src="{{ site.source_url }}/plugin/baidu/push.js" > </script>
 

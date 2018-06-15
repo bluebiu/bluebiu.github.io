@@ -11,9 +11,9 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
 
 ---
 
-* [<u>「marathon-records」</u>](/runningabout/marathon-records)
-* [<u>「PB」</u>](/runningabout/pb)
-* [<u>「一言不合跑九桥」</u>](/runningabout/9)
+* [<u>「marathon-records」</u>](/runningabout/marathon-records.html)
+* [<u>「PB」</u>](/runningabout/pb.html)
+* [<u>「一言不合跑九桥」</u>](/runningabout/9.html)
 
 ![img_0][]
  
@@ -28,6 +28,6 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
 ###### [3R - Run, Road, Refresh - Running on the road can refresh us！]
 
 
-[img_0]:{{site.img_url}}/other/runningabout/luguhu.jpg
-[img_1]:{{site.img_url}}/other/runningabout/2016.jpg
-[img_2]:{{site.img_url}}/other/runningabout/3R_banner.jpg
+[img_0]:{{site.source_url}}/other/runningabout/luguhu.jpg
+[img_1]:{{site.source_url}}/other/runningabout/2016.jpg
+[img_2]:{{site.source_url}}/other/runningabout/3R_banner.jpg

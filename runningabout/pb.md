@@ -9,7 +9,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
 
 ---
 
-###### (*——Last updated on 2017-01-28 21:30:00*)
+###### (*——Last updated on 2018-05-10 14:30:00*)
 
 <table class="table table-bordered table-striped table-condensed">
    <tr style="background-color: rgba(255,255,0,0.6);">
@@ -103,18 +103,18 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
    </tr>
    <tr>
       <td><b>「42.195k」</b></td>
-      <td><b>04:01:28</b></td>
+      <td><b>03:50:06</b></td>
       <td>深圳国际马拉松</td>
-      <td>2016-12-18</td>
+      <td>2017-12-17</td>
       <td>深圳</td>
-      <td>可惜没破4~</td>
+      <td>破4</td>
    </tr>
    <tr>
       <td>上次pb</td>
-      <td>04:07:11</td>
-      <td>桂林国际马拉松</td>
-      <td>2016-06-11</td>
-      <td>桂林</td>
+      <td>04:01:28</td>
+      <td>深圳国际马拉松</td>
+      <td>2016-12-18</td>
+      <td>深圳</td>
       <td></td>
    </tr>
 </table>
@@ -132,5 +132,5 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
 
 ###### [42k马拉松大众选手等级达标证书 - 2016年]
 
-[img_0]:{{site.img_url}}/other/runningabout/certificate_10k.png
-[img_1]:{{site.img_url}}/other/runningabout/certificate_42k.png
+[img_0]:{{site.source_url}}/other/runningabout/certificate_10k.png
+[img_1]:{{site.source_url}}/other/runningabout/certificate_42k.png

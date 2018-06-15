@@ -13,14 +13,17 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
         background-color: rgba(255,165,0,0.4);
     }*/
     .for_pb{
-        background-color: rgba(0,55,255,0.5);
+        background-color: rgba(33,33,255,0.5);
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
     }
 
 </style>
 
-# Marathon Records (2015 - 2017)
+# Marathon Records (2015 - 2018)
 
-###### (*——Last updated on 2017-01-28 21:30:00*)
+###### (*——Last updated on 2018-05-10 14:30:00*)
 
 ---
 
@@ -166,6 +169,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td class="for_yes">✅</td>
       <td>04:12:41</td>
       <td>首马</td>
+      <td><a href="{% post_url 2016-10-30-2016-10-30-changsha-42k %}" target="_blank"><u>>></u></a></td>
    </tr>
    <tr>
       <td rowspan="4">11</td>
@@ -227,7 +231,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>深圳国际马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:01:28<a href="/runningabout/pb.html" target="_blank"><u class="for_pb">pb</u></a></td>
+      <td>04:01:28</td>
       <td></td>
    </tr>
 </table>
@@ -288,6 +292,93 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>42.195</td>
       <td class="for_no">没中签</td>
       <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>8</td>
+      <td>11</td>
+      <td>北京马拉松</td>
+      <td>42.195</td>
+      <td class="for_no">没中签</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>9</td>
+      <td>14</td>
+      <td>上海马拉松</td>
+      <td>42.195</td>
+      <td class="for_no">没中签</td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td>11</td>
+      <td>26</td>
+      <td>东莞国际马拉松·16届亚锦赛</td>
+      <td>42.195</td>
+      <td class="for_yes">✅</td>
+      <td>04:58:33</td>
+      <td></td>
+   </tr>
+   <tr>
+      <td rowspan="4">12</td>
+      <td>3</td>
+      <td>南宁国际马拉松</td>
+      <td>42.195</td>
+      <td class="for_yes">✅</td>
+      <td>04:13:02</td>
+      <td>家乡第一个全马</td>
+   </tr>
+   <tr>
+      <!-- <td>12</td> -->
+      <td>10</td>
+      <td>广州马拉松</td>
+      <td>42.195</td>
+      <td class="for_yes">✅</td>
+      <td>04:58:22</td>
+      <td></td>
+   </tr>
+   <tr>
+      <!-- <td>12</td> -->
+      <td>17</td>
+      <td>深圳国际马拉松</td>
+      <td>42.195</td>
+      <td class="for_yes">✅</td>
+      <td>03:50:06<a href="/runningabout/pb.html" target="_blank"><u class="for_pb">pb</u></a></td>
+      <td></td>
+   </tr>
+   <tr>
+      <!-- <td>12</td> -->
+      <td>25</td>
+      <td>广州黄埔马拉松</td>
+      <td>42.195</td>
+      <td class="for_yes">✅</td>
+      <td>04:45:49</td>
+      <td></td>
+   </tr>
+</table>
+
+## 2018
+
+<table class="table table-bordered table-striped table-condensed">
+   <tr style="background-color: rgba(255,255,0,0.3);">
+      <th style="width: 25px;">月</th>
+      <th style="width: 25px;">日</th>
+      <th style="width: 280px;">名称</th>
+      <th style="width: 80px;">里程(km)</th>
+      <th style="width: 70px;">状态</th>
+      <th style="width: 100px;">成绩</th>
+      <th style="width: 250px;">备注</th>
+      <th style="width: 25px;">详</th>
+   </tr>
+   <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>深圳大棚新年马拉松</td>
+      <td>42.195</td>
+      <td class="for_yes">✅</td>
+      <td>04:06:08</td>
       <td></td>
    </tr>
 </table>

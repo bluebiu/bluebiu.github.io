@@ -56,4 +56,9 @@
     <!-- biubiu pop-text -180615 -->
     <script type="text/javascript" src="{{ site.source_url }}/plugin/float/pop-text.js" > </script>
 
+    <!-- leancloud应用基础引入 180619-->
+    {% if site.leancloud.enable %}
+      <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+      <script>AV.initialize("{{site.leancloud.app_id}}", "{{site.leancloud.app_key}}");</script>
+    {% endif %}
 </head>

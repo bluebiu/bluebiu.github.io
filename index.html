@@ -28,6 +28,11 @@ header-img: "/base/img/banners/sz_wori.jpg"
            <span class="post-meta-item-text"> Hits:  </span>
            <span class="leancloud-visitors-count"></span>
           </span>
+          <span id="{{ post.url }}" class="leancloud_praises" data-flag-title="{{ post.title }}">
+           <span class="post-meta-divider">|</span>
+           <span class="post-meta-item-text"> Hits:  </span>
+           <span class="leancloud-praises-count"></span>
+          </span>
         {% endif %}
     </p>
 </div>
@@ -51,5 +56,6 @@ header-img: "/base/img/banners/sz_wori.jpg"
 </ul>
 {% endif %}
 
+
 <!-- 文章点击统计 -180420 -->
-{% include leancloud-analytics.html %}
+<script type="text/javascript" src="{{ site.source_url }}/plugin/leancloud/hits.js"></script>

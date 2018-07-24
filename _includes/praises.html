@@ -1,0 +1,10 @@
+<!-- 点赞块 -180617 -->
+<div class="praise-middle">
+    <li class="thumbs_up_button leancloud_like fa fa-thumbs-o-up " aria-hidden="true" title="支持一下" data-id="{{ page.url }}" data-flag-title="{{ page.title }}"> 赞 &nbsp;&nbsp;<span class="leancloud_count_like">?</span>
+    </li>
+    <li class="thumbs_down_button leancloud_unlike fa fa-thumbs-o-down " aria-hidden="true" title="批评一下" data-id="{{ page.url }}" data-flag-title="{{ page.title }}"> 踩 &nbsp;&nbsp;<span class="leancloud_count_unlike">?</span>
+    </li>
+</div>
+
+<link rel="stylesheet" href="{{ "/plugin/leancloud/praises/praises.css" | prepend: site.source_url }}" />
+<script src="{{ "/plugin/leancloud/praises/praises.js" | prepend: site.source_url }}"> </script>

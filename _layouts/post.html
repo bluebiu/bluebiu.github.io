@@ -58,17 +58,22 @@ layout: default
                 {{ content }}
 
                 <p>(完)</p>
+
+                <!-- 点赞模块 -180619 -->
+                {% include praises.html %}
+
+                <hr />
                 <!-- 转载声明 -->
                 <!-- 参考自Codeboy.me -160121  -->
-                    <blockquote>
-                        <!-- 这里baseurl没办法咯，where+map后面没法用prepend -160201 -->
-                        <p>分类：「 <a href="{{ site.baseurl }}{{ site.navs | where : "title", "Categories" | map : "url" }}#{{ page.categories }}">{{ page.categories }}</a> 」</p>
-                        <p>发表时间：{% if page.first_time %}{{ page.first_time }}{% else %}{{ page.date | date: "%Y.%m.%d" }}{% endif %}</p>
-                        <p>最后更新：{% if page.last_time %}{{ page.last_time }}{% elsif page.first_time %}{{ page.first_time }}{% else %}{{ page.date | date: "%Y.%m.%d" }}{% endif %}</p>
-                        <p>转载请注明原作者及出处：「 <a href="{{ site.baseurl | prepend : site.url }}">{{ page.author }}</a> - <a href="{{ page.url | prepend : site.baseurl | prepend : site.url }}">{{ page.url | prepend : site.baseurl | prepend : site.url }}</a> 」</p>
-                    </blockquote>
+                <blockquote>
+                    <!-- 这里baseurl没办法咯，where+map后面没法用prepend -160201 -->
+                    <p>分类：「 <a href="{{ site.baseurl }}{{ site.navs | where : "title", "Categories" | map : "url" }}#{{ page.categories }}">{{ page.categories }}</a> 」</p>
+                    <p>发表时间：{% if page.first_time %}{{ page.first_time }}{% else %}{{ page.date | date: "%Y.%m.%d" }}{% endif %}</p>
+                    <p>最后更新：{% if page.last_time %}{{ page.last_time }}{% elsif page.first_time %}{{ page.first_time }}{% else %}{{ page.date | date: "%Y.%m.%d" }}{% endif %}</p>
+                    <p>转载请注明原作者及出处：「 <a href="{{ site.baseurl | prepend : site.url }}">{{ page.author }}</a> - <a href="{{ page.url | prepend : site.baseurl | prepend : site.url }}">{{ page.url | prepend : site.baseurl | prepend : site.url }}</a> 」</p>
+                </blockquote>
                 <!-- end转载声明 -->
-                <hr>
+                <hr />
 
                 <ul class="pager">
                     {% if page.previous.url %}
@@ -135,7 +140,7 @@ layout: default
 <!-- 不用的，就直接引用js好了 -->
 
 <!-- 文章点击统计 -180420 -->
-{% include leancloud-analytics.html %}
+<script type="text/javascript" src="{{ site.source_url }}/plugin/leancloud/hits.js"></script>
 
 <!-- 替换task list的js -160207 -->
 <script type="text/javascript" src="{{ site.source_url }}/plugin/checklist/checklists.js" > </script>

@@ -13,13 +13,13 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
 
 n年前的了……
 
-![]({{site.img_url}}/other/photography/1.jpg)  
-![]({{site.img_url}}/other/photography/2.jpg)  
-![]({{site.img_url}}/other/photography/3.jpg)  
-![]({{site.img_url}}/other/photography/4.jpg)  
-![]({{site.img_url}}/other/photography/5.jpg)  
-![]({{site.img_url}}/other/photography/6.jpg)  
-![]({{site.img_url}}/other/photography/7.jpg)  
+![]({{site.source_url}}/other/photography/1.jpg)  
+![]({{site.source_url}}/other/photography/2.jpg)  
+![]({{site.source_url}}/other/photography/3.jpg)  
+![]({{site.source_url}}/other/photography/4.jpg)  
+![]({{site.source_url}}/other/photography/5.jpg)  
+![]({{site.source_url}}/other/photography/6.jpg)  
+![]({{site.source_url}}/other/photography/7.jpg)  
  
 
 <br />

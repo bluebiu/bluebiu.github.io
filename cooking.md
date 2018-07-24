@@ -13,7 +13,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
 
 2016诚意第一餐……
 
-![]({{site.img_url}}/other/tmp/eat.jpg)  
+![]({{site.source_url}}/other/tmp/eat.jpg)  
  
 
 <br />

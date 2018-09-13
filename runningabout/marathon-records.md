@@ -23,7 +23,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
 
 # Marathon Records (2015 - 2018)
 
-###### (*——Last updated on 2018-07-24 16:16:16*)
+###### (*——Last updated on 2018-08-22 14:23:42*)
 
 ---
 
@@ -46,7 +46,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>南宁国际半程马拉松</td>
       <td>21.0975</td>
       <td class="for_yes">✅</td>
-      <td>01:53:59</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2015-12-12-nanning-21k.jpg" target="_blank" title="查看证书">01:53:59</a></td>
       <td>第一次线下</td>
       <td><a href="{% post_url 2015-12-12-2015-12-12-nanning-21k %}" target="_blank"><u>>></u></a></td>
    </tr>
@@ -71,7 +71,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>清远国际马拉松</td>
       <td>21.0975</td>
       <td class="for_yes">✅</td>
-      <td>01:51:25</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2016-03-20-qingyuan-21k.jpg" target="_blank" title="查看证书">01:51:25</a></td>
       <td>第一次跟3R一起</td>
       <td><a href="{% post_url 2016-03-20-2016-03-20-qingyuan-21k %}" target="_blank"><u>>></u></a></td>
    </tr>
@@ -100,7 +100,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>广州特步欢乐跑</td>
       <td>10</td>
       <td class="for_yes">✅</td>
-      <td>00:44:38<a href="/runningabout/pb.html" target="_blank"><u class="for_pb">pb</u></a></td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2016-05-15-guangzhou-10k.jpg" target="_blank" title="查看证书">00:44:38</a><a href="/runningabout/pb.html" target="_blank"><u class="for_pb">pb</u></a></td>
       <td>欢乐英雄戒指:)</td>
       <td><a href="{% post_url 2016-05-15-2016-05-15-guangzhou-10k %}" target="_blank"><u>>></u></a></td>
    </tr>
@@ -147,7 +147,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>韶关半程马拉松</td>
       <td>21.0975</td>
       <td class="for_yes">✅</td>
-      <td>01:53:46</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2016-10-23-shaoguan-21k.jpg" target="_blank" title="查看证书">01:53:46</a></td>
       <td></td>
       <td><a href="{% post_url 2016-10-23-2016-10-23-shaoguan-21k %}" target="_blank"><u>>></u></a></td>
 
@@ -167,7 +167,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>长沙国际马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:12:41</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2016-10-30-changsha-42k.jpg" target="_blank" title="查看证书">04:12:41</a></td>
       <td>首马</td>
       <td><a href="{% post_url 2016-10-30-2016-10-30-changsha-42k %}" target="_blank"><u>>></u></a></td>
    </tr>
@@ -177,7 +177,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>杭州马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:20:49</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2016-11-06-hangzhou-42k.jpg" target="_blank" title="查看证书">04:20:49</a></td>
       <td></td>
       <td><a href="{% post_url 2016-11-06-2016-11-06-hangzhou-42k %}" target="_blank"><u>>></u></a></td>
    </tr>
@@ -187,7 +187,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>桂林国际马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:07:11</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2016-11-13-guilin-42k.jpg" target="_blank" title="查看证书">04:07:11</a></td>
       <td>第一次雨战</td>
       <td><a href="{% post_url 2016-11-13-2016-11-13-guilin-42k %}" target="_blank"><u>>></u></a></td>
    </tr>
@@ -206,7 +206,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>深圳南山半程马拉松</td>
       <td>21.0975</td>
       <td class="for_yes">✅</td>
-      <td>01:42:01<a href="/runningabout/pb.html" target="_blank"><u class="for_pb">pb</u></a></td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2016-11-27-shenzhen-nanshan-21k.jpg" target="_blank" title="查看证书">01:42:01</a><a href="/runningabout/pb.html" target="_blank"><u class="for_pb">pb</u></a></td>
       <td></td>
       <td><a href="{% post_url 2016-11-27-2016-11-27-shenzhen-nanshan-21k %}" target="_blank"><u>>></u></a></td>
    </tr>
@@ -216,7 +216,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>南宁国际半程马拉松</td>
       <td>21.0975</td>
       <td class="for_yes">✅</td>
-      <td>01:45:34</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2016-12-04-nanning-21k.jpg" target="_blank" title="查看证书">01:45:34</a></td>
       <td></td>
       <td><a href="{% post_url 2016-12-04-2016-12-04-nanning-21k %}" target="_blank"><u>>></u></a></td>
    </tr>
@@ -226,7 +226,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>广州马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:12:34</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2016-12-11-guangzhou-42k.jpg" target="_blank" title="查看证书">04:12:34</a></td>
       <td></td>
       <td><a href="{% post_url 2016-12-11-2016-12-11-guangzhou-42k %}" target="_blank"><u>>></u></a></td>
    </tr>
@@ -236,7 +236,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>深圳国际马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:01:28</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2016-12-18-shenzhen-42k.jpg" target="_blank" title="查看证书">04:01:28</a></td>
       <td></td>
       <td><a href="{% post_url 2016-12-18-2016-12-18-shenzhen-42k %}" target="_blank"><u>>></u></a></td>
    </tr>
@@ -270,8 +270,9 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>厦门国际马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:22:10</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2017-01-02-xiamen-42k.jpg" target="_blank" title="查看证书">04:22:10</a></td>
       <td></td>
+      <td><a href="{% post_url 2017-01-02-2017-01-02-xiamen-42k %}" target="_blank"><u>>></u></a></td>
    </tr>
    <tr>
       <td>02</td>
@@ -288,8 +289,9 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>清远国际马拉松</td>
       <td>21.0975</td>
       <td class="for_yes">✅</td>
-      <td>02:42:31</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2017-03-19-qingyuan-21k.jpg" target="_blank" title="查看证书">02:42:31-B</a><br /><a href="{{site.source_url}}/other/runningabout/marathon-records/2017-03-19-qingyuan-21k-juan.jpg" target="_blank" title="查看证书">02:42:32-J</a></td>
       <td>领导首个半马完成！</td>
+      <td><a href="{% post_url 2017-03-19-2017-03-19-qingyuan-21k %}" target="_blank"><u>>></u></a></td>
    </tr>
    <tr>
       <td>04</td>
@@ -324,7 +326,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>东莞国际马拉松·16届亚锦赛</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:58:33</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2017-11-26-dongguan-42k.jpg" target="_blank" title="查看证书">04:58:33</a></td>
       <td></td>
    </tr>
    <tr>
@@ -333,7 +335,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>南宁国际马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:13:02</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2017-12-03-nanning-42k.jpg" target="_blank" title="查看证书">04:13:02</a></td>
       <td>家乡第一个全马</td>
    </tr>
    <tr>
@@ -342,7 +344,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>广州马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:58:22</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2017-12-10-guangzhou-42k.jpg" target="_blank" title="查看证书">04:58:22</a></td>
       <td></td>
    </tr>
    <tr>
@@ -351,7 +353,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>深圳国际马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>03:50:06<a href="/runningabout/pb.html" target="_blank"><u class="for_pb">pb</u></a></td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2017-12-17-shenzhen-42k.jpg" target="_blank" title="查看证书">03:50:06</a><a href="/runningabout/pb.html" target="_blank"><u class="for_pb">pb</u></a></td>
       <td>pb福地……</td>
    </tr>
    <tr>
@@ -360,7 +362,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>广州黄埔马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:45:49</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2017-12-24-guangzhou-huangpu-42k.jpg" target="_blank" title="查看证书">04:45:49</a></td>
       <td></td>
    </tr>
 </table>
@@ -384,7 +386,7 @@ header-img: "/base/img/banners/ship_in_hand.jpg"
       <td>深圳大棚新年马拉松</td>
       <td>42.195</td>
       <td class="for_yes">✅</td>
-      <td>04:06:08</td>
+      <td><a href="{{site.source_url}}/other/runningabout/marathon-records/2018-01-01-shenzhen-dapeng-42k.jpg" target="_blank" title="查看证书">04:06:08</a></td>
       <td></td>
    </tr>
    <tr>
